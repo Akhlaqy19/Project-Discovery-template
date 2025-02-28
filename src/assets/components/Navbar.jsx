@@ -1,0 +1,90 @@
+import React from 'react'
+import {FaGithub, FaStar } from 'react-icons/fa'
+import confetti from "canvas-confetti"
+
+function Navbar() {
+ const handleHover = () => {
+    confetti({
+      particleCount: 300,
+      spread: 20,
+      origin: 
+        { y: 0.075, 
+          x : 0.18 },
+      colors: ['#ffff00', '#ff0000'], // رنگ‌های دلخواه
+      scalar: 0.3,
+      // ticks: 30,           // تعداد فریم‌های انیمیشن (تقریباً 0.5 ثانیه در 60fps)
+    });
+  };
+  
+  return (
+    <>
+    {/* wrapper */}
+      {/* <nav className=''> */}
+        {/* navbar */}
+        <div className="fixed z-50 top-0 left-0 right-0 
+        flex justify-between items-center mx-auto 
+        px-8 py-5 leading-5 bg-black text-white backdrop-blur-lg">
+          
+          {/* left / logo */}
+          <div className="flex justify-between gap-8">     
+
+            {/* logo image */}
+            <div className="">            
+              <img src="/img/logo.png" alt="" className='cursor-pointer'/>
+            </div>
+
+              {/* github score */} 
+            <a href='#' onMouseEnter={handleHover} 
+             className="max-lg:hidden group
+             flex items-center gap-2 text-sm text-white/60 last:text-1 
+             *:transition *:delay-75 *:duration-150 *:ease-in-out">
+
+                <FaGithub className='text-lg group-hover:text-white'/>
+                <span className='group-hover:text-white'>100.4K</span>
+                {/* star icon */}
+                <FaStar className='group-hover:text-white'/>
+              </a>
+            </div>
+
+          {/* mid / navbar links */}
+          <div className="max-lg:hidden">
+            <ul className='flex justify-between gap-x-12 nav-effect *:hover:text-white/45'>
+              <li>
+                <a href="#">Features</a>
+              </li>
+              <li>
+                <a href="#">Solutions</a>
+              </li>
+              <li>
+                <a href="#">Docs</a>
+              </li>
+              <li>
+                <a href="#">Pricing</a>
+              </li>
+            </ul>
+         
+          </div>
+
+           {/* right / sign in */}
+          <div className="flex justify-between items-center gap-x-5">
+            {/* sign in */}
+            <div className="max-lg:hidden nav-effect *:hover:text-white/45">
+              <a href="#">
+                Sign In
+              </a>
+            </div>
+            {/* start to talk btn */}
+            <div className="nav-effect *:hover:text-black *:hover:bg-white">
+              <a href="#" className='block py-2 px-4 font-medium border border-white rounded-md'>
+                Talk to sales
+              </a>
+            </div>
+          </div>
+        </div>
+    {/* </nav> */}
+    </>
+
+  )
+}
+
+export default Navbar

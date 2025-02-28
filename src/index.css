@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "Geist";
+    font-display: swap;
+    src: local("Geist") url("/fonts/Geist/Geist.ttf") format("trueType");
+}
+
+:root {
+    @apply box-border m-0 p-0 border-0 outline-0 text-base align-baseline;
+}
+
+#root {
+
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	@apply bg-black overflow-hidden;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+input {
+	@apply outline-0;
+}
+
+button {
+	@apply outline-0;
+}
+
+@theme {
+	/* fonts */
+    --font-main: Geist;
+	--text-11: 44px;
+
+	/* spacing and sizing */
+
+	/* colors */
+	--color-yellow: #DADF58;
+}
+
+.nav-effect {
+	@apply *:transition *:delay-100 *:duration-300 *:ease-in-out;
+}
