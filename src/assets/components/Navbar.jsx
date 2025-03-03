@@ -5,25 +5,28 @@ import confetti from "canvas-confetti"
 function Navbar() {
  const handleHover = () => {
     confetti({
-      particleCount: 300,
-      spread: 20,
+      particleCount: 250,
+      spread: 40,
       origin: 
         { y: 0.075, 
           x : 0.18 },
       colors: ['#ffff00', '#ff0000'], // رنگ‌های دلخواه
       scalar: 0.3,
-      // ticks: 30,           // تعداد فریم‌های انیمیشن (تقریباً 0.5 ثانیه در 60fps)
+      startVelocity: 20,
+      gravity: 1,
+      ticks: 90,  // تعداد فریم‌های انیمیشن (تقریباً 0.5 ثانیه در 60fps)
     });
   };
   
   return (
     <>
     {/* wrapper */}
-      {/* <nav className=''> */}
+      <nav className=''>
         {/* navbar */}
         <div className="fixed z-50 top-0 left-0 right-0 
         flex justify-between items-center mx-auto 
-        px-8 py-5 leading-5 bg-black text-white backdrop-blur-lg">
+        px-8 py-5 leading-5 bg-black text-white backdrop-blur-lg
+        ">
           
           {/* left / logo */}
           <div className="flex justify-between gap-8">     
@@ -36,19 +39,19 @@ function Navbar() {
               {/* github score */} 
             <a href='#' onMouseEnter={handleHover} 
              className="max-lg:hidden group
-             flex items-center gap-2 text-sm text-white/60 last:text-1 
+             flex items-center gap-2 text-sm text-white/60 
              *:transition *:delay-75 *:duration-150 *:ease-in-out">
 
                 <FaGithub className='text-lg group-hover:text-white'/>
-                <span className='group-hover:text-white'>100.4K</span>
+                <span className='group-hover:text-white'>100.5k</span>
                 {/* star icon */}
-                <FaStar className='group-hover:text-white'/>
+                <FaStar className='text-sm group-hover:text-white'/>
               </a>
             </div>
 
           {/* mid / navbar links */}
-          <div className="max-lg:hidden">
-            <ul className='flex justify-between gap-x-12 nav-effect *:hover:text-white/45'>
+          <div className="max-lg:hidden mr-18">
+            <ul className='flex justify-between gap-x-12 text-sm nav-effect *:hover:text-white/45'>
               <li>
                 <a href="#">Features</a>
               </li>
@@ -81,7 +84,7 @@ function Navbar() {
             </div>
           </div>
         </div>
-    {/* </nav> */}
+    </nav>
     </>
 
   )

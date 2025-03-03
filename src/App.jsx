@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-     <div className="App font-main">
+     <div className="App mx-auto max-w-384 font-main">
 
         <Header/>
         <Features />

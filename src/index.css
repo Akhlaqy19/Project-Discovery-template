@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* Add fonts */
 @font-face {
     font-family: "Geist";
     font-display: swap;
@@ -10,17 +11,14 @@
     @apply box-border m-0 p-0 border-0 outline-0 text-base align-baseline;
 }
 
-#root {
 
-}
-
-/* HTML5 display-role reset for older browsers */
+/* Reset CSS / HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	@apply bg-black overflow-hidden;
+	@apply bg-black overflow-x-hidden;
 	line-height: 1;
 }
 ol, ul {
@@ -47,6 +45,8 @@ button {
 	@apply outline-0;
 }
 
+
+/* Custom Utilities */
 @theme {
 	/* fonts */
     --font-main: Geist;
@@ -56,8 +56,142 @@ button {
 
 	/* colors */
 	--color-yellow: #DADF58;
+	--color-yellow-light: #fdffdb;
+	--color-orange: #de632e;
+	/* oklch(0.987 0.026 102.212) */
 }
 
 .nav-effect {
 	@apply *:transition *:delay-100 *:duration-300 *:ease-in-out;
 }
+
+
+.btn-monitor span:nth-child(1) {
+	@apply absolute w-full h-0.25 top-0 left-0 bg-linear-to-r from-yellow-light to-yellow;
+	animation: animate1 5s linear infinite;
+	-webkit-animation: animate1 5s linear infinite;
+}
+
+@keyframes animate1 {
+	0% {
+		transform: translateX(-100%);
+		-webkit-transform: translateX(-100%);
+		-moz-transform: translateX(-100%);
+		-ms-transform: translateX(-100%);
+		-o-transform: translateX(-100%);
+	}
+
+	100% {
+		transform: translateX(100%);
+		-webkit-transform: translateX(100%);
+		-moz-transform: translateX(100%);
+		-ms-transform: translateX(100%);
+		-o-transform: translateX(100%);
+	}
+}
+
+.btn-monitor span:nth-child(2) {
+	@apply absolute w-0.25 h-full top-0 right-0 bg-linear-to-b from-yellow-light to-yellow;
+	animation: animate2 5s linear infinite;
+	-webkit-animation: animate2 5s linear infinite;
+	animation-delay: 5s;
+}
+
+@keyframes animate2 {
+	0% {
+		transform: translateY(-100%);
+		-webkit-transform: translateY(-100%);
+		-moz-transform: translateY(-100%);
+		-ms-transform: translateY(-100%);
+		-o-transform: translateY(-100%);
+	}
+
+	100% {
+		transform: translateY(100%);
+		-webkit-transform: translateY(100%);
+		-moz-transform: translateY(100%);
+		-ms-transform: translateY(100%);
+		-o-transform: translateY(100%);
+	}
+}
+
+.btn-monitor span:nth-child(3) {
+	@apply absolute w-full h-0.25 bottom-0 left-0 bg-linear-to-l from-yellow-light to-yellow;
+	animation: animate3 5s linear infinite;
+	-webkit-animation: animate3 5s linear infinite;
+}
+
+@keyframes animate3 {
+	0% {
+		transform: translateX(100%);
+		-webkit-transform: translateX(100%);
+		-moz-transform: translateX(100%);
+		-ms-transform: translateX(100%);
+		-o-transform: translateX(100%);
+	}
+
+	100% {
+		transform: translateX(-100%);
+		-webkit-transform: translateX(-100%);
+		-moz-transform: translateX(-100%);
+		-ms-transform: translateX(-100%);
+		-o-transform: translateX(-100%);
+	}
+}
+
+
+.btn-monitor span:nth-child(4) {
+	@apply absolute w-0.25 h-full top-0 left-0 bg-linear-to-t from-yellow-light to-yellow;
+	animation: animate4 5s linear infinite;
+	-webkit-animation: animate4 5s linear infinite;
+	animation-delay: 15s;
+}
+
+
+@keyframes animate4 {
+	0% {
+		transform: translateY(100%);
+		-webkit-transform: translateY(100%);
+		-moz-transform: translateY(100%);
+		-ms-transform: translateY(100%);
+		-o-transform: translateY(100%);
+	}
+
+	100% {
+		transform: translateY(-100%);
+		-webkit-transform: translateY(-100%);
+		-moz-transform: translateY(-100%);
+		-ms-transform: translateY(-100%);
+		-o-transform: translateY(-100%);
+	}
+}
+
+.bitmap {
+	animation: bitmap-animate 1.2s alternate infinite;
+	-webkit-animation: bitmap-animate 1.2s alternate infinite;
+}
+
+@keyframes bitmap-animate {
+	0% {
+		transform: translateY(-10%);
+		-webkit-transform: translateY(-10%);
+		-moz-transform: translateY(-10%);
+		-ms-transform: translateY(-10%);
+		-o-transform: translateY(-10%);
+}
+	100% {
+		transform: translateY(10%);
+		-webkit-transform: translateY(10%);
+		-moz-transform: translateY(10%);
+		-ms-transform: translateY(10%);
+		-o-transform: translateY(10%);
+	}
+}
+
+/* .text-high {
+	@apply text-orange;
+}
+
+.text-critical {
+	@apply text-orange;
+} */
