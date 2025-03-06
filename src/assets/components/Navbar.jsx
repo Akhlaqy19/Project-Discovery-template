@@ -20,38 +20,40 @@ function Navbar() {
   
   return (
     <>
-    {/* wrapper */}
-      <nav className=''>
+      {/* wrapper */}
+      <nav className="">
         {/* navbar */}
-        <div className="fixed z-50 top-0 left-0 right-0 
-        flex justify-between items-center mx-auto 
+        <div
+          className="fixed z-50 top-0 left-0 right-0 
+        flex justify-between items-center mx-auto max-w-384
         px-8 py-5 leading-5 bg-black text-white backdrop-blur-lg
-        ">
-          
+        "
+        >
           {/* left / logo */}
-          <div className="flex justify-between gap-8">     
-
+          <div className="flex justify-between gap-8">
             {/* logo image */}
-            <div className="">            
-              <img src="/img/logo.png" alt="" className='cursor-pointer'/>
+            <div className="">
+              <img src="/img/logo.png" alt="" className="cursor-pointer" />
             </div>
 
-              {/* github score */} 
-            <a href='#' onMouseEnter={handleHover} 
-             className="max-lg:hidden group
+            {/* github score */}
+            <a
+              href="#"
+              onMouseEnter={handleHover}
+              className="max-lg:hidden group
              flex items-center gap-2 text-sm text-white/60 
-             *:transition *:delay-75 *:duration-150 *:ease-in-out">
-
-                <FaGithub className='text-lg group-hover:text-white'/>
-                <span className='group-hover:text-white'>100.5k</span>
-                {/* star icon */}
-                <FaStar className='text-sm group-hover:text-white'/>
-              </a>
-            </div>
+             *:transition *:delay-75 *:duration-150 *:ease-in-out"
+            >
+              <FaGithub className="text-lg group-hover:text-white" />
+              <span className="group-hover:text-white">100.7k</span>
+              {/* star icon */}
+              <FaStar className="text-sm group-hover:text-white" />
+            </a>
+          </div>
 
           {/* mid / navbar links */}
           <div className="max-lg:hidden mr-18">
-            <ul className='flex justify-between gap-x-12 text-sm nav-effect *:hover:text-white/45'>
+            <ul className="flex justify-between gap-x-12 text-sm nav-effect *:hover:text-white/45">
               <li>
                 <a href="#">Features</a>
               </li>
@@ -65,29 +67,28 @@ function Navbar() {
                 <a href="#">Pricing</a>
               </li>
             </ul>
-         
           </div>
 
-           {/* right / sign in */}
-          <div className="flex justify-between items-center gap-x-5">
+          {/* right / sign in */}
+          <div className="flex justify-between items-center gap-x-8 text-sm">
             {/* sign in */}
             <div className="max-lg:hidden nav-effect *:hover:text-white/45">
-              <a href="#">
-                Sign In
-              </a>
+              <a href="#">Sign In</a>
             </div>
             {/* start to talk btn */}
             <div className="nav-effect *:hover:text-black *:hover:bg-white">
-              <a href="#" className='block py-2 px-4 font-medium border border-white rounded-md'>
+              <a
+                href="#"
+                className="block py-2 px-4 font-medium border border-white rounded-md"
+              >
                 Talk to sales
               </a>
             </div>
           </div>
         </div>
-    </nav>
+      </nav>
     </>
-
-  )
+  );
 }
 
 export default Navbar

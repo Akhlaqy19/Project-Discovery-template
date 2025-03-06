@@ -53,11 +53,15 @@ button {
 	--text-11: 44px;
 
 	/* spacing and sizing */
+	--tracking-3: 3px;
 
 	/* colors */
 	--color-yellow: #DADF58;
 	--color-yellow-light: #fdffdb;
 	--color-orange: #de632e;
+	--color-sub-yellow: #EEF35F;
+	--color-gray: #b4b4bb;
+
 	/* oklch(0.987 0.026 102.212) */
 }
 
