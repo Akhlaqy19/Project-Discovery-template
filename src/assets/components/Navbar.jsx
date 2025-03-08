@@ -1,5 +1,6 @@
 import React from 'react'
-import {FaGithub, FaStar } from 'react-icons/fa'
+import {FaGithub } from 'react-icons/fa'
+import { IoMdStar } from "react-icons/io";
 import confetti from "canvas-confetti"
 
 function Navbar() {
@@ -45,9 +46,9 @@ function Navbar() {
              *:transition *:delay-75 *:duration-150 *:ease-in-out"
             >
               <FaGithub className="text-lg group-hover:text-white" />
-              <span className="group-hover:text-white">100.7k</span>
+              <span className="group-hover:text-white">101k</span>
               {/* star icon */}
-              <FaStar className="text-sm group-hover:text-white" />
+              <IoMdStar className="text-sm group-hover:text-white" />
             </a>
           </div>
 

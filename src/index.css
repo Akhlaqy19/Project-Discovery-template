@@ -51,22 +51,51 @@ button {
 	/* fonts */
     --font-main: Geist;
 	--text-11: 44px;
+	--text-semi: 15px;
 
 	/* spacing and sizing */
 	--tracking-3: 3px;
 
+
+
 	/* colors */
-	--color-yellow: #DADF58;
+	--color-gray-light: #e5e7eb;
+	--color-yellow: #dadf58;
 	--color-yellow-light: #fdffdb;
 	--color-orange: #de632e;
 	--color-sub-yellow: #EEF35F;
 	--color-gray: #b4b4bb;
+	--color-glass-primary: #111;
+
+	/* radial-gradient(160.33% 160.3% at 98.14% 97.73%, rgba(9, 9, 11, 0) 33.78%, rgba(255, 255, 255, 0.03) 64.91%, rgba(255, 255, 255, 0.03) 100%),
+		#09090b */
+	--color-glass-secondary: #141414;
+	/* linear-gradient(135deg, hsla(0, 0%, 100%, .05) 10%, hsla(0, 0%, 100%, .03) 40%),
+		#09090b */
 
 	/* oklch(0.987 0.026 102.212) */
 }
 
 .nav-effect {
 	@apply *:transition *:delay-100 *:duration-300 *:ease-in-out;
+}
+
+.box-title-effect {
+	@apply transition delay-75 duration-150 ease-in-out;
+}
+
+.title-gradient {
+	@apply bg-clip-text text-transparent bg-gradient-to-br from-white to-white/70
+}
+
+/* .sticky-active {
+
+} */
+
+/* کلاس اضافه‌شده هنگام رسیدن به نقطه مورد نظر */
+.child.sticky-active {
+transform: scale(0.8);  /* کوچک شدن */
+opacity: 0.5;           /* کاهش شفافیت */
 }
 
 
@@ -190,7 +219,8 @@ button {
 		-ms-transform: translateY(10%);
 		-o-transform: translateY(10%);
 	}
-}
+} 
+
 
 /* .text-high {
 	@apply text-orange;
@@ -198,4 +228,10 @@ button {
 
 .text-critical {
 	@apply text-orange;
-} */
+}
+
+
+.btn-monitor {
+	@apply relative top-0 flex justify-center items-center
+}
+*/

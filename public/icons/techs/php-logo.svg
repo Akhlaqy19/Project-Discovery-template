@@ -1,0 +1,12 @@
+<svg width="20" height="18" viewBox="0 0 20 18" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <!-- بیضی پس‌زمینه مشابه لوگوی رسمی -->
+    <ellipse cx="11" cy="9" rx="10" ry="6.5" fill="transparent"/>
+
+    <!-- متن PHP به صورت مورب -->
+    <g transform="translate(4,8) scale(0.6) skewX(-10)">
+        <text x="0" y="5" font-family="Arial" font-size="10" font-weight="light" fill="white" letter-spacing="0.5">
+            PHP
+        </text>
+    </g>
+</svg>
