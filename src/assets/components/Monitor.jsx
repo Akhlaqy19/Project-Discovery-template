@@ -13,7 +13,7 @@ function Monitor() {
         const ctx = canvas.getContext("2d");
 
         let dots = [];
-        const numberOfDots = 60;
+        const numberOfDots = 100;
 
         class Dot {
         constructor() {
@@ -48,8 +48,8 @@ function Monitor() {
 
         const resizeCanvas = () => {
         const rect = button.getBoundingClientRect();
-        canvas.width = rect.width + 32;
-        canvas.height = rect.height + 32;
+        canvas.width = rect.width + 40;
+        canvas.height = rect.height + 40;
         container.style.width = `${canvas.width}px`;
         container.style.height = `${canvas.height}px`;
         dots.forEach((dot) => dot.reset(canvas));

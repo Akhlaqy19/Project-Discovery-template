@@ -17,10 +17,11 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
-	@apply bg-black overflow-x-hidden;
-	line-height: 1;
+	@apply overflow-x-hidden bg-black;
 }
+
 ol, ul {
 	list-style: none;
 }
@@ -52,11 +53,11 @@ button {
     --font-main: Geist;
 	--text-11: 44px;
 	--text-semi: 15px;
+	--text-x1: 22px;
+	--text-xm: 13px;
 
 	/* spacing and sizing */
 	--tracking-3: 3px;
-
-
 
 	/* colors */
 	--color-gray-light: #e5e7eb;
@@ -76,6 +77,16 @@ button {
 	/* oklch(0.987 0.026 102.212) */
 }
 
+header {
+	@apply bg-zinc-900;
+	background-image: radial-gradient( 
+	oklch(0.446 0.03 256.802) 20%
+	oklch(0.373 0.034 259.733) 20%,
+	oklch(0.278 0.033 256.848) 20%,
+	oklch(0.21 0.034 264.665) 20%,
+	oklch(0.13 0.028 261.692) 20%);
+}
+
 .nav-effect {
 	@apply *:transition *:delay-100 *:duration-300 *:ease-in-out;
 }
@@ -88,9 +99,59 @@ button {
 	@apply bg-clip-text text-transparent bg-gradient-to-br from-white to-white/70
 }
 
-/* .sticky-active {
+.vertical-marquee {
+	animation: scrollUp 24s linear infinite;
+}
 
-} */
+.slider {
+	animation: slider-animate 24s linear infinite;
+}
+
+.swiper-container {
+	@apply relative;
+}
+
+.swiper-container::after,
+.swiper-container::before
+{
+	content: "";
+	@apply absolute top-0 w-1/2 h-full text-white z-2;
+}
+
+.swiper-container::before {
+	left: 0;
+	background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 150%);
+}
+
+/* محو شدن از سمت راست به شفاف */
+.swiper-container::after {
+	right: 0;
+	background: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 150%);
+}
+
+
+
+@keyframes scrollUp {
+	0% {
+		transform: translateY(0);
+	}
+
+	100% {
+		/* -100% یعنی به اندازه ارتفاع کل محتوای اول، به بالا اسکرول کند */
+		transform: translateY(-100%);
+	}
+}
+
+@keyframes slider-animate {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		/* -100% یعنی به اندازه ارتفاع کل محتوای اول، به بالا اسکرول کند */
+		transform: translateX(-100%);
+	}
+}
 
 /* کلاس اضافه‌شده هنگام رسیدن به نقطه مورد نظر */
 .child.sticky-active {
@@ -200,24 +261,24 @@ opacity: 0.5;           /* کاهش شفافیت */
 }
 
 .bitmap {
-	animation: bitmap-animate 1.2s alternate infinite;
-	-webkit-animation: bitmap-animate 1.2s alternate infinite;
+	animation: bitmap-animate 1.8s alternate infinite;
+	-webkit-animation: bitmap-animate 1.8s alternate infinite;
 }
 
 @keyframes bitmap-animate {
 	0% {
-		transform: translateY(-10%);
-		-webkit-transform: translateY(-10%);
-		-moz-transform: translateY(-10%);
-		-ms-transform: translateY(-10%);
-		-o-transform: translateY(-10%);
+		transform: translateY(-7%);
+		-webkit-transform: translateY(-7%);
+		-moz-transform: translateY(-7%);
+		-ms-transform: translateY(-7%);
+		-o-transform: translateY(-7%);
 }
 	100% {
-		transform: translateY(10%);
-		-webkit-transform: translateY(10%);
-		-moz-transform: translateY(10%);
-		-ms-transform: translateY(10%);
-		-o-transform: translateY(10%);
+		transform: translateY(7%);
+		-webkit-transform: translateY(7%);
+		-moz-transform: translateY(7%);
+		-ms-transform: translateY(7%);
+		-o-transform: translateY(7%);
 	}
 } 
 

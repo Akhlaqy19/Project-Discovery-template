@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import Monitor from "./Monitor"
 // import Bitmap1 from "/icons/header-bitmaps/1.svg"
 // import Bitmap2 from "/icons/header-bitmaps/2.svg"
@@ -59,8 +59,8 @@ function Hero() {
   </svg> */}
 
      <section
-       className="relative flex flex-col gap-y-7 mx-auto h-170 bg-0.15 text-center text-white 
-   bg-radial from-white/10 to-black"
+       className="relative flex flex-col gap-y-7 mx-auto h-150 bg-0.15 text-center text-white 
+   bg-radial from-white/2 to-black"
      >
        <a
          href="#"
@@ -86,10 +86,10 @@ function Hero() {
       <svg className='absolute top-44 right-18'>
         <use href="#bit-sm"></use>
       </svg> */}
-       <div className="flex flex-col gap-y-6 absolute top-1/2 left-1/2 -translate-1/2 max-w-4/9">
+       <div className="flex flex-col gap-y-6 absolute top-57/100 left-1/2 -translate-1/2 max-w-4/9">
          <h1
            className="text-11/13 font-semibold 
-            title-gradient"
+            title-gradient tracking-tight"
          >
            Monitor your infrastructure. <br />
            Real vulnerabilities. Zero noise.
