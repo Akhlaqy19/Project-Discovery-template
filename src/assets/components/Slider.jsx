@@ -28,9 +28,9 @@ import salesforce from "/icons/header-logos/salesforce.svg"
 
 function Slider() {
   return (
-    <section className="swiper-container h-24 py-2
-    px-8 flex justify-center items-center
-     max-w-384 mx-auto text-center overflow-hidden">
+    <section className="swiper-container py-2
+    px-8 flex justify-center *:items-center bg-midnight
+     max-w-384 mx-auto text-center overflow-hidden -z-10">
       <div
         className="slider flex items-center shrink-0 gap-x-4
         *:shrink-0 *:flex *:items-center *:gap-x-4 *:*:mx-6
@@ -38,7 +38,7 @@ function Slider() {
       >
         <div className="">
           <div className="">
-            <img src={vanta} alt="Vanta company logo" className="mx-auto" />
+            <img src={vanta} alt="Vanta company logo" className="bg-midnight mx-auto" />
           </div>
           <div className="">
             <img src={ibm} alt="IBM company logo" className="mx-auto" />

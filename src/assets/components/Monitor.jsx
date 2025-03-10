@@ -111,24 +111,21 @@ function Monitor() {
               className="absolute -top-5 w-35 h-19 border-0"
             />
           </div>
-
-          <button
-            className="btn-monitor absolute -top-5.5 z-10 px-4 py-3 text-sm font- text-yellow
+            <button
+              className="btn-monitor absolute -top-5.5 z-10 px-4 py-3 text-sm font- text-yellow
               border-2 border-yellow/50 overflow-hidden
               outline-offset-8 outline-yellow rounded-md cursor-not-allowed
               bg-yellow/20 backdrop-blur-md 
               transition delay-75 duration-250 ease-in-out
               hover:text-black hover:bg-yellow"
-            disabled
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <a href="#" className="block w-full h-full cursor-not-allowed">
+              disabled
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
               Monitor
-            </a>
-          </button>
+            </button>
         </div>
       </div>
     </>

@@ -8,7 +8,7 @@
 }
 
 :root {
-    @apply box-border m-0 p-0 border-0 outline-0 text-base align-baseline;
+    @apply box-border m-0 p-0 border-0 outline-0 text-base align-baseline bg-midnight;
 }
 
 
@@ -19,7 +19,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
-	@apply overflow-x-hidden bg-black;
+	@apply overflow-x-hidden;
 }
 
 ol, ul {
@@ -60,6 +60,7 @@ button {
 	--tracking-3: 3px;
 
 	/* colors */
+	--color-midnight: rgb(9, 9, 11);
 	--color-gray-light: #e5e7eb;
 	--color-yellow: #dadf58;
 	--color-yellow-light: #fdffdb;
@@ -74,17 +75,10 @@ button {
 	/* linear-gradient(135deg, hsla(0, 0%, 100%, .05) 10%, hsla(0, 0%, 100%, .03) 40%),
 		#09090b */
 
-	/* oklch(0.987 0.026 102.212) */
 }
 
 header {
-	@apply bg-zinc-900;
-	background-image: radial-gradient( 
-	oklch(0.446 0.03 256.802) 20%
-	oklch(0.373 0.034 259.733) 20%,
-	oklch(0.278 0.033 256.848) 20%,
-	oklch(0.21 0.034 264.665) 20%,
-	oklch(0.13 0.028 261.692) 20%);
+	@apply bg-radial-[at_30%_30%_30%] from-zinc-900 via-neutral-950 to-stone-950;
 }
 
 .nav-effect {
@@ -129,6 +123,9 @@ header {
 	background: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 150%);
 }
 
+.card_feature-img {
+	background: radial-gradient(160.33% 160.3% at 98.14% 97.73%, rgba(9, 9, 11, 0) 33.78%, hsla(0, 0%, 100%, .03) 64.91%, hsla(0, 0%, 100%, .03) 100%), #09090b;
+}
 
 
 @keyframes scrollUp {
@@ -282,17 +279,19 @@ opacity: 0.5;           /* کاهش شفافیت */
 	}
 } 
 
-
-/* .text-high {
-	@apply text-orange;
+/* .card {
+	animation: appear linear;
+	animation-timeline: view();
+	animation-range: entry 0% cover 70%;
 }
 
-.text-critical {
-	@apply text-orange;
-}
-
-
-.btn-monitor {
-	@apply relative top-0 flex justify-center items-center
-}
-*/
+@keyframes appear {
+	from {
+		opacity: 1;
+		scale: 1;
+	}
+	to {
+		opacity: 0;
+		scale: 0.4;
+	}
+} */

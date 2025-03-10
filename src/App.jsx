@@ -14,6 +14,7 @@ function App() {
       <div className="App mx-auto max-w-384 font-main container">
         <Header />
         <main>
+          {/* <Slider/> */}
           <Features />
           <Purpose />
         </main>

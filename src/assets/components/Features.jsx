@@ -42,10 +42,10 @@ const cardVariants = {
             <motion.div
               className="child sticky top-40 mt-6 mx-auto "
               key={featureData.id}
-              initial="hidden"
-              variants={cardVariants}
-              viewport={{ once: true }}
-              whileInView="visible"
+              // initial="hidden"
+              // variants={cardVariants}
+              // viewport={{ once: true }}
+              // whileInView="visible"
             >
               <FeatureCard {...featureData}></FeatureCard>
             </motion.div>

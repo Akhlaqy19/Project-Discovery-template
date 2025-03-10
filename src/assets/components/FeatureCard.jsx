@@ -7,7 +7,6 @@ function FeatureCard({ subTitle, title, description, img }) {
     <>
       <section className="px-7 mx-auto w-full">
         <div 
-       
         className="">
           <div className="flex flex-col gap-4 mx-auto w-full text-left items-start">
             <span
@@ -28,7 +27,7 @@ function FeatureCard({ subTitle, title, description, img }) {
           </div>
 
           <div className="mt-6 overflow-hidden border-3 border-stone-800 rounded-2xl">
-            <img src={img} alt="" className="block" />
+            <img src={img} alt="" className="block w-full card_feature-img" />
           </div>
         </div>
       </section>
