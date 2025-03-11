@@ -1,6 +1,7 @@
-import React from 'react'
-import AttackServices from "./AttackServices"
-import ScanVulnerabilities from "./ScanVulnerabilities"
+import React from 'react';
+import AttackServices from "./AttackServices";
+import ScanVulnerabilities from "./ScanVulnerabilities";
+import AlertBox from "./AlertBox";
 
 function Purpose() {
 
@@ -41,7 +42,9 @@ function Purpose() {
               
             </div>
 
-            <div className=""></div>
+            <div className="">
+              <AlertBox/>
+            </div>
           </div>
         </div>
       </section>

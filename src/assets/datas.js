@@ -25,7 +25,53 @@ const featureInfos = [
   },
 ];
 
-export {featureInfos};
+
+const attackServicesInfos = [
+  {
+    id: 1,
+    domain: "app.hooli.com",
+    port: 21,
+    techs: ["php-logo", "nextjs"],
+    ip: "193.127.236",
+  },
+  {
+    id: 2,
+    domain: "staging.hooli.com",
+    port: 110,
+    techs: ["amazon-web-services", "kubernetes"],
+    ip: "45.182.184",
+  },
+  {
+    id: 3,
+    domain: "ftp.hooli.com",
+    port: 21,
+    techs: ["amazon-web-services", "cloudflare", "kubernetes"],
+    ip: "196.88.248",
+  },
+  {
+    id: 4,
+    domain: "dev.hooli.com",
+    port: 23,
+    techs: ["cloudflare", "google-cloud"],
+    ip: "5.242.113",
+  },
+  {
+    id: 5,
+    domain: "api.hooli.com",
+    port: 21,
+    techs: ["fastly", "nextjs"],
+    ip: "238.147.26",
+  },
+  {
+    id: 6,
+    domain: "breamhall.hooli.com",
+    port: 25,
+    techs: ["php-logo", "fastly", "cloudflare"],
+    ip: "148.154.199",
+  },
+];
+
+
 
 const toolkitsInfos = [
   {
@@ -34,7 +80,7 @@ const toolkitsInfos = [
     situate: "Path Traversal",
     code: "CVE-2023-2825",
     score: 7.5,
-    img: "/icons/toolkits-for-vulnerability/gitlab.svg",
+    img: "gitlab",
   },
   {
     id: 2,
@@ -42,7 +88,7 @@ const toolkitsInfos = [
     situate: "Code Execution",
     code: "CVE-2023-34362",
     score: 9.8,
-    img: "/icons/toolkits-for-vulnerability/moveit-transfer.svg",
+    img: "moveit-transfer",
   },
   {
     id: 3,
@@ -50,7 +96,7 @@ const toolkitsInfos = [
     situate: "Code Execution",
     code: "CVE-2022-0543",
     score: 10,
-    img: "/icons/toolkits-for-vulnerability/redis.svg",
+    img: "redis",
   },
   {
     id: 4,
@@ -58,7 +104,7 @@ const toolkitsInfos = [
     situate: "Code Execution",
     code: "CVE-2023-20887",
     score: 9.8,
-    img: "/icons/toolkits-for-vulnerability/vmware.svg",
+    img: "vmware",
   },
   {
     id: 5,
@@ -66,8 +112,186 @@ const toolkitsInfos = [
     situate: "Command Injection",
     code: "CVE-2022-36804",
     score: 8.8,
-    img: "/icons/toolkits-for-vulnerability/atlassian.svg",
+    img: "atlassian",
   },
 ];
 
+
+const rowAlertBoxInfos = [
+  {
+    id: 1,
+    type: "Medium",
+    code: "CVE-2014-4941",
+    details: "Cross RSS 1.7 - Local File Inclusion",
+    count: 4,
+    img: "webhook.svg",
+    name: "Webhook",
+  },
+  {
+    id: 2,
+    type: "Critical",
+    code: "CVE-2024-28255",
+    details: "OpenMetadata - Authentication Bypass",
+    count: 5,
+    img: "teams.svg",
+    name: "Teams",
+  },
+  {
+    id: 3,
+    type: "High",
+    code: "CVE-2024-20767",
+    details: "Adobe ColdFusion - Arbitrary File Read",
+    count: 1,
+    img: "slack.svg",
+    name: "Slack",
+  },
+  {
+    id: 4,
+    type: "Info",
+    code: "PRIVATEBIN-DET",
+    details: "PrivateBin - Detect",
+    count: 18,
+    img: "api.svg",
+    name: "API",
+  },
+  {
+    id: 5,
+    type: "Medium",
+    code: "CVE-2024-28734",
+    details: "Coda v.2024Q1 - Cross-Site Scripting",
+    count: 3,
+    img: "email.svg",
+    name: "Email",
+  },
+  {
+    id: 6,
+    type: "High",
+    code: "CVE-2019-9632",
+    details: "ESAFENET CDG - Arbitrary File Download",
+    count: 12,
+    img: "webhook.svg",
+    name: "Webhook",
+  },
+  {
+    id: 7,
+    type: "Critical",
+    code: "CVE-2024-27954",
+    details: "WordPress Automatic Plugin <3.92.1 - Arbitrary Fil...",
+    count: 21,
+    img: "api.svg",
+    name: "API",
+  },
+  {
+    id: 8,
+    type: "Medium",
+    code: "CVE-2014-4577",
+    details: "WP AmASIN – The Amazon Affiliate Shop - Local File...",
+    count: 3,
+    img: "teams.svg",
+    name: "Teams",
+  },
+  {
+    id: 9,
+    type: "Info",
+    code: "DIRECTUS-DETEC",
+    details: "Directus - Detect",
+    count: 7,
+    img: "webhook.svg",
+    name: "Webhook",
+  },
+  {
+    id: 10,
+    type: "High",
+    code: "quick-cms-sqli",
+    details: "Quick.CMS v6.7 - SQL Injection",
+    count: 9,
+    img: "email.svg",
+    name: "Email",
+  },
+  {
+    id: 11,
+    type: "High",
+    code: "UPS-NETWORK-LF",
+    details: "UPS Network Management Card 4 Path Traversal",
+    count: 1,
+    img: "api.svg",
+    name: "API",
+  },
+  {
+    id: 12,
+    type: "Medium",
+    code: "CVE-2012-2122",
+    details: "MySQL - Authentication Bypass",
+    count: 14,
+    img: "api.svg",
+    name: "API",
+  },
+  {
+    id: 13,
+    type: "Critical",
+    code: "CVE-2024-1212",
+    details: "Progress Kemp LoadMaster - Command Injection",
+    count: 6,
+    img: "webhook.svg",
+    name: "Webhook",
+  },
+  {
+    id: 14,
+    type: "High",
+    code: "CVE-2023-34105",
+    details: "SRS - Command Injection",
+    count: 2,
+    img: "webhook.svg",
+    name: "Webhook",
+  },
+  {
+    id: 15,
+    type: "Critical",
+    code: "CVE-2023-5830",
+    details: "ColumbiaSoft DocumentLocator - Improper Authentica...",
+    count: 6,
+    img: "api.svg",
+    name: "API",
+  },
+  {
+    id: 16,
+    type: "Medium",
+    code: "CVE-2014-4941",
+    details: "Cross RSS 1.7 - Local File Inclusion",
+    count: 14,
+    img: "api.svg",
+    name: "API",
+  },
+  {
+    id: 17,
+    type: "Critical",
+    code: "CVE-2024-28255",
+    details: "OpenMetadata - Authentication Bypass",
+    count: 10,
+    img: "webhook.svg",
+    name: "Webhook",
+  },
+  {
+    id: 18,
+    type: "High",
+    code: "CVE-2024-20767",
+    details: "Adobe ColdFusion - Arbitrary File Read",
+    count: 1,
+    img: "slack.svg",
+    name: "Slack",
+  },
+  {
+    id: 19,
+    type: "Info",
+    code: "PRIVATEBIN-DET",
+    details: "PrivateBin - Detect",
+    count: 18,
+    img: "api.svg",
+    name: "API",
+  },
+];
+
+export { featureInfos };
+export { attackServicesInfos };
 export { toolkitsInfos };
+export { rowAlertBoxInfos };

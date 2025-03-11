@@ -35,6 +35,12 @@ function ScanVulnerabilities() {
               {toolkitsInfos.map((toolkitData) => (
                 <ScanBoxToolkits key={toolkitData.id} {...toolkitData} />
               ))}
+              {toolkitsInfos.map((toolkitData) => (
+                <ScanBoxToolkits key={toolkitData.id} {...toolkitData} />
+              ))}
+              {toolkitsInfos.map((toolkitData) => (
+                <ScanBoxToolkits key={toolkitData.id} {...toolkitData} />
+              ))}
             </div>
           </div>
         </div>

@@ -60,20 +60,23 @@ button {
 	--tracking-3: 3px;
 
 	/* colors */
-	--color-midnight: rgb(9, 9, 11);
-	--color-gray-light: #e5e7eb;
+	--color-midnight: #09090b;
+	--color-high: #de632e;
 	--color-yellow: #dadf58;
 	--color-yellow-light: #fdffdb;
+	--color-sub-yellow: #eef35f;
 	--color-orange: #de632e;
-	--color-sub-yellow: #EEF35F;
+	--color-medium: #fbbf24;
+	--color-glass-secondary: #222;
+	--color-gray-light: #e5e7eb;
 	--color-gray: #b4b4bb;
 	--color-glass-primary: #111;
-	--color-base-2: linear-gradient(135deg, hsla(0, 0%, 100%, .05) 10%, hsla(0, 0%, 100%, .03) 40%),
-		#09090b
-
+	--color-base-2: linear-gradient(135deg, hsla(0, 0%, 100%, .05) 10%, hsla(0, 0%, 100%, .03) 40%);
+	--color-overlay: radial-gradient(160.33% 160.3% at 98.14% 97.73%, rgba(9, 9, 11, 0) 33.78%, rgba(255, 255, 255, 0.03) 64.91%, rgba(255, 255, 255, 0.03) 100%),
+		#09090b;
+		
 	/* radial-gradient(160.33% 160.3% at 98.14% 97.73%, rgba(9, 9, 11, 0) 33.78%, rgba(255, 255, 255, 0.03) 64.91%, rgba(255, 255, 255, 0.03) 100%),
 		#09090b */
-	--color-glass-secondary: #141414;
 	/* linear-gradient(135deg, hsla(0, 0%, 100%, .05) 10%, hsla(0, 0%, 100%, .03) 40%),
 		#09090b */
 
@@ -81,6 +84,16 @@ button {
 
 header {
 	@apply bg-radial-[at_30%_30%_30%] from-zinc-900 via-neutral-950 to-stone-950;
+}
+
+.glowBackground {
+	@apply bg-overlay;
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	border-radius: 16px;
 }
 
 .nav-effect {
@@ -125,13 +138,18 @@ header {
 	background: radial-gradient(160.33% 160.3% at 98.14% 97.73%, rgba(9, 9, 11, 0) 33.78%, hsla(0, 0%, 100%, .03) 64.91%, hsla(0, 0%, 100%, .03) 100%), #09090b;
 }
 
+.bg-base {
+	border: 1px solid #222;
+	background: radial-gradient(160.33% 160.3% at 98.14% 97.73%, rgba(9, 9, 11, 0) 33.78%, hsla(0, 0%, 100%, .03) 64.91%, hsla(0, 0%, 100%, .03) 100%), #09090b;
+}
+
 .bg-base-2 {
 	border: 1px solid hsla(0, 0%, 100%, .05);
 	background: linear-gradient(135deg, hsla(0, 0%, 100%, .05) 10%, hsla(0, 0%, 100%, .03) 40%), #09090b;
 }
 
 .vertical-marquee {
-	animation: scrollUp 24s linear infinite;
+	animation: scrollUp 10s linear infinite running; 
 }
 
 @keyframes scrollUp {
@@ -146,18 +164,18 @@ header {
 }
 
 .horizontal-marquee {
-	animation: scrollLeft 24s linear infinite;
+	animation: scrollLeft 3s linear infinite running;
 }
 
 @keyframes scrollLeft {
-		0% {
-			transform: translateX(0);
-		}
-	
-		100% {
-			/* -100% یعنی به اندازه ارتفاع کل محتوای اول، به بالا اسکرول کند */
-			transform: translateX(-100%);
-		}
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		/* -100% یعنی به اندازه ارتفاع کل محتوای اول، به سمت چپ اسکرول کند */
+		transform: translateX(-100%);
+	}
 }
 
 @keyframes slider-animate {

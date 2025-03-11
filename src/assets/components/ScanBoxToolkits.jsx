@@ -3,9 +3,9 @@ import React from "react";
 function ScanBoxToolkits({name, situate, code, score, img}) {
   return (
     <>
-      <div className="border border-black">
+      <div className="bg-base-2 border border-black">
         <div className="">
-          <img src={img} alt="" />
+          <img src={`/icons/toolkits-for-vulnerability/${img}.svg`} alt="" />
         </div>
         <div className="mt-1">
           <h5 className="text-white text-lg font-light tracking-[0.3px]">
@@ -25,7 +25,7 @@ function ScanBoxToolkits({name, situate, code, score, img}) {
             {score}
           </p>
         </button>
-{/* 
+        {/* 
         <div
           className="GlowBackground_glowBackground__jasUQ"
           style="background-color: rgb(34, 34, 34); --glow-color: #444444; --glow-size-start: 0px; --glow-size-end: 500px; --border-radius: 16px; --border-width: 1px; --overlay-color: radial-gradient(160.33% 160.3% at 98.14% 97.73%,rgba(9, 9, 11, 0) 33.78%,rgba(255, 255, 255, 0.03) 64.91%,rgba(255, 255, 255, 0.03) 100%),#09090b; --x: 0px; --y: 0px;"
