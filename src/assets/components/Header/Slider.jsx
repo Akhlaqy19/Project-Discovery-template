@@ -150,47 +150,7 @@ function Slider() {
         *:min-h-20 *:max-w-1/7 **:text-center
         **:text-sm **:text-gray-600 opacity-30 grayscale"
       >
-        <SwiperSlide className="">
-          <img src={vanta} alt="Vanta company logo" className="mx-auto" />
-        </SwiperSlide>
-        <SwiperSlide className="">
-          <img src={ibm} alt="IBM company logo" className="mx-auto" />
-        </SwiperSlide>
-        <SwiperSlide className="">
-          <img
-            src={bytedance}
-            alt="ByteDance company logo"
-            className="mx-auto"
-          />
-        </SwiperSlide>
-        <SwiperSlide className="">
-          <img src={netflix} alt="Netflix company logo" className="mx-auto" />
-        </SwiperSlide>
-        <SwiperSlide className="">
-          <img src={amplify} alt="Amplify company logo" className="mx-auto" />
-        </SwiperSlide>
-        <SwiperSlide className="">
-          <img src={chipotle} alt="chipotle company logo" className="mx-auto" />
-        </SwiperSlide>
-        <SwiperSlide className="">
-          <img src={elastic} alt="elastic company logo" className="mx-auto" />
-        </SwiperSlide>
-        <SwiperSlide className="">
-          <img src={paddle} alt="paddle company logo" className="mx-auto" />
-        </SwiperSlide>
-        <SwiperSlide className="">
-          <img src={fastly} alt="fastly company logo" className="mx-auto" />
-        </SwiperSlide>
-        <SwiperSlide className="">
-          <img src={observa} alt="observa company logo" className="mx-auto" />
-        </SwiperSlide>
-        <SwiperSlide className="">
-          <img
-            src={salesforce}
-            alt="salesforce company logo"
-            className="mx-auto"
-          />
-        </SwiperSlide>
+        ...
       </Swiper> */}
     </section>
   );

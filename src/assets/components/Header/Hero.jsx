@@ -1,5 +1,5 @@
 import React from 'react';
-import Monitor from "./Monitor"
+import Monitor from "./../Monitor"
 
 function Hero() {
 

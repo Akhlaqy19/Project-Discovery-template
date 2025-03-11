@@ -1,5 +1,5 @@
 import React from 'react'
-import BtnSales from './BtnSales';
+import BtnSales from './../BtnSales';
 import {FaGithub } from 'react-icons/fa'
 import { IoMdStar } from "react-icons/io";
 import confetti from "canvas-confetti"

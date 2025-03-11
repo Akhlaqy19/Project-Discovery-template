@@ -194,22 +194,22 @@ const FeatureCardBase = ({
   const elementRef = useRef(null);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsSticky(entry.intersectionRatio < 1);
-      },
-      {
-        root: null,
-        rootMargin: '0px 0px 0px 0px', // منطبق با top: 0 در استایل sticky
-        threshold: [0, 1]
-      }
-    );
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       setIsSticky(entry.intersectionRatio == 1);
+  //     },
+  //     {
+  //       root: null,
+  //       rootMargin: '0px 0px 0px 0px', // منطبق با top: 0 در استایل sticky
+  //       threshold: [0, 1]
+  //     }
+  //   );
 
-    if (elementRef.current) observer.observe(elementRef.current);
+  //   if (elementRef.current) observer.observe(elementRef.current);
     
-    return () => observer.disconnect();
-  }, []);
+  //   return () => observer.disconnect();
+  // }, []);
 
   const Component = isSticky ? motion.section : "section";
   const motionProps = isSticky ? { style: { scale } } : {};

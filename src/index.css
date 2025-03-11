@@ -58,15 +58,22 @@ button {
 
 	/* spacing and sizing */
 	--tracking-3: 3px;
+	--tracking-xs: 0.3px;
+
+	/* line height sizes*/
+	--leading-base: 1.6;
 
 	/* colors */
 	--color-midnight: #09090b;
-	--color-high: #de632e;
+	/* --color-high: #de632e; */
 	--color-yellow: #dadf58;
 	--color-yellow-light: #fdffdb;
 	--color-sub-yellow: #eef35f;
 	--color-orange: #de632e;
 	--color-medium: #fbbf24;
+	--color-info: #22C55E;
+	--color-high: #de632e;
+	--color-critical: #e12c4e;
 	--color-glass-secondary: #222;
 	--color-gray-light: #e5e7eb;
 	--color-gray: #b4b4bb;
@@ -82,19 +89,20 @@ button {
 
 }
 
+
+.custom-container-sm {
+	@apply relative z-40 mx-auto w-full max-w-7xl lg:px-8;
+}
+
+
+.glowBackground {
+	@apply bg-overlay relative block size-full overflow-hidden rounded-2xl;
+}
+
 header {
 	@apply bg-radial-[at_30%_30%_30%] from-zinc-900 via-neutral-950 to-stone-950;
 }
 
-.glowBackground {
-	@apply bg-overlay;
-	position: relative;
-	display: block;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	border-radius: 16px;
-}
 
 .nav-effect {
 	@apply *:transition *:delay-100 *:duration-300 *:ease-in-out;
@@ -105,7 +113,7 @@ header {
 }
 
 .title-gradient {
-	@apply bg-clip-text text-transparent bg-gradient-to-br from-white to-white/70
+	@apply bg-clip-text text-transparent bg-gradient-to-b from-white to-white/75;
 }
 
 .slider {
@@ -148,8 +156,46 @@ header {
 	background: linear-gradient(135deg, hsla(0, 0%, 100%, .05) 10%, hsla(0, 0%, 100%, .03) 40%), #09090b;
 }
 
+
+.bg-opacity-10 {
+	--tw-bg-opacity: 0.1;
+}
+
+.border-opacity-10 {
+	--tw-border-opacity: 0.1;
+}
+
+.text-info {
+	--tw-text-opacity: 1;
+	color: rgb(34 197 94 / var(--tw-text-opacity, 1));
+	background-color: rgb( 34 197 94 / var(--tw-bg-opacity));
+	border-color: rgb( 34 197 94 / var(--tw-border-opacity));
+}
+
+.text-medium {
+	background-color: rgb( 251 191 36 / var(--tw-bg-opacity));
+	border-color: rgb(251 191 36 / var(--tw-border-opacity));
+}
+
+.text-critical {
+	background-color: rgb(225 44 78 / var(--tw-bg-opacity));
+	border-color: rgb(225 44 78 / var(--tw-border-opacity));
+}
+
+.text-high {
+	background-color: rgb(222 99 46 / var(--tw-bg-opacity));
+	border-color: rgb(222 99 46 / var(--tw-border-opacity));
+}
+ 
+
+
 .vertical-marquee {
 	animation: scrollUp 10s linear infinite running; 
+}
+
+.vertical-marquee-slower {
+	animation: scrollUp 80s linear infinite running;
+	
 }
 
 @keyframes scrollUp {
@@ -164,7 +210,7 @@ header {
 }
 
 .horizontal-marquee {
-	animation: scrollLeft 3s linear infinite running;
+	animation: scrollLeft 10s linear infinite running;
 }
 
 @keyframes scrollLeft {

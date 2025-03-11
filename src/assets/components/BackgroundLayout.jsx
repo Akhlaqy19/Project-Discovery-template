@@ -3,9 +3,9 @@ import * as THREE from "three";
 
 function BackgroundLayout() {
   return (
-        <>
+      <>
 
-        </>
+      </>
     )
 }
 

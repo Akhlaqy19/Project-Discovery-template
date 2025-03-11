@@ -7,23 +7,24 @@ function Purpose() {
 
   return (
     <>
-      <section className="relative mx-auto mt-120 max-w-7xl">
-        <div className="px-7 mx-auto w-full">
-          <div className="flex flex-col gap-4 my-10 mx-auto w-full items-start">
-            <span
-              className="inline-block text-xs font-light 
+      <section className="relative z-40 px-7 mx-auto mt-120 max-w-7xl">
+        <div className="w-full">
+          <div className="flex flex-col gap-3 items-start text-left my-6 py-10 w-full max-w-full mx-auto">
+            <div className="my-5">
+              <p
+                className="inline-block text-xs font-light 
                 tracking-3 text-sub-yellow uppercase"
-            >
-              Why ProjectDiscovery
-            </span>
-            <h2
-              className="pt-3 text-11 font-semibold -tracking-wide
-                title-gradient
-            "
-            >
+              >
+                Why ProjectDiscovery
+              </p>
+            </div>
+
+            {/*  */}
+
+            <h2 className=" text-3xl md:text-3xl lg:text-4xl xl:text-[44px] leading-[1.15] xl:leading-[1.20] font-semibold tracking-[-1px] title-gradient">
               Real-time detection for teams that ship fast
             </h2>
-            <p className="pb-6 text-gray text-lg font-light tracking-wide">
+            <p className="max-w-4xl xl:text-lg text-gray text-lg font-light tracking-wide">
               Continuous security checks as your team deploys. Automated
               workflows to enable instant, organization-wide detection and
               triage. Transform noisy, ineffective scan results into relevant
@@ -31,20 +32,10 @@ function Purpose() {
             </p>
           </div>
 
-          <div className="w-full">
-            <div
-              className="grid grid-cols-2 gap-6 h-75.5 text-gray text-lg font-semibold 
-              *:px-6 *:bg-glass-primary *:border-0.5 *:rounded-2xl"
-            >
-            
-              <AttackServices />
-              <ScanVulnerabilities />
-              
-            </div>
-
-            <div className="">
-              <AlertBox/>
-            </div>
+          <div className="grid grid-cols-2 gap-6 w-full text-gray text-lg font-semibold *:bg-glass-primary *:border-0.5 *:rounded-2xl *:first:px-6 *:nth-[2]:px-6">
+            <AttackServices />
+            <ScanVulnerabilities />
+            <AlertBox />
           </div>
         </div>
       </section>

@@ -9,14 +9,14 @@ function AlertBox() {
   return (
     <>
       <section
-        className=" relative m-0 p-0 w-full pb-7 h-75 bg-glass-primary rounded-xl
+        className="group col-span-2 relative m-0 p-0 w-full pb-7 h-75 bg-glass-primary rounded-xl
       "
         onMouseEnter={() => setIsVerticalMarquee(true)}
         onMouseLeave={() => setIsVerticalMarquee(false)}
       >
         <div className="flex items-center justify-between mb-4 w-full px-6 pb-3 pt-6 text-gray">
           {/* duration-200 */}
-          <h3 className="text-base xl:text-lg font-semibold tracking-[0.3px] transition-colors ">
+          <h3 className="group-hover:text-white box-title-effect text-base xl:text-lg font-semibold tracking-[0.3px] transition-colors ">
             Alert your engineering team in minutes
           </h3>
         </div>
@@ -27,7 +27,7 @@ function AlertBox() {
               {/* group-hover:[animation-play-state:running] [animation-play-state:paused] */}
               <div
                 className={`flex flex-col shrink-0 justify-around 
-                  ${isVerticalMarquee ? "vertical-marquee" : ""}`}
+                  ${isVerticalMarquee ? "vertical-marquee-slower" : ""}`}
               >
                 {rowAlertBoxInfos.map((rowAlertBoxData) => (
                   <RowAlertBox key={rowAlertBoxData.id} {...rowAlertBoxData} />

@@ -9,13 +9,13 @@ import AttackServicesBase from "./AttackServicesBase";
 // import fastly from "/icons/techs/fastly.svg";
 
 function AttackServices() {
-
+ 
   const [isVerticalMarquee, setIsVerticalMarquee] = useState(false);
 
   return (
     <>
       <section
-        className="group flex flex-col gap-y-7 py-7"
+        className="group flex flex-col gap-y-7 py-7 h-75.5"
         onMouseEnter={() => setIsVerticalMarquee(true)}
         onMouseLeave={() => setIsVerticalMarquee(false)}
       >
@@ -53,13 +53,12 @@ function AttackServices() {
                 "
               > */}
 
-               <AttackServicesBase/>
-               <AttackServicesBase/>
-               {/* <AttackServicesBase/>
+              <AttackServicesBase />
+              <AttackServicesBase />
+              {/* <AttackServicesBase/>
                <AttackServicesBase/> */}
-              
+
               {/* </div> */}
-             
             </div>
           </section>
         </div>
