@@ -25,4 +25,49 @@ const featureInfos = [
   },
 ];
 
-export default featureInfos;
+export {featureInfos};
+
+const toolkitsInfos = [
+  {
+    id: 1,
+    name: "Gitlab",
+    situate: "Path Traversal",
+    code: "CVE-2023-2825",
+    score: 7.5,
+    img: "/icons/toolkits-for-vulnerability/gitlab.svg",
+  },
+  {
+    id: 2,
+    name: "MOVEit transfer",
+    situate: "Code Execution",
+    code: "CVE-2023-34362",
+    score: 9.8,
+    img: "/icons/toolkits-for-vulnerability/moveit-transfer.svg",
+  },
+  {
+    id: 3,
+    name: "Redis",
+    situate: "Code Execution",
+    code: "CVE-2022-0543",
+    score: 10,
+    img: "/icons/toolkits-for-vulnerability/redis.svg",
+  },
+  {
+    id: 4,
+    name: "VMware",
+    situate: "Code Execution",
+    code: "CVE-2023-20887",
+    score: 9.8,
+    img: "/icons/toolkits-for-vulnerability/vmware.svg",
+  },
+  {
+    id: 5,
+    name: "Atlassian",
+    situate: "Command Injection",
+    code: "CVE-2022-36804",
+    score: 8.8,
+    img: "/icons/toolkits-for-vulnerability/atlassian.svg",
+  },
+];
+
+export { toolkitsInfos };

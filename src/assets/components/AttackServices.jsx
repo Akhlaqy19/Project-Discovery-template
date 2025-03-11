@@ -14,7 +14,7 @@ function AttackServices() {
   return (
     <>
       <section
-        className="group flex flex-col gap-y-7"
+        className="group flex flex-col gap-y-7 py-7"
         onMouseEnter={() => setIsVerticalMarquee(true)}
         onMouseLeave={() => setIsVerticalMarquee(false)}
       >
@@ -46,10 +46,10 @@ function AttackServices() {
             <div className={isVerticalMarquee ? "vertical-marquee" : ""}>
               <div
                 className="h-39 *:flex *:items-center *:text-sm
-                     *:tracking-widest *:*:*:block *:*:*:h-full *:*:first:w-2/5 *:*:not-first:w-1/5
-                     *:*:nth-[2]:pl-4  *:*:nth-[3]:pl-0 *:*:nth-[3]:*:gap-x-1.75 *:
-                     transition-transform
-                     "
+                *:tracking-widest *:*:*:block *:*:*:h-full *:*:first:w-2/5 *:*:not-first:w-1/5
+                *:*:nth-[2]:pl-4  *:*:nth-[3]:pl-0 *:*:nth-[3]:*:gap-x-1.75 *:
+                transition-transform
+                "
               >
                 <div className="h-13">
                   <div className="">

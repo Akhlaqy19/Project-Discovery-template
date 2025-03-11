@@ -47,7 +47,7 @@ function Navbar() {
              *:transition *:delay-75 *:duration-150 *:ease-in-out"
             >
               <FaGithub className="text-lg group-hover:text-white" />
-              <span className="group-hover:text-white">100.9k</span>
+              <span className="group-hover:text-white">101.0k</span>
               {/* star icon */}
               <IoMdStar className="text-sm group-hover:text-white" />
             </a>
