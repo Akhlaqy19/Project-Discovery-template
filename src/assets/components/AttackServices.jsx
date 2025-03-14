@@ -1,16 +1,26 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import AttackServicesBase from "./AttackServicesBase";
 
 function AttackServices() {
  
-  const [isVerticalMarquee, setIsVerticalMarquee] = useState(false);
+   const marqueeRef = useRef(null);
+
+   const handleMouseEnter = () => {
+     marqueeRef.current.classList.add("running");
+   };
+
+   const handleMouseLeave = () => {
+     marqueeRef.current.classList.remove("running");
+   };
+
+  // const [isVerticalMarquee, setIsVerticalMarquee] = useState(false);
 
   return (
     <>
       <section
         className="group flex flex-col gap-y-7 py-7 h-75.5"
-        onMouseEnter={() => setIsVerticalMarquee(true)}
-        onMouseLeave={() => setIsVerticalMarquee(false)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <div className="">
           <h3 className="group-hover:text-white box-title-effect">
@@ -38,10 +48,8 @@ function AttackServices() {
           </div>
           <section className="w-full overflow-hidden">
             <div
-              //
-              className={`${
-                isVerticalMarquee ? "vertical-marquee" : ""
-              } flex flex-col h-312`}
+              ref={marqueeRef}
+              className="flex flex-col h-312 vertical-marquee"
             >
               <AttackServicesBase />
               <AttackServicesBase />

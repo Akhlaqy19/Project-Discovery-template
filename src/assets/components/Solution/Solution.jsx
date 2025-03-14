@@ -30,7 +30,7 @@ export default function Solution() {
       
 
             <div
-              className="bg-graph-gradient relative flex flex-col gap-11 w-full md:gap-24 
+              className="relative flex flex-col gap-11 w-full md:gap-24 
             *:flex *:justify-between"
             >
               <div className=" absolute top-0 left-0 right-0 bottom-0">

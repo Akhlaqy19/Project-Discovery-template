@@ -1,13 +1,13 @@
 import React from 'react'
 import BtnSales from './../BtnSales';
 import {FaGithub } from 'react-icons/fa'
-import { IoMdStar } from "react-icons/io";
+import { TiStar } from "react-icons/ti";
 import confetti from "canvas-confetti"
 
 function Navbar() {
  const handleHover = () => {
     confetti({
-      particleCount: 250,
+      particleCount: 300,
       spread: 40,
       origin: 
         { y: 0.075, 
@@ -15,7 +15,7 @@ function Navbar() {
       colors: ['#ffff00', '#ff0000'], // رنگ‌های دلخواه
       scalar: 0.3,
       startVelocity: 20,
-      gravity: 1,
+      gravity: 0.8,
       ticks: 90,  // تعداد فریم‌های انیمیشن (تقریباً 0.5 ثانیه در 60fps)
     });
   };
@@ -47,9 +47,9 @@ function Navbar() {
              *:transition *:delay-75 *:duration-150 *:ease-in-out"
             >
               <FaGithub className="text-lg group-hover:text-white" />
-              <span className="group-hover:text-white">101.2k</span>
+              <span className="pl-0.5 group-hover:text-white">101.2k</span>
               {/* star icon */}
-              <IoMdStar className="text-sm group-hover:text-white" />
+              <TiStar className="-translate-x-0.5 text-sm group-hover:text-white" />
             </a>
           </div>
 
@@ -78,7 +78,7 @@ function Navbar() {
               <a href="#">Sign In</a>
             </div>
 
-            <BtnSales/>
+            <BtnSales />
           </div>
         </div>
       </nav>

@@ -1,18 +1,28 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import RowAlertBox from "./RowAlertBox"
 import {rowAlertBoxInfos} from "./../datas"
 
 function AlertBox() {
 
-  const [isVerticalMarquee, setIsVerticalMarquee] = useState(false);
+  // const [isVerticalMarquee, setIsVerticalMarquee] = useState(false);
+
+    const marqueeRef = useRef(null);
+
+    const handleMouseEnter = () => {
+      marqueeRef.current.classList.add("running");
+    };
+
+    const handleMouseLeave = () => {
+      marqueeRef.current.classList.remove("running");
+    };
 
   return (
     <>
       <section
         className="group col-span-2 relative m-0 p-0 w-full pb-7 h-75 bg-glass-primary rounded-xl
       "
-        onMouseEnter={() => setIsVerticalMarquee(true)}
-        onMouseLeave={() => setIsVerticalMarquee(false)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <div className="flex items-center justify-between mb-4 w-full px-6 pb-3 pt-6 text-gray">
           {/* duration-200 */}
@@ -26,8 +36,8 @@ function AlertBox() {
               {/* [--duration-200] */}
               {/* group-hover:[animation-play-state:running] [animation-play-state:paused] */}
               <div
-                className={`flex flex-col shrink-0 justify-around 
-                  ${isVerticalMarquee ? "vertical-marquee-slower" : ""}`}
+                ref={marqueeRef}
+                className="flex flex-col shrink-0 justify-around vertical-marquee-slower"
               >
                 {rowAlertBoxInfos.map((rowAlertBoxData) => (
                   <RowAlertBox key={rowAlertBoxData.id} {...rowAlertBoxData} />

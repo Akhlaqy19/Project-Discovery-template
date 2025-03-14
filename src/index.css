@@ -7,6 +7,15 @@
     src: url("/fonts/Geist/Geist.ttf") format("trueType");
 }
 
+* {
+	scrollbar-width: thin;
+	scrollbar-color: #222 transparent;
+}
+
+*::-webkit-scrollbar {
+	width: 4px;
+}
+
 :root {
     @apply box-border m-0 p-0 border-0 outline-0 text-base align-baseline bg-midnight;
 }
@@ -159,7 +168,6 @@ header {
 
 .bg-graph-gradient {
 	--tw-bg-graph-gradient: var(radial-gradient(oklch(0.646 0.222 41.116), oklch(0.852 0.199 91.936)));
-
 }
 
 .bg-opacity-10 {
@@ -195,11 +203,21 @@ header {
 
 
 .vertical-marquee {
-	animation: scrollUp 60s linear infinite running; 
+	animation: scrollUp 55s linear infinite; 
+	animation-play-state: paused;
+}
+
+.vertical-marquee.running {
+	animation-play-state: running;
 }
 
 .vertical-marquee-slower {
-	animation: scrollUp 80s linear infinite running;
+	animation: scrollUp 95s linear infinite;
+	animation-play-state: paused;
+}
+
+.vertical-marquee-slower.running {
+	animation-play-state: running;
 }
 
 @keyframes scrollUp {
@@ -214,9 +232,17 @@ header {
 }
 
 .horizontal-marquee {
-	animation: scrollLeft 15s linear infinite running;
-	animation-fill-mode: forwards;
+	animation: scrollLeft 15s linear infinite;
+	/* animation-fill-mode: forwards; */
+	animation-play-state: paused;
+		/* انیمیشن در حالت پیش‌فرض متوقف است */
 }
+
+.horizontal-marquee.running {
+	animation-play-state: running;
+	/* انیمیشن در حالت اجرا */
+}
+
 
 @keyframes scrollLeft {
 	0% {
