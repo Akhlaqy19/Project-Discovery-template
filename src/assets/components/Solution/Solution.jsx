@@ -1,6 +1,7 @@
 import React from 'react'
 import SolutionCase from "./SolutionCase"
 import CompanyLogo from "/icons/company-logo.svg";
+import GraphDashLines from './GraphDashLines';
 
 export default function Solution() {
   return (
@@ -26,82 +27,14 @@ export default function Solution() {
                 </p>
               </div>
             </div>
-
-            {/* خطوط SVG */}
-            {/* <div className="absolute w-full h-full top-1/5 left-0 pointer-events-none">
-              <DashedLine x1="50%" y1="50%" x2="5%" y2="20%" />
-              <DashedLine x1="50%" y1="50%" x2="95%" y2="20%" />
-              <DashedLine x1="50%" y1="50%" x2="10%" y2="50%" />
-              <DashedLine x1="50%" y1="50%" x2="95%" y2="50%" />
-              <DashedLine x1="50%" y1="50%" x2="5%" y2="80%" />
-              <DashedLine x1="50%" y1="50%" x2="95%" y2="80%" />
-            </div> */}
-
-            {/* بخش‌های مختلف */}
+      
 
             <div
-              className="relative flex flex-col gap-11 w-full md:gap-24 
+              className="bg-graph-gradient relative flex flex-col gap-11 w-full md:gap-24 
             *:flex *:justify-between"
             >
-              <div className="absolute top-0 left-0 right-0 bottom-0">
-                <svg
-                  width="100%"
-                  height="596"
-                  viewBox="0 0 1424 596"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  {/* بخش تعریف گرادیان‌ها */}
-                  <defs>
-                    {/* نمونه یک گرادیان خطی (linearGradient) از چپ به راست */}
-                    <linearGradient
-                      id="gradient" /* id دلخواه: باید در stroke=url(#...) هم استفاده شود */
-                      x1="0%"
-                      y1="0%"
-                      x2="100%"
-                      y2="0%"
-                    >
-                      {/* رنگ شروع گرادیان */}
-                      <stop offset="0%" stopColor="oklch(0.852 0.199 91.936)" />
-                      {/* رنگ انتهای گرادیان */}
-                      <stop
-                        offset="100%"
-                        stopColor="oklch(0.637 0.237 25.331)"
-                      />
-                    </linearGradient>
-
-                    {/* اگر نیاز به گرادیان دیگری داری، می‌توانی در همین‌جا تعریف کنی */}
-                  </defs>
-
-                  <g clip-path="url(#clip0_1_53)" strokeDasharray="5,5">
-                    {/* خطوط بالایی (چپ و راست) */}
-                    <path
-                      d="M32 -17C233.17 140.559 427.374 207.924 713 281M32 -17C233.17 140.559 427.374 207.924 713 281"
-                      stroke="url(#gradient)"
-                      stroke-width="2"
-                    />
-                    <path
-                      d="M1392 -17C1191.42 140.559 997.788 207.924 713 281"
-                      stroke="url(#gradient)"
-                      stroke-width="2"
-                    />
-                    <path
-                      d="M32 595C233.17 437.441 427.374 370.076 713 297M32 595C233.17 437.441 427.374 370.076 713 297"
-                      stroke="url(#gradient)"
-                      stroke-width="2"
-                    />
-                    <path
-                      d="M1392 595C1191.42 437.441 997.788 370.076 713 297"
-                      stroke="url(#gradient)"
-                      stroke-width="2"
-                    />
-                    <path d="M17 289H1407" stroke="url(#gradient)" stroke-width="2" />
-                    {/* clipPath برای برش ناحیه اضافه، در صورت نیاز */}
-                    <clipPath id="clip0_1_53">
-                      <rect width="1424" height="596" fill="white" />
-                    </clipPath>
-                  </g>
-                </svg>
+              <div className=" absolute top-0 left-0 right-0 bottom-0">
+                <GraphDashLines/>
               </div>
               <div className="">
                 <SolutionCase title="Application" />

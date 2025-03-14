@@ -71,7 +71,7 @@ button {
 	--color-sub-yellow: #eef35f;
 	--color-orange: #de632e;
 	--color-medium: #fbbf24;
-	--color-graph-gradient: radial-gradient(oklch(0.646 0.222 41.116), oklch(0.852 0.199 91.936));
+	/* --color-graph-gradient: radial-gradient(oklch(0.646 0.222 41.116), oklch(0.852 0.199 91.936)); */
 	--color-info: #22C55E;
 	--color-high: #de632e;
 	--color-critical: #e12c4e;
@@ -157,6 +157,10 @@ header {
 	background: linear-gradient(135deg, hsla(0, 0%, 100%, .05) 10%, hsla(0, 0%, 100%, .03) 40%), #09090b;
 }
 
+.bg-graph-gradient {
+	--tw-bg-graph-gradient: var(radial-gradient(oklch(0.646 0.222 41.116), oklch(0.852 0.199 91.936)));
+
+}
 
 .bg-opacity-10 {
 	--tw-bg-opacity: 0.1;
@@ -164,10 +168,6 @@ header {
 
 .border-opacity-10 {
 	--tw-border-opacity: 0.1;
-}
-
-.graph-lines-gradient {
-	
 }
 
 .text-info {
@@ -195,12 +195,11 @@ header {
 
 
 .vertical-marquee {
-	animation: scrollUp 10s linear infinite running; 
+	animation: scrollUp 60s linear infinite running; 
 }
 
 .vertical-marquee-slower {
 	animation: scrollUp 80s linear infinite running;
-	
 }
 
 @keyframes scrollUp {
@@ -215,7 +214,8 @@ header {
 }
 
 .horizontal-marquee {
-	animation: scrollLeft 10s linear infinite running;
+	animation: scrollLeft 15s linear infinite running;
+	animation-fill-mode: forwards;
 }
 
 @keyframes scrollLeft {
@@ -224,7 +224,7 @@ header {
 	}
 
 	100% {
-		/* -100% یعنی به اندازه ارتفاع کل محتوای اول، به سمت چپ اسکرول کند */
+		/* -100% یعنی به اندازه عرض کل محتوای اول، به سمت چپ اسکرول کند */
 		transform: translateX(-100%);
 	}
 }

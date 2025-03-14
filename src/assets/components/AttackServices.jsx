@@ -20,7 +20,7 @@ function AttackServices() {
 
         <div
           className="h-47.5 mt-5 px-6 bg-base-2 backdrop-blur-2xl 
-                **:font-light **:leading-3.5 rounded-2xl "
+                **:font-light **:leading-3.5 rounded-2xl overflow-hidden"
         >
           <div className="h-11.25 text-xm text-left *:inline-block py-3 *:tracking-wide">
             <div className="w-2/5">
@@ -36,8 +36,15 @@ function AttackServices() {
               <span className="text-x1">ɪ</span>P
             </div>
           </div>
-          <section className="w-full h-36.25 overflow-hidden">
-            <div className={isVerticalMarquee ? "vertical-marquee" : ""}>
+          <section className="w-full overflow-hidden">
+            <div
+              //
+              className={`${
+                isVerticalMarquee ? "vertical-marquee" : ""
+              } flex flex-col h-312`}
+            >
+              <AttackServicesBase />
+              <AttackServicesBase />
               <AttackServicesBase />
               <AttackServicesBase />
             </div>
