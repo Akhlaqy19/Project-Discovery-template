@@ -71,6 +71,7 @@ button {
 	--color-sub-yellow: #eef35f;
 	--color-orange: #de632e;
 	--color-medium: #fbbf24;
+	--color-graph-gradient: radial-gradient(oklch(0.646 0.222 41.116), oklch(0.852 0.199 91.936));
 	--color-info: #22C55E;
 	--color-high: #de632e;
 	--color-critical: #e12c4e;
@@ -163,6 +164,10 @@ header {
 
 .border-opacity-10 {
 	--tw-border-opacity: 0.1;
+}
+
+.graph-lines-gradient {
+	
 }
 
 .text-info {

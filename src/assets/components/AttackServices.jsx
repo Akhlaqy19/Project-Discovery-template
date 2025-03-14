@@ -1,12 +1,5 @@
 import React, { useState } from "react";
 import AttackServicesBase from "./AttackServicesBase";
-// import GoogleCloud from "/icons/techs/google-cloud.svg"
-// import php from "/icons/techs/php-logo.svg";
-// import Nextjs from "/icons/techs/nextjs.svg"
-// import Kubernetes from "/icons/techs/kubernetes.svg";
-// import Cloudflare from "/icons/techs/cloudflare.svg";
-// import aws from "/icons/techs/amazon-web-services.svg";
-// import fastly from "/icons/techs/fastly.svg";
 
 function AttackServices() {
  
@@ -45,20 +38,8 @@ function AttackServices() {
           </div>
           <section className="w-full h-36.25 overflow-hidden">
             <div className={isVerticalMarquee ? "vertical-marquee" : ""}>
-              {/* <div
-                className="h-39 *:flex *:items-center *:text-sm
-                *:tracking-widest *:*:*:block *:*:*:h-full *:*:first:w-2/5 *:*:not-first:w-1/5
-                *:*:nth-[2]:pl-4  *:*:nth-[3]:pl-0 *:*:nth-[3]:*:gap-x-1.75 *:
-                transition-transform
-                "
-              > */}
-
               <AttackServicesBase />
               <AttackServicesBase />
-              {/* <AttackServicesBase/>
-               <AttackServicesBase/> */}
-
-              {/* </div> */}
             </div>
           </section>
         </div>

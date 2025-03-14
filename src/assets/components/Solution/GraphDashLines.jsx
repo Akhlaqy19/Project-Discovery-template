@@ -1,0 +1,55 @@
+import React from 'react'
+
+export default function GraphDashLines({children}) {
+  return (
+    <>
+      <svg
+        width="100%"
+        height="596"
+        viewBox="0 0 1424 596"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {children}
+        <g clip-path="url(#clip0_1_46)" strokeDasharray={[5, 5]}>
+          <path
+            d="M32 -17C233.17 140.559 427.374 207.924 713 281M32 -17C233.17 140.559 427.374 207.924 713 281"
+            stroke="yellow"
+            stroke-width="2"
+            mask="url(#gradient-mask)"
+          />
+          <path
+            d="M1392 -17C1191.42 140.559 997.788 207.924 713 281"
+            stroke="yellow"
+            stroke-width="2"
+            mask="url(#gradient-mask)"
+          />
+          <path
+            d="M32 595C233.17 437.441 427.374 370.076 713 297M32 595C233.17 437.441 427.374 370.076 713 297"
+            stroke="yellow"
+            stroke-width="2"
+            mask="url(#gradient-mask)"
+          />
+          <path
+            d="M1392 595C1191.42 437.441 997.788 370.076 713 297"
+            stroke="yellow"
+            stroke-width="2"
+            mask="url(#gradient-mask)"
+          />
+          <path
+            // className="graph-lines-gradient "
+            d="M17 289H1407"
+            stroke="yellow"
+            stroke-width="2"
+            mask="url(#gradient-mask)"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_1_46">
+            <rect width="1424" height="596" fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+    </>
+  );
+}
