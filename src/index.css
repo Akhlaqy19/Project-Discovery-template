@@ -152,7 +152,17 @@ mask-image: linear-gradient(to right,
 }
 
 .slider {
-	animation: slider-animate 28s linear infinite;
+	animation: slider-animate 35s linear infinite;
+}
+
+@keyframes slider-animate {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(calc(-100% - 1rem));
+	}
 }
 
 .swiper-container {
@@ -291,21 +301,10 @@ mask-image: linear-gradient(to right,
 	}
 }
 
-@keyframes slider-animate {
-	0% {
-		transform: translateX(0);
-	}
-
-	100% {
-		/* -100% یعنی به اندازه ارتفاع کل محتوای اول، به بالا اسکرول کند */
-		transform: translateX(-100%);
-	}
-}
-
 /* کلاس اضافه‌شده هنگام رسیدن به نقطه مورد نظر */
 .child.sticky-active {
-transform: scale(0.8);  /* کوچک شدن */
-opacity: 0.5;           /* کاهش شفافیت */
+transform: scale(0.8); 
+opacity: 0.5;         
 }
 
 

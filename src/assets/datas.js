@@ -1,4 +1,8 @@
+
+
 const usersRated = 101.3;
+
+const monitorValidationText = "Enter a valid domain to discover your infrastructure"
 
 const sliderLogosInfo = [
   {
@@ -400,3 +404,34 @@ export { attackServicesInfos };
 export { toolkitsInfos };
 export { rowAlertBoxInfos };
 export { vulnerabilityInfo };
+
+// Import Swiper React components
+// import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+// import 'swiper/css';
+// import 'swiper/css/autoplay';
+
+// import required modules
+// import { Autoplay } from 'swiper/modules';
+
+  {/* <Swiper
+  modules={[Autoplay]}
+  spaceBetween={0}
+  slidesPerView={8}
+  loop={true}
+  // translate='yes'
+  speed={2000}
+  autoplay={{
+    delay: 0,
+    disableOnInteraction: false,
+  }}
+  allowTouchMove={false}
+  resizeObserver={true}
+  className="flex justify-center items-center gap-x-2.5 *:min-w-full
+  mx-auto mt-0 text-center *:flex *:justify-center *:items-center
+  *:min-h-20 *:max-w-1/7 **:text-center
+  **:text-sm **:text-gray-600 opacity-30 grayscale"
+  >
+  ...
+  </Swiper> */}

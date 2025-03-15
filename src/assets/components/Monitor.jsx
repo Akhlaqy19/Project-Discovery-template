@@ -23,8 +23,8 @@ function Monitor() {
         reset(canvas) {
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
-            this.speedX = (Math.random() - 0.5) * 0.8;
-            this.speedY = (Math.random() - 0.5) * 0.8;
+            this.speedX = (Math.random() - 0.5) * 0.6;
+            this.speedY = (Math.random() - 0.5) * 0.6;
             this.size = 0.2 + Math.random();
             this.alpha = 0.3 + Math.random() * 0.5;
         }
