@@ -1,3 +1,5 @@
+const usersRated = 101.3;
+
 const sliderLogosInfo = [
   {
     id: 1,
@@ -391,6 +393,7 @@ const vulnerabilityInfo = [
   },
 ];
 
+export { usersRated };
 export { sliderLogosInfo };
 export { featureInfos };
 export { attackServicesInfos };

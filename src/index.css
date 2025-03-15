@@ -138,12 +138,35 @@ header {
 	@apply text-base xl:text-lg text-gray font-light tracking-xs max-w-xl;
 }
 
+.mask-gradient {
+-webkit-mask-image: linear-gradient(to right,
+		rgba(255, 255, 255, 0),
+		rgb(255, 255, 255) 40%,
+		rgb(255, 255, 255) 60%,
+		rgba(255, 255, 255, 0));
+mask-image: linear-gradient(to right,
+		rgba(255, 255, 255, 0),
+		rgb(255, 255, 255) 40%,
+		rgb(255, 255, 255) 60%,
+		rgba(255, 255, 255, 0));
+}
+
 .slider {
-	animation: slider-animate 24s linear infinite;
+	animation: slider-animate 28s linear infinite;
 }
 
 .swiper-container {
 	@apply relative;
+	-webkit-mask-image: linear-gradient(to right,
+			rgba(255, 255, 255, 0),
+			rgb(255, 255, 255) 40%,
+			rgb(255, 255, 255) 60%,
+			rgba(255, 255, 255, 0));
+	mask-image: linear-gradient(to right,
+			rgba(255, 255, 255, 0),
+			rgb(255, 255, 255) 40%,
+			rgb(255, 255, 255) 60%,
+			rgba(255, 255, 255, 0));
 }
 
 .swiper-container::after,
@@ -155,13 +178,14 @@ header {
 
 .swiper-container::before {
 	left: 0;
-	background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 150%);
+	/* background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 150%); */
+
 }
 
 /* محو شدن از سمت راست به شفاف */
 .swiper-container::after {
 	right: 0;
-	background: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 150%);
+	/* background: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 150%); */
 }
 
 .card_feature-img {

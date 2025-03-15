@@ -3,6 +3,7 @@ import BtnSales from './../BtnSales';
 import {FaGithub } from 'react-icons/fa'
 import { TiStar } from "react-icons/ti";
 import confetti from "canvas-confetti"
+import { usersRated } from '../../datas';
 
 function Navbar() {
  const handleHover = () => {
@@ -47,7 +48,7 @@ function Navbar() {
              *:transition *:delay-75 *:duration-150 *:ease-in-out"
             >
               <FaGithub className="text-lg group-hover:text-white" />
-              <span className="pl-0.5 group-hover:text-white">101.2k</span>
+              <span className="pl-0.5 group-hover:text-white">{usersRated}k</span>
               {/* star icon */}
               <TiStar className="-translate-x-0.5 text-sm group-hover:text-white" />
             </a>
