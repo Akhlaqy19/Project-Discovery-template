@@ -12,8 +12,8 @@ function RowAttackServices({domain, port, techs, ip}) {
         </div>
         <div className="pl-0">
           <div className="*:w-4" style={{ display: "flex" }}>
-            {techs.map((tech) => (
-              <img src={`/icons/techs/${tech}.svg`} alt="" />
+            {techs.map((tech, i) => (
+              <img key={i} src={`/icons/techs/${tech}.svg`} alt="" />
             ))}
           </div>
         </div>

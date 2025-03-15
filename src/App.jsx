@@ -3,6 +3,8 @@ import Header from './assets/components/Header/Header';
 import Features from './assets/components/Features';
 import Purpose from "./assets/components/Purpose";
 import Solution from './assets/components/Solution/Solution';
+import VulnerabilityDetails from './assets/components/VulnerabilityDetails';
+import Integration from "./assets/components/Integration/Integration"
 import Footer from './assets/components/Footer';
 import './App.css'
 
@@ -16,6 +18,8 @@ function App() {
           <Features />
           <Purpose />
           <Solution/>
+          <VulnerabilityDetails/>
+          <Integration/>
         </main>
         <Footer />
       </div>

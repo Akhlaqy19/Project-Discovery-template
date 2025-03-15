@@ -13,8 +13,6 @@ function AttackServices() {
      marqueeRef.current.classList.remove("running");
    };
 
-  // const [isVerticalMarquee, setIsVerticalMarquee] = useState(false);
-
   return (
     <>
       <section

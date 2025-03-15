@@ -75,7 +75,7 @@ function Navbar() {
           <div className="flex justify-between items-center gap-x-8 text-sm">
             {/* sign in */}
             <div className="max-lg:hidden nav-effect *:hover:text-white/45">
-              <a href="#">Sign In</a>
+              <a href="#">Sign in</a>
             </div>
 
             <BtnSales />

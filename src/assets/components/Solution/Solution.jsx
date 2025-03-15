@@ -16,25 +16,24 @@ export default function Solution() {
                 </p>
               </div>
               <div>
-                <h2 className="title-gradient text-3xl md:text-3xl lg:text-4xl xl:text-11 font-semibold leading-[1.15] xl:leading-[1.20] tracking-[-1px]">
+                <h2 className="title-section title-gradient">
                   Dramatically reduce scanning times, tools, and resources
                 </h2>
               </div>
               <div>
-                <p className="text-base xl:text-lg text-gray font-light tracking-[0.3px] max-w-xl">
+                <p className="subtitle-section">
                   Consolidate scattered scanning tools into a single, precise,
                   customizable framework for modern teams.
                 </p>
               </div>
             </div>
-      
 
             <div
               className="relative flex flex-col gap-11 w-full md:gap-24 
             *:flex *:justify-between"
             >
               <div className=" absolute top-0 left-0 right-0 bottom-0">
-                <GraphDashLines/>
+                <GraphDashLines />
               </div>
               <div className="">
                 <SolutionCase title="Application" />

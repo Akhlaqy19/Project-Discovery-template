@@ -15,8 +15,6 @@ function ScanVulnerabilities() {
       marqueeRef.current.classList.remove("running");
     };
 
-
-
   return (
     <>
  

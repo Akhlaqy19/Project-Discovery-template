@@ -28,111 +28,150 @@ import salesforce from "/icons/header-logos/salesforce.svg"
 
 function Slider() {
   return (
-    <section className="swiper-container py-2
+    <>
+      <section
+        className="swiper-container py-2
     px-8 flex justify-center *:items-center bg-midnight
-     max-w-384 mx-auto text-center overflow-hidden -z-10">
-      <div
-        className="slider flex items-center shrink-0 gap-x-4
+     max-w-384 mx-auto text-center overflow-hidden -z-10"
+      >
+        <div
+          className="slider flex items-center shrink-0 gap-x-4
         *:shrink-0 *:flex *:items-center *:gap-x-4 *:*:mx-6
         grayscale opacity-40"
-      >
-        <div className="">
+        >
           <div className="">
-            <img src={vanta} alt="Vanta company logo" className="bg-midnight mx-auto" />
+            <div className="">
+              <img
+                src={vanta}
+                alt="Vanta company logo"
+                className="bg-midnight mx-auto"
+              />
+            </div>
+            <div className="">
+              <img src={ibm} alt="IBM company logo" className="mx-auto" />
+            </div>
+            <div className="">
+              <img
+                src={bytedance}
+                alt="ByteDance company logo"
+                className="mx-auto"
+              />
+            </div>
+            <div className="">
+              <img
+                src={netflix}
+                alt="Netflix company logo"
+                className="mx-auto"
+              />
+            </div>
+            <div className="">
+              <img
+                src={amplify}
+                alt="Amplify company logo"
+                className="mx-auto"
+              />
+            </div>
+            <div className="">
+              <img
+                src={chipotle}
+                alt="chipotle company logo"
+                className="mx-auto"
+              />
+            </div>
+            <div className="">
+              <img
+                src={elastic}
+                alt="elastic company logo"
+                className="mx-auto"
+              />
+            </div>
+            <div className="">
+              <img src={paddle} alt="paddle company logo" className="mx-auto" />
+            </div>
+            <div className="">
+              <img src={fastly} alt="fastly company logo" className="mx-auto" />
+            </div>
+            <div className="">
+              <img
+                src={observa}
+                alt="observa company logo"
+                className="mx-auto"
+              />
+            </div>
+            <div className="">
+              <img
+                src={salesforce}
+                alt="salesforce company logo"
+                className="mx-auto"
+              />
+            </div>
           </div>
           <div className="">
-            <img src={ibm} alt="IBM company logo" className="mx-auto" />
-          </div>
-          <div className="">
-            <img
-              src={bytedance}
-              alt="ByteDance company logo"
-              className="mx-auto"
-            />
-          </div>
-          <div className="">
-            <img src={netflix} alt="Netflix company logo" className="mx-auto" />
-          </div>
-          <div className="">
-            <img src={amplify} alt="Amplify company logo" className="mx-auto" />
-          </div>
-          <div className="">
-            <img
-              src={chipotle}
-              alt="chipotle company logo"
-              className="mx-auto"
-            />
-          </div>
-          <div className="">
-            <img src={elastic} alt="elastic company logo" className="mx-auto" />
-          </div>
-          <div className="">
-            <img src={paddle} alt="paddle company logo" className="mx-auto" />
-          </div>
-          <div className="">
-            <img src={fastly} alt="fastly company logo" className="mx-auto" />
-          </div>
-          <div className="">
-            <img src={observa} alt="observa company logo" className="mx-auto" />
-          </div>
-          <div className="">
-            <img
-              src={salesforce}
-              alt="salesforce company logo"
-              className="mx-auto"
-            />
+            <div className="">
+              <img src={vanta} alt="Vanta company logo" className="mx-auto" />
+            </div>
+            <div className="">
+              <img src={ibm} alt="IBM company logo" className="mx-auto" />
+            </div>
+            <div className="">
+              <img
+                src={bytedance}
+                alt="ByteDance company logo"
+                className="mx-auto"
+              />
+            </div>
+            <div className="">
+              <img
+                src={netflix}
+                alt="Netflix company logo"
+                className="mx-auto"
+              />
+            </div>
+            <div className="">
+              <img
+                src={amplify}
+                alt="Amplify company logo"
+                className="mx-auto"
+              />
+            </div>
+            <div className="">
+              <img
+                src={chipotle}
+                alt="chipotle company logo"
+                className="mx-auto"
+              />
+            </div>
+            <div className="">
+              <img
+                src={elastic}
+                alt="elastic company logo"
+                className="mx-auto"
+              />
+            </div>
+            <div className="">
+              <img src={paddle} alt="paddle company logo" className="mx-auto" />
+            </div>
+            <div className="">
+              <img src={fastly} alt="fastly company logo" className="mx-auto" />
+            </div>
+            <div className="">
+              <img
+                src={observa}
+                alt="observa company logo"
+                className="mx-auto"
+              />
+            </div>
+            <div className="">
+              <img
+                src={salesforce}
+                alt="salesforce company logo"
+                className="mx-auto"
+              />
+            </div>
           </div>
         </div>
-        <div className="">
-          <div className="">
-            <img src={vanta} alt="Vanta company logo" className="mx-auto" />
-          </div>
-          <div className="">
-            <img src={ibm} alt="IBM company logo" className="mx-auto" />
-          </div>
-          <div className="">
-            <img
-              src={bytedance}
-              alt="ByteDance company logo"
-              className="mx-auto"
-            />
-          </div>
-          <div className="">
-            <img src={netflix} alt="Netflix company logo" className="mx-auto" />
-          </div>
-          <div className="">
-            <img src={amplify} alt="Amplify company logo" className="mx-auto" />
-          </div>
-          <div className="">
-            <img
-              src={chipotle}
-              alt="chipotle company logo"
-              className="mx-auto"
-            />
-          </div>
-          <div className="">
-            <img src={elastic} alt="elastic company logo" className="mx-auto" />
-          </div>
-          <div className="">
-            <img src={paddle} alt="paddle company logo" className="mx-auto" />
-          </div>
-          <div className="">
-            <img src={fastly} alt="fastly company logo" className="mx-auto" />
-          </div>
-          <div className="">
-            <img src={observa} alt="observa company logo" className="mx-auto" />
-          </div>
-          <div className="">
-            <img
-              src={salesforce}
-              alt="salesforce company logo"
-              className="mx-auto"
-            />
-          </div>
-        </div>
-      </div>
 
-      {/* <Swiper
+        {/* <Swiper
         modules={[Autoplay]}
         spaceBetween={0}
         slidesPerView={8}
@@ -152,7 +191,8 @@ function Slider() {
       >
         ...
       </Swiper> */}
-    </section>
+      </section>
+    </>
   );
 }
 

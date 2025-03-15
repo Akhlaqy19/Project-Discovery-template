@@ -104,6 +104,10 @@ button {
 	@apply relative z-40 mx-auto w-full max-w-7xl lg:px-8;
 }
 
+.custom-p-sm {
+	@apply py-24 lg:py-32;
+}
+
 
 .glowBackground {
 	@apply bg-overlay relative block size-full overflow-hidden rounded-2xl;
@@ -115,7 +119,7 @@ header {
 
 
 .nav-effect {
-	@apply *:transition *:delay-100 *:duration-300 *:ease-in-out;
+	@apply *:transition *:delay-75 *:duration-300 *:ease-in-out;
 }
 
 .box-title-effect {
@@ -124,6 +128,14 @@ header {
 
 .title-gradient {
 	@apply bg-clip-text text-transparent bg-gradient-to-b from-white to-white/75;
+}
+
+.title-section {
+	@apply text-3xl md:text-3xl lg:text-4xl xl:text-11 font-semibold leading-[1.15] xl:leading-[1.20] tracking-[-1px];
+}
+
+.subtitle-section {
+	@apply text-base xl:text-lg text-gray font-light tracking-xs max-w-xl;
 }
 
 .slider {
@@ -394,3 +406,4 @@ opacity: 0.5;           /* کاهش شفافیت */
 		-o-transform: translateY(7%);
 	}
 } 
+

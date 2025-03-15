@@ -33,7 +33,7 @@ export default function GraphDashLines({}) {
           {/* more gradients in this here... */}
         </defs>
 
-        <g strokeDasharray="5,5">
+        <g clipPath="clip0_1_53" strokeDasharray="5,5">
           {/* up lines (left and right) */}
           <path
             d="M32 -17C233.17 140.559 427.374 207.924 713 281M32 -17C233.17 140.559 427.374 207.924 713 281"
@@ -66,9 +66,9 @@ export default function GraphDashLines({}) {
           />
 
           {/* clipPath برای برش ناحیه اضافه، در صورت نیاز */}
-          {/* <clipPath id="clip0_1_53">
+          <clipPath id="clip0_1_53">
             <rect width="1424" height="596" fill="white" />
-          </clipPath> */}
+          </clipPath>
         </g>
       </svg>
     </>

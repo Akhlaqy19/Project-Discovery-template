@@ -14,14 +14,10 @@ function AttackServicesBase() {
       >
         {
           attackServicesInfos.map(data => (
+            
               <RowAttackServices key={data.id} {...data}/>
           ))
         }
-        {/* {
-            attackServicesInfos.map(data => (
-                <RowAttackServices key={data.id} {...data}/>
-            ))
-        } */}
       </div>
     </>
   );

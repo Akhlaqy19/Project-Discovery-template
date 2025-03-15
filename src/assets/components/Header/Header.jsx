@@ -6,11 +6,13 @@ import Slider from "./Slider";
 
 function Header() {
   return (
-    <header className="w-full">
-      <Navbar />
-      <Hero />
-      <Slider />
-    </header>
+    <>
+      <header className="w-full">
+        <Navbar />
+        <Hero />
+        <Slider />
+      </header>
+    </>
   );
 }
 
