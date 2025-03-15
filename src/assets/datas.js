@@ -1,3 +1,52 @@
+const sliderLogosInfo = [
+  {
+    id: 1,
+    src: "ibm",
+  },
+  {
+    id: 2,
+    src: "amplify",
+  },
+  {
+    id: 3,
+    src: "bytedance",
+  },
+  {
+    id: 4,
+    src: "chipotle",
+  },
+  {
+    id: 5,
+    src: "elastic",
+  },
+  {
+    id: 6,
+    src: "fastly",
+  },
+  {
+    id: 7,
+    src: "netflix",
+  },
+  {
+    id: 8,
+    src: "paddle",
+  },
+  {
+    id: 9,
+    src: "vanta",
+  },
+  {
+    id: 10,
+    src: "observa",
+  },
+  {
+    id: 11,
+    src: "salesforce",
+  },
+];
+
+//////////////////////////////////////
+
 const featureInfos = [
   {
     id: 1,
@@ -25,6 +74,7 @@ const featureInfos = [
   },
 ];
 
+//////////////////////////////////////
 
 const attackServicesInfos = [
   {
@@ -71,7 +121,7 @@ const attackServicesInfos = [
   },
 ];
 
-
+//////////////////////////////////////
 
 const toolkitsInfos = [
   {
@@ -80,7 +130,7 @@ const toolkitsInfos = [
     situate: "Path Traversal",
     code: "CVE-2023-2825",
     score: 7.5,
-    img: "gitlab",
+    img: "gitlab-sm",
   },
   {
     id: 2,
@@ -116,6 +166,7 @@ const toolkitsInfos = [
   },
 ];
 
+//////////////////////////////////////
 
 const rowAlertBoxInfos = [
   {
@@ -291,7 +342,58 @@ const rowAlertBoxInfos = [
   },
 ];
 
+//////////////////////////////////////
+// آرایه‌ای از عناوین با شناسه‌ها و برچسب‌ها
+const vulnerabilityInfo = [
+  {
+    id: "vulnerability",
+    label: "Vulnerability Management",
+    restOfTitle: "",
+    text: [
+      `Traditional vulnerability management platforms struggle with excessive false positives and noise. Our vulnerability management platform, powered by Nuclei, delivers high-fidelity scanning to identify actual exploitable vulnerabilities that have real-world impact rather than just relying on CVSS scores. By leveraging the global open-source community, our library of over 9,000 Nuclei templates reflect the latest CVEs and trending misconfigurations.
+    `,
+      `
+    Our product integrates asset data from cloud platforms to provide essential context, allowing you to prioritize and manage vulnerabilities effectively. With multiple status tracking and easy export options via JSON, API, or Jira integration, remediation is streamlined for your engineering teams.
+    `,
+    ],
+    options: [
+      "Exploitable vulnerabilities",
+      "10x faster triage",
+      "Open source community",
+    ],
+  },
+  {
+    id: "attack",
+    label: "Attack Surface Management",
+    restOfTitle: " (ASM)",
+    text: [
+      `
+    Managing an organization's attack surface is increasingly complex with the expansion of cloud environments and shadow IT. Our platform offers industry-leading reconnaissance, powered by our globally popular open-source tools like Subfinder, Naabu, Chaos, and more, to continuously discover your attack surface.
+    `,
+      ` Our comprehensive library and real-time feed of Nuclei templates detect not only trending CVEs but also exposed panels, misconfigurations, and other critical issues across your full attack surface. A successful attack surface management program goes beyond discovery—it ensures critical vulnerabilities are detected early and remediated, reducing your overall risk and strengthening your security posture.`,
+    ],
+    options: [
+      "Advanced reconnaissance",
+      "AI query and filters",
+      "Labels, asset owners",
+    ],
+  },
+  {
+    id: "compliance",
+    label: "Compliance",
+    restOfTitle: " and Security",
+    text: [
+      `
+    Compliance-driven security tools today are expensive, outdated, and do little beyond compliance to improve an organization's security posture. Our platform not only helps identify critical issues and exploits in your infrastructure but also satisfies compliance frameworks like SOC 2, PCI, and others.`,
+      `We provide the necessary integrations and reporting to meet regulatory requirements and help you pass your next audit. Beyond compliance, our platform enhances your overall security by addressing real-world vulnerabilities, ensuring continuous protection while reducing risk.`,
+    ],
+    options: ["SOC 2", "PCI", "HIPAA"],
+  },
+];
+
+export { sliderLogosInfo };
 export { featureInfos };
 export { attackServicesInfos };
 export { toolkitsInfos };
 export { rowAlertBoxInfos };
+export { vulnerabilityInfo };

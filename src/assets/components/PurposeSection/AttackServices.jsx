@@ -30,7 +30,7 @@ function AttackServices() {
           className="h-47.5 mt-5 px-6 bg-base-2 backdrop-blur-2xl 
                 **:font-light **:leading-3.5 rounded-2xl overflow-hidden"
         >
-          <div className="h-11.25 text-xm text-left *:inline-block py-3 *:tracking-wide">
+          <div className="h-11.25 text-xm text-left *:inline-block py-3 *:tracking-wide *:uppercase">
             <div className="w-2/5">
               <span className="">HOST</span>
             </div>
@@ -41,7 +41,7 @@ function AttackServices() {
               <span className="">TECH</span>
             </div>
             <div className="w-1/5 text-center">
-              <span className="text-x1">ɪ</span>P
+              <span className="text-xs text-gray-400">ɪ</span>P
             </div>
           </div>
           <section className="w-full overflow-hidden">

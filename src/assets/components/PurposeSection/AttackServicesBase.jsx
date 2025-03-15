@@ -1,5 +1,5 @@
 import React from 'react'
-import {attackServicesInfos} from "./../datas"; 
+import {attackServicesInfos} from "./../../datas"; 
 import RowAttackServices from "./RowAttackServices"
 
 function AttackServicesBase() {

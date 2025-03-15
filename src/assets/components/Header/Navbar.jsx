@@ -55,7 +55,7 @@ function Navbar() {
 
           {/* mid / navbar links */}
           <div className="max-lg:hidden mr-18">
-            <ul className="flex justify-between gap-x-12 text-sm nav-effect *:hover:text-white/45">
+            <ul className="flex justify-between gap-x-12 text-sm nav-effect **:capitalize *:hover:text-white/45">
               <li>
                 <a href="#">Features</a>
               </li>

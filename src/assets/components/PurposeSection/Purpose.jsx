@@ -21,7 +21,7 @@ function Purpose() {
 
             {/*  */}
 
-            <h2 className=" text-3xl md:text-3xl lg:text-4xl xl:text-[44px] leading-[1.15] xl:leading-[1.20] font-semibold tracking-[-1px] title-gradient">
+            <h2 className="title-section title-gradient">
               Real-time detection for teams that ship fast
             </h2>
             <p className="max-w-4xl xl:text-lg text-gray text-lg font-light tracking-wide">

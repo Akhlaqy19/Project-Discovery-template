@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import ScanBoxToolkits from "./ScanBoxToolkits"
-import {toolkitsInfos} from "./../datas";
+import {toolkitsInfos} from "./../../datas";
 
 
 function ScanVulnerabilities() {

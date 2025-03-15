@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import RowAlertBox from "./RowAlertBox"
-import {rowAlertBoxInfos} from "./../datas"
+import {rowAlertBoxInfos} from "./../../datas";
 
 function AlertBox() {
 
@@ -25,7 +25,7 @@ function AlertBox() {
         onMouseLeave={handleMouseLeave}
       >
         <div className="flex items-center justify-between mb-4 w-full px-6 pb-3 pt-6 text-gray">
-          <h3 className="group-hover:text-white box-title-effect text-base xl:text-lg font-semibold tracking-[0.3px] transition-colors ">
+          <h3 className="group-hover:text-white box-title-effect text-base xl:text-lg font-semibold tracking-xs transition-colors ">
             Alert your engineering team in minutes
           </h3>
         </div>

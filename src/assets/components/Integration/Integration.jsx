@@ -7,7 +7,7 @@ import Teams from "/icons/alert-box-icons/teams.svg";
 import Webhook from "/icons/alert-box-icons/webhook.svg";
 import Api from "/icons/alert-box-icons/api.svg";
 import Email from "/icons/alert-box-icons/email.svg";
-import Gitlab from "/icons/toolkits-for-vulnerability/gitlab.svg";
+import Gitlab from "/icons/toolkits-for-vulnerability/gitlab-lg.svg";
 
 function Integration() {
   return (
