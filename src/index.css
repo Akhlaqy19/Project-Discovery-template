@@ -7,6 +7,12 @@
     src: url("/fonts/Geist/Geist.ttf") format("trueType");
 }
 
+@font-face {
+    font-family: "GeistMono";
+    font-display: swap;
+    src: url("/fonts/Geist-Mono/GeistMono-VariableFont_wght.ttf") format("trueType");
+}
+
 * {
 	scrollbar-width: thin;
 	scrollbar-color: #222 transparent;
@@ -126,11 +132,12 @@ header {
 
 
 .nav-effect {
-	@apply **:transition **:delay-50 **:duration-300 **:ease-in-out;
+	@apply transition-all delay-50 duration-275 ease-in-out
+	 **:transition **:delay-50 **:duration-275 **:ease-in-out;
 }
 
 .box-title-effect {
-	@apply transition delay-75 duration-150 ease-in-out;
+	@apply transition-all delay-75 duration-200 ease-in-out;
 }
 
 .title-gradient {
@@ -453,6 +460,6 @@ opacity: 0.5;
 	}
 }
 
-.__className_c1e5c9 {
+.row-number {
 	font-family: GeistMono, ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
 }

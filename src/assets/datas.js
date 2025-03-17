@@ -1,6 +1,6 @@
 
 
-const usersRated = 101.3;
+const usersRated = 101.4;
 
 const monitorValidationText = "Enter a valid domain to discover your infrastructure"
 
@@ -422,26 +422,32 @@ const issueInfos = [
   {
     id: 1,
     title: "Broken Authentication",
+    count: 37,
   },
   {
     id: 2,
     title: "Weak password",
+    count: 62,
   },
   {
     id: 3,
     title: "Out of band",
+    count: 50,
   },
   {
     id: 4,
     title: "SQL Injection",
+    count: 43,
   },
   {
     id: 5,
     title: "Secrets",
+    count: 31,
   },
   {
     id: 6,
     title: "IDOR",
+    count: 55,
   },
 ];
 
@@ -454,6 +460,7 @@ export { rowAlertBoxInfos };
 export { vulnerabilityInfo };
 export { communityInfo };
 export { issueInfos };
+
 
 // Import Swiper React components
 // import { Swiper, SwiperSlide } from 'swiper/react';
@@ -489,4 +496,4 @@ export { issueInfos };
 /* radial-gradient(160.33% 160.3% at 98.14% 97.73%, rgba(9, 9, 11, 0) 33.78%, rgba(255, 255, 255, 0.03) 64.91%, rgba(255, 255, 255, 0.03) 100%),
   #09090b */
 /* linear-gradient(135deg, hsla(0, 0%, 100%, .05) 10%, hsla(0, 0%, 100%, .03) 40%),
-  #09090b */
+  #09090b */ 

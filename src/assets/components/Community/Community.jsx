@@ -113,13 +113,13 @@ export default function Community() {
             </div>
             <div className="absolute -bottom-5 right-12 z-30 w-auto md:right-24">
               <div className="flex items-center gap-0">
-                <PaginationNumber number="1" rounded="l" border="" />
+                <PaginationNumber number="1" rounded="rounded-l-xl" border="" />
                 <PaginationNumber
                   number="2"
                   rounded=""
                   border="border-x-none"
                 />
-                <PaginationNumber number="3" rounded="r" border="" />
+                <PaginationNumber number="3" rounded="rounded-r-xl" border="" />
               </div>
             </div>
           </div>
@@ -132,8 +132,9 @@ export default function Community() {
 const PaginationNumber = ({ number, rounded, border }) => {
   return (
     <>
+      {/* sm:bg-midnight */}
       <button
-        className={`bg-base-smoke rounded-${rounded}-xl px-4 py-3 font-medium ${border} text-white hover:bg-midnight sm:bg-midnight`}
+        className={`bg-base-smoke ${rounded} px-4 py-3 font-medium ${border} text-white hover:bg-midnight`}
       >
         {number}
       </button>
