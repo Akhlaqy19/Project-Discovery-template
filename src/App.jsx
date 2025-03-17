@@ -6,16 +6,18 @@ import Features from './assets/components/Features';
 import Purpose from "./assets/components/PurposeSection/Purpose";
 import Solution from './assets/components/Solution/Solution';
 import VulnerabilityDetails from './assets/components/VulnerabilityDetails';
-import Integration from "./assets/components/Integration/Integration"
+import Integration from "./assets/components/Integration/Integration";
+import Community from "./assets/components/Community/Community";
+import Customization from './assets/components/Customization/Customization';
 import Footer from './assets/components/Footer';
-import './App.css'
+import './App.css';
 
 function App() {
 
   return (
     <>
       <div className="mx-auto max-w-384 font-main">
-      <Header />
+        <Header />
         <main className="relative z-30 min-h-screen">
           <Hero />
           <Slider />
@@ -24,6 +26,8 @@ function App() {
           <Solution />
           <VulnerabilityDetails />
           <Integration />
+          <Community/>
+          <Customization />
         </main>
         <Footer />
       </div>

@@ -397,6 +397,54 @@ const vulnerabilityInfo = [
   },
 ];
 
+const communityInfo = [
+  {
+    id: 1,
+    color: "critical",
+    img: "danger-sign",
+    text: "Vulnerability announced — ",
+  },
+  {
+    id: 2,
+    color: "high",
+    img: "timer",
+    text: "Nuclei template created — ",
+  },
+  {
+    id: 3,
+    color: "info",
+    img: "tick-green",
+    text: "Vulnerability detected — Alert sent in",
+  },
+];
+
+const issueInfos = [
+  {
+    id: 1,
+    title: "Broken Authentication",
+  },
+  {
+    id: 2,
+    title: "Weak password",
+  },
+  {
+    id: 3,
+    title: "Out of band",
+  },
+  {
+    id: 4,
+    title: "SQL Injection",
+  },
+  {
+    id: 5,
+    title: "Secrets",
+  },
+  {
+    id: 6,
+    title: "IDOR",
+  },
+];
+
 export { usersRated };
 export { sliderLogosInfo };
 export { featureInfos };
@@ -404,6 +452,8 @@ export { attackServicesInfos };
 export { toolkitsInfos };
 export { rowAlertBoxInfos };
 export { vulnerabilityInfo };
+export { communityInfo };
+export { issueInfos };
 
 // Import Swiper React components
 // import { Swiper, SwiperSlide } from 'swiper/react';
@@ -435,3 +485,8 @@ export { vulnerabilityInfo };
   >
   ...
   </Swiper> */}
+
+/* radial-gradient(160.33% 160.3% at 98.14% 97.73%, rgba(9, 9, 11, 0) 33.78%, rgba(255, 255, 255, 0.03) 64.91%, rgba(255, 255, 255, 0.03) 100%),
+  #09090b */
+/* linear-gradient(135deg, hsla(0, 0%, 100%, .05) 10%, hsla(0, 0%, 100%, .03) 40%),
+  #09090b */

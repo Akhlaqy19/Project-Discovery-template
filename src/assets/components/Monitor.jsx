@@ -106,14 +106,16 @@ function Monitor() {
         pointer-events-auto sm:flex-row md:items-center"
         >
           <div className="relative w-full flex-1 sm:w-96 md:max-w-96">
+            {/* transition-all delay-75 duration-250 */}
             <input
               ref={inputRef}
               type="url"
               placeholder="Enter your domain to get started"
               className={`check-validation z-30 w-sm h-12 px-4 py-3 text-gray border
-            border-glass-secondary transition-all delay-75 duration-250 caret-yellow
+            border-glass-secondary caret-yellow transition-all
               rounded-lg placeholder:indent-3 placeholder:text-white/30
             hover:border-gray/50 focus:border-gray/50`}
+
               // onInvalid={() => setIsShowWarningText(true)}
 
               // onInvalidCapture={() => {
@@ -132,10 +134,7 @@ function Monitor() {
               ref={containerRef}
               className="absolute -inset-4 z-0 overflow-hidden"
             >
-              <canvas
-                ref={canvasRef}
-                className="absolute w-35 h-19 border-0"
-              />
+              <canvas ref={canvasRef} className="absolute w-35 h-19 border-0" />
             </div>
 
             <button
@@ -164,7 +163,6 @@ function Monitor() {
                 ></div>
               </div> */}
             </button>
-
           </div>
         </div>
       </div>

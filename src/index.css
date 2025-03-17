@@ -74,13 +74,11 @@ button {
 
 	/* colors */
 	--color-midnight: #09090b;
-	/* --color-high: #de632e; */
 	--color-yellow: #dadf58;
 	--color-yellow-light: #fdffdb;
 	--color-sub-yellow: #eef35f;
 	--color-orange: #de632e;
 	--color-medium: #fbbf24;
-	/* --color-graph-gradient: radial-gradient(oklch(0.646 0.222 41.116), oklch(0.852 0.199 91.936)); */
 	--color-info: #22C55E;
 	--color-high: #de632e;
 	--color-critical: #e12c4e;
@@ -91,17 +89,18 @@ button {
 	--color-base-2: linear-gradient(135deg, hsla(0, 0%, 100%, .05) 10%, hsla(0, 0%, 100%, .03) 40%);
 	--color-overlay: radial-gradient(160.33% 160.3% at 98.14% 97.73%, rgba(9, 9, 11, 0) 33.78%, rgba(255, 255, 255, 0.03) 64.91%, rgba(255, 255, 255, 0.03) 100%),
 		#09090b;
-		
-	/* radial-gradient(160.33% 160.3% at 98.14% 97.73%, rgba(9, 9, 11, 0) 33.78%, rgba(255, 255, 255, 0.03) 64.91%, rgba(255, 255, 255, 0.03) 100%),
-		#09090b */
-	/* linear-gradient(135deg, hsla(0, 0%, 100%, .05) 10%, hsla(0, 0%, 100%, .03) 40%),
-		#09090b */
+
+	--border-width: 0.75;
 
 }
 
 .custom-container {
 	max-width: 1536px;
 	@apply relative z-50 mx-auto w-full lg:px-8;
+}
+
+.custom-p-sm {
+	@apply py-24 lg:py-32;
 }
 
 .custom-container-sm {
@@ -112,10 +111,14 @@ button {
 	@apply py-24 lg:py-32;
 }
 
-
 .glowBackground {
 	@apply bg-overlay relative block size-full overflow-hidden rounded-2xl;
 }
+
+.bg-custom-gradient {
+	background-image: linear-gradient(135deg, hsla(0, 0%, 100%, .02), hsla(0, 0%, 100%, .015));
+}
+
 
 header {
 	@apply bg-radial-[at_30%_30%_30%] from-zinc-900 via-neutral-950 to-stone-950;
@@ -207,7 +210,7 @@ mask-image: linear-gradient(to right,
 }
 
 .bg-base {
-	border: 1px solid #222;
+	@apply border border-glass-secondary;
 	background: radial-gradient(160.33% 160.3% at 98.14% 97.73%, rgba(9, 9, 11, 0) 33.78%, hsla(0, 0%, 100%, .03) 64.91%, hsla(0, 0%, 100%, .03) 100%), #09090b;
 }
 
@@ -248,6 +251,10 @@ mask-image: linear-gradient(to right,
 .text-high {
 	background-color: rgb(222 99 46 / var(--tw-bg-opacity));
 	border-color: rgb(222 99 46 / var(--tw-border-opacity));
+}
+
+.bg-base-smoke {
+	@apply border border-glass-secondary;
 }
  
 
@@ -418,7 +425,34 @@ opacity: 0.5;
 	}
 } 
 
+.overlay-back {
+	animation: animate-overlay-back 2s linear ease;
+}
 
-/* .check-validation:user-valid .btn-monitor{
-	cursor: pointer;
-} */
+@keyframes animate-overlay-back {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.overlay {
+	animation: animate-overlay linear ease;
+}
+
+@keyframes animate-overlay {
+	0% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.__className_c1e5c9 {
+	font-family: GeistMono, ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+}
