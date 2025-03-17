@@ -1,5 +1,7 @@
 import React from 'react';
 import Header from './assets/components/Header/Header';
+import Hero from './assets/components/Header/Hero';
+import Slider from './assets/components/Header/Slider';
 import Features from './assets/components/Features';
 import Purpose from "./assets/components/PurposeSection/Purpose";
 import Solution from './assets/components/Solution/Solution';
@@ -12,14 +14,16 @@ function App() {
 
   return (
     <>
-      <div className="App mx-auto max-w-384 font-main container">
-        <Header />
-        <main>
+      <div className="mx-auto max-w-384 font-main">
+      <Header />
+        <main className="relative z-30 min-h-screen">
+          <Hero />
+          <Slider />
           <Features />
           <Purpose />
-          <Solution/>
-          <VulnerabilityDetails/>
-          <Integration/>
+          <Solution />
+          <VulnerabilityDetails />
+          <Integration />
         </main>
         <Footer />
       </div>

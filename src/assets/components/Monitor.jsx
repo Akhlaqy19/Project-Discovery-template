@@ -1,6 +1,16 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 function Monitor() {
+
+  const [isChechBtnHovered, setIsChechBtnHovered] = useState(false);
+  const [isShowWarningText, setIsShowWarningText] = useState(false);
+
+    const checkUrlValidation = () => {
+
+    }
+
+    const inputRef = useRef();
+    const btnRef = useRef();
 
     const canvasRef = useRef(null);
     const containerRef = useRef(null);
@@ -88,44 +98,74 @@ function Monitor() {
   return (
     <>
       {/* get started monitor */}
-      <div
-        className="absolute top-120 left-1/2 flex items-center gap-x-4 
-        w-full max-w-384 mx-auto text-center -translate-6/38 text-white *:border *:rounded-md"
-      >
-        <input
-          type="text"
-          placeholder="Enter your domain to get started"
-          className="w-sm px-4 py-3 border-white/10 
-          transition-colors delay-75 duration-250 caret-yellow
-          placeholder:indent-3 placeholder:text-white/30
-        hover:border-white/60 focus:border-white/60"
-        />
 
-        <div className="relative border-none">
-          <div
-            ref={containerRef}
-            className="absolute -inset-4 z-0 overflow-hidden"
-          >
-            <canvas
-              ref={canvasRef}
-              className="absolute -top-5 w-35 h-19 border-0"
+      <div className="flex w-full mx-auto min-w-96">
+        <div
+          className="flex flex-col items-center gap-4 
+        w-full mx-auto text-center text-white 
+        pointer-events-auto sm:flex-row md:items-center"
+        >
+          <div className="relative w-full flex-1 sm:w-96 md:max-w-96">
+            <input
+              ref={inputRef}
+              type="url"
+              placeholder="Enter your domain to get started"
+              className={`check-validation z-30 w-sm h-12 px-4 py-3 text-gray border
+            border-glass-secondary transition-all delay-75 duration-250 caret-yellow
+              rounded-lg placeholder:indent-3 placeholder:text-white/30
+            hover:border-gray/50 focus:border-gray/50`}
+              // onInvalid={() => setIsShowWarningText(true)}
+
+              // onInvalidCapture={() => {
+              //   isChechBtnHovered && setIsShowWarningText(true)
+              // }}
             />
+            {/* { (
+              <p className="absolute -bottom-7 left-1 z-40 w-full text-left text-xs text-sub-yellow opacity-100">
+                Enter a valid domain to discover your infrastructure
+              </p>
+            )} */}
           </div>
-            <button
-              className="btn-monitor absolute -top-5.5 z-10 px-4 py-3 text-sm font- text-yellow
-              border-2 border-yellow/50 overflow-hidden
-              outline-offset-8 outline-yellow rounded-md cursor-not-allowed
-              bg-yellow/20 backdrop-blur-md 
-              transition delay-75 duration-250 ease-in-out
-              hover:text-black hover:bg-yellow"
-              disabled
+
+          <div className="relative border-none">
+            <div
+              ref={containerRef}
+              className="absolute -inset-4 z-0 overflow-hidden"
             >
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              Monitor
+              <canvas
+                ref={canvasRef}
+                className="absolute w-35 h-19 border-0"
+              />
+            </div>
+
+            <button
+              ref={btnRef}
+              className={`
+              z-30 inline-flex w-22 items-center justify-center px-4 py-2
+              btn-monitor relative h-12 
+              text-sm font-semibold text-sub-yellow
+              border border-sub-yellow overflow-hidden
+               rounded-md cursor-not-allowed
+              bg-sub-yellow/20 shadow-sm backdrop-blur-sm tracking-xs
+              transition delay-75 duration-250 ease-in-out
+              hover:text-midnight hover:bg-sub-yellow`}
+              disabled
+              onMouseOver={() => setIsChechBtnHovered(true)}
+              onMouseOut={() => setIsChechBtnHovered(false)}
+            >
+              <span className="relative z-20 mx-auto flex font-medium">
+                Monitor
+              </span>
+
+              {/* <div className="rounded-md">
+                <div
+                  className="pointer-events-none absolute inset-0 rounded-[inherit] [border:calc(var(--border-width)*1px)_solid_transparent] ![mask-clip:padding-box,border-box] ![mask-composite:intersect] [mask:linear-gradient(transparent,transparent),linear-gradient(white,white)] after:absolute after:aspect-square after:w-[calc(var(--size)*1px)] after:animate-border-beam after:[animation-delay:var(--delay)] after:[background:linear-gradient(to_left,var(--color-from),var(--color-to),transparent)] after:[offset-anchor:calc(var(--anchor)*1%)_50%] after:[offset-path:rect(0_auto_auto_0_round_calc(var(--size)*1px))]"
+                  style="--size: 40; --duration: 15; --anchor: 90; --border-width: 0.75; --color-from: #ffffff; --color-to: #EEF35F; --delay: -0s;"
+                ></div>
+              </div> */}
             </button>
+
+          </div>
         </div>
       </div>
     </>

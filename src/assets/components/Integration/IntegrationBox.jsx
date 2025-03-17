@@ -30,8 +30,8 @@ export default function IntegrationBox({title, caption, images}) {
 
                 <div className="w-fit transition duration-200 ease-linear pointer-events-none relative z-20">
                   <div className="bg-base-2 mt-6 flex items-center rounded-xl bg-custom-gradient p-3 align-middle *:px-4 *:not-last:border-r *:not-last:border-[#363636]">
-                    {images.map((img) => (
-                      <img src={img} alt=""/>
+                    {images.map((img, i) => (
+                      <img key={i} src={img} alt={`${img} technology`}/>
                     ))}
                   </div>
                 </div>

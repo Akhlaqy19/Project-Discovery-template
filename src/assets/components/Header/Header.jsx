@@ -1,16 +1,12 @@
 import React from 'react'
 import Navbar from './Navbar'
-import Hero from './Hero'
-import Slider from "./Slider";
 
 
 function Header() {
   return (
     <>
-      <header className="w-full">
+      <header className="fixed top-0 z-50 w-full bg-midnight/80 backdrop-blur-lg transition-all duration-300 border-b border-transparent">
         <Navbar />
-        <Hero />
-        <Slider />
       </header>
     </>
   );

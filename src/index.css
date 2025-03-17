@@ -99,6 +99,10 @@ button {
 
 }
 
+.custom-container {
+	max-width: 1536px;
+	@apply relative z-50 mx-auto w-full lg:px-8;
+}
 
 .custom-container-sm {
 	@apply relative z-40 mx-auto w-full max-w-7xl lg:px-8;
@@ -119,7 +123,7 @@ header {
 
 
 .nav-effect {
-	@apply *:transition *:delay-75 *:duration-300 *:ease-in-out;
+	@apply **:transition **:delay-50 **:duration-300 **:ease-in-out;
 }
 
 .box-title-effect {
@@ -307,7 +311,7 @@ transform: scale(0.8);
 opacity: 0.5;         
 }
 
-
+/* 
 .btn-monitor span:nth-child(1) {
 	@apply absolute w-full h-0.25 top-0 left-0 bg-linear-to-r from-yellow-light to-yellow;
 	animation: animate1 5s linear infinite;
@@ -330,7 +334,7 @@ opacity: 0.5;
 		-ms-transform: translateX(100%);
 		-o-transform: translateX(100%);
 	}
-}
+} */
 
 .btn-monitor span:nth-child(2) {
 	@apply absolute w-0.25 h-full top-0 right-0 bg-linear-to-b from-yellow-light to-yellow;
@@ -393,40 +397,28 @@ opacity: 0.5;
 @keyframes animate4 {
 	0% {
 		transform: translateY(100%);
-		-webkit-transform: translateY(100%);
-		-moz-transform: translateY(100%);
-		-ms-transform: translateY(100%);
-		-o-transform: translateY(100%);
 	}
 
 	100% {
 		transform: translateY(-100%);
-		-webkit-transform: translateY(-100%);
-		-moz-transform: translateY(-100%);
-		-ms-transform: translateY(-100%);
-		-o-transform: translateY(-100%);
 	}
 }
 
 .bitmap {
-	animation: bitmap-animate 1.8s alternate infinite;
-	-webkit-animation: bitmap-animate 1.8s alternate infinite;
+	animation: bitmap-animate 1.4s alternate infinite;
+	-webkit-animation: bitmap-animate 1.4s alternate infinite;
 }
 
 @keyframes bitmap-animate {
 	0% {
-		transform: translateY(-7%);
-		-webkit-transform: translateY(-7%);
-		-moz-transform: translateY(-7%);
-		-ms-transform: translateY(-7%);
-		-o-transform: translateY(-7%);
+		transform: translateY(-10%);
 }
 	100% {
-		transform: translateY(7%);
-		-webkit-transform: translateY(7%);
-		-moz-transform: translateY(7%);
-		-ms-transform: translateY(7%);
-		-o-transform: translateY(7%);
+		transform: translateY(-10% + 0.5%);
 	}
 } 
 
+
+/* .check-validation:user-valid .btn-monitor{
+	cursor: pointer;
+} */
