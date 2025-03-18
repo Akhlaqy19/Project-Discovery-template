@@ -1,4 +1,32 @@
 const usersRated = 101.4;
+
+const bitmapData = [
+  {
+    id: 1,
+    yAxis: "top-[32%]",
+    xAxis: "left-[7%]",
+    size: "w-14 h-18",
+    scale: "",
+    img: "1.svg",
+  },
+  {
+    id: 2,
+    yAxis: "top-[52%]",
+    xAxis: "right-[15.5%]",
+    size: "size-12",
+    scale: "scale-75",
+    img: "2.svg",
+  },
+  {
+    id: 3,
+    yAxis: "top-[20%]",
+    xAxis: "right-[4.5%]",
+    size: "size-8",
+    scale: "scale-50",
+    img: "3.svg",
+  },
+];
+
 const sliderLogosInfo = [
   {
     id: 1,
@@ -541,6 +569,7 @@ const communityComments = [
 ];
 
 export { usersRated };
+export { bitmapData };
 export { sliderLogosInfo };
 export { featureInfos };
 export { attackServicesInfos };

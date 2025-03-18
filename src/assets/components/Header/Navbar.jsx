@@ -92,7 +92,7 @@ function Navbar() {
               <a href="#">Sign in</a>
             </div>
 
-            <BtnSales />
+            <BtnSales height={""}/>
           </div>
         </div>
       </nav>

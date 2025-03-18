@@ -13,6 +13,49 @@
     src: url("/fonts/Geist-Mono/GeistMono-VariableFont_wght.ttf") format("trueType");
 }
 
+/* Custom Utilities */
+@theme {
+	/* fonts */
+	--font-main: Geist;
+	--text-11: 44px;
+	--text-semi: 15px;
+	--text-x1: 22px;
+	--text-xm: 13px;
+
+	/* spacing and sizing */
+	--tracking-3: 3px;
+	--tracking-xs: 0.3px;
+
+	/* line height sizes*/
+	--leading-base: 1.6;
+
+	/* colors */
+	--color-midnight: #09090b;
+	--color-yellow: #dadf58;
+	--color-yellow-light: #fdffdb;
+	--color-sub-yellow: #eef35f;
+	--color-orange: #de632e;
+	--color-medium: #fbbf24;
+	--color-info: #22C55E;
+	--color-high: #de632e;
+	--color-critical: #e12c4e;
+	--color-glass-primary: #111;
+	--color-glass-secondary: #222;
+	--color-gray-light: #e5e7eb;
+	--color-gray: #b4b4bb;
+	--color-base-2: linear-gradient(135deg, hsla(0, 0%, 100%, .05) 10%, hsla(0, 0%, 100%, .03) 40%);
+	--color-overlay: radial-gradient(160.33% 160.3% at 98.14% 97.73%, rgba(9, 9, 11, 0) 33.78%, rgba(255, 255, 255, 0.03) 64.91%, rgba(255, 255, 255, 0.03) 100%),
+		#09090b;
+
+	--border-width: 0.75;
+
+	--gap: 16px;
+	--glow-color: #444444;
+	--glow-size-start: 0px;
+	--glow-size-end: 500px;
+	--overlay-color: radial-gradient(160.33% 160.3% at 98.14% 97.73%, rgba(9, 9, 11, 0) 33.78%, rgba(255, 255, 255, 0.03) 64.91%, rgba(255, 255, 255, 0.03) 100%), #09090b;
+}
+
 * {
 	scrollbar-width: thin;
 	scrollbar-color: #222 transparent;
@@ -23,9 +66,8 @@
 }
 
 :root {
-    @apply box-border m-0 p-0 border-0 outline-0 text-base align-baseline bg-midnight;
+	@apply box-border m-0 p-0 border-0 outline-0 text-base align-baseline bg-midnight;
 }
-
 
 /* Reset CSS / HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -61,57 +103,8 @@ button {
 	@apply outline-0;
 }
 
-
-/* Custom Utilities */
-@theme {
-	/* fonts */
-    --font-main: Geist;
-	--text-11: 44px;
-	--text-semi: 15px;
-	--text-x1: 22px;
-	--text-xm: 13px;
-
-	/* spacing and sizing */
-	--tracking-3: 3px;
-	--tracking-xs: 0.3px;
-
-	/* line height sizes*/
-	--leading-base: 1.6;
-
-	/* colors */
-	--color-midnight: #09090b;
-	--color-yellow: #dadf58;
-	--color-yellow-light: #fdffdb;
-	--color-sub-yellow: #eef35f;
-	--color-orange: #de632e;
-	--color-medium: #fbbf24;
-	--color-info: #22C55E;
-	--color-high: #de632e;
-	--color-critical: #e12c4e;
-	--color-glass-secondary: #222;
-	--color-gray-light: #e5e7eb;
-	--color-gray: #b4b4bb;
-	--color-glass-primary: #111;
-	--color-base-2: linear-gradient(135deg, hsla(0, 0%, 100%, .05) 10%, hsla(0, 0%, 100%, .03) 40%);
-	--color-overlay: radial-gradient(160.33% 160.3% at 98.14% 97.73%, rgba(9, 9, 11, 0) 33.78%, rgba(255, 255, 255, 0.03) 64.91%, rgba(255, 255, 255, 0.03) 100%),
-		#09090b;
-
-	--border-width: 0.75;
-
-
-	--gap: 16px;
-	--glow-color: #444444;
-	--glow-size-start: 0px;
-	--glow-size-end: 500px;
-	--overlay-color: radial-gradient(160.33% 160.3% at 98.14% 97.73%, rgba(9, 9, 11, 0) 33.78%, rgba(255, 255, 255, 0.03) 64.91%, rgba(255, 255, 255, 0.03) 100%), #09090b;
-}
-
 .custom-container {
 	@apply relative z-50 mx-auto w-full max-w-384 lg:px-8;
-}
-
-.custom-p-sm {
-	@apply py-24 lg:py-32;
 }
 
 .custom-container-sm {
@@ -132,45 +125,29 @@ button {
 
 
 header {
-	@apply bg-radial-[at_30%_30%_30%] from-zinc-900 via-neutral-950 to-stone-950;
+	/* @apply bg-radial-[at_30%_30%_30%] from-zinc-900 via-neutral-950 to-stone-950; */
 }
 
 
 .nav-effect {
-	@apply transition-all delay-50 duration-275 ease-in-out
-	 **:transition **:delay-50 **:duration-275 **:ease-in-out;
+	@apply transition-all delay-50 duration-275 ease-in-out;
+	 /* **:transition **:delay-50 **:duration-275 **:ease-in-out; */
 }
 
 .box-title-effect {
 	@apply transition-all delay-75 duration-200 ease-in-out;
 }
 
-.title-gradient {
-	@apply bg-clip-text text-transparent bg-gradient-to-b from-white to-white/75;
+.section-gradient-title {
+	@apply text-3xl md:text-3xl lg:text-4xl xl:text-11 font-semibold leading-[1.15] xl:leading-[1.20] tracking-[-1px]
+	bg-clip-text text-transparent bg-gradient-to-b from-white to-white/75;
 }
 
-.title-section {
-	@apply text-3xl md:text-3xl lg:text-4xl xl:text-11 font-semibold leading-[1.15] xl:leading-[1.20] tracking-[-1px];
-}
-
-.subtitle-section {
+.section-subtitle {
 	@apply text-base xl:text-lg text-gray font-light tracking-xs;
 }
 
 .mask-gradient {
--webkit-mask-image: linear-gradient(to right,
-		rgba(255, 255, 255, 0),
-		rgb(255, 255, 255) 40%,
-		rgb(255, 255, 255) 60%,
-		rgba(255, 255, 255, 0));
-mask-image: linear-gradient(to right,
-		rgba(255, 255, 255, 0),
-		rgb(255, 255, 255) 40%,
-		rgb(255, 255, 255) 60%,
-		rgba(255, 255, 255, 0));
-}
-
-.mask-gradient- {
 	mask: linear-gradient(to right,
 	 rgba(0, 0, 0, 0),
 	 rgb(0, 0, 0) 10%,
@@ -192,6 +169,20 @@ mask-image: linear-gradient(to right,
 	}
 }
 
+.slider-comments {
+	animation: slider-marquee-faster 7s 0s linear infinite;
+}
+
+@keyframes slider-marquee-faster {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(calc(-100% - var(--gap)));
+	}
+}
+
 .swiper-container {
 	@apply relative;
 	-webkit-mask-image: linear-gradient(to right,
@@ -204,6 +195,7 @@ mask-image: linear-gradient(to right,
 			rgb(255, 255, 255) 40%,
 			rgb(255, 255, 255) 60%,
 			rgba(255, 255, 255, 0));
+	
 }
 
 .swiper-container::after,
@@ -265,8 +257,6 @@ mask-image: linear-gradient(to right,
 	@apply border border-glass-secondary;
 }
  
-
-
 .vertical-marquee {
 	animation: scrollUp 55s linear infinite; 
 	animation-play-state: paused;
@@ -289,7 +279,6 @@ mask-image: linear-gradient(to right,
 	0% {
 		transform: translateY(0);
 	}
-
 	100% {
 		transform: translateY(-100%);
 	}
@@ -324,15 +313,14 @@ opacity: 0.5;
 
 .bitmap {
 	animation: bitmap-animate 1.4s alternate infinite;
-	-webkit-animation: bitmap-animate 1.4s alternate infinite;
 }
 
 @keyframes bitmap-animate {
 	0% {
-		transform: translateY(-10%);
-}
+		transform: translateY(-10px);
+	}
 	100% {
-		transform: translateY(-10% + 0.5%);
+		transform: translateY(0);
 	}
 } 
 
@@ -389,10 +377,10 @@ opacity: 0.5;
 .GlowBackground_glowBorderBg__g39y_ {
 	@apply absolute z-1 pointer-events-none rounded-2xl opacity-100 
 	transition-opacity duration-500 ease-out;
-	--border-width-1: 1px;
-	top: var(--border-width);
+	/* --border-width-1: 1px; */
+	/* top: var(--border-width);
 	right: var(--border-width);
 	bottom: var(--border-width);
-	left: var(--border-width);
+	left: var(--border-width); */
 	background: var(--overlay-color);
 }

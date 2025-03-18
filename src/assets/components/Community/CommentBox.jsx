@@ -7,7 +7,7 @@ export default function CommentBox({ fullName, userName, avatar, comment }) {
       <a
         href={`https://twitter.com/${userName}`}
         target="_blank"
-        className="slider mx-3"
+        className="slider-comments mx-3"
       >
         <figure className="relative w-96 cursor-pointer overflow-hidden p-8">
           <div className="pointer-events-none relative z-20 flex flex-col items-center gap-2">
@@ -37,9 +37,10 @@ export default function CommentBox({ fullName, userName, avatar, comment }) {
           </div>
 
           <div className="absolute left-0 top-0 z-10 h-full w-full">
+            {/* bg-glass-secondary */}
             <div
               className="GlowBackground_glowBackground__jasUQ 
-              bg-glass-secondary border rounded-2xl"
+               bg-base-2 border rounded-2xl"
             >
               <div className="GlowBackground_glowBorderBg__g39y_"></div>
             </div>

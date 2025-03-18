@@ -11,10 +11,10 @@ export default function SectionTitle({ mainTitle, subTitle, description, width }
         </p>
       </div>
       <div>
-        <h3 className="title-section title-gradient w-full">{mainTitle}</h3>
+        <h3 className="section-gradient-title w-full">{mainTitle}</h3>
       </div>
       <div>
-        <p className={`subtitle-section ${width}`}>{description}</p>
+        <p className={`section-subtitle ${width}`}>{description}</p>
       </div>
     </>
   );

@@ -99,19 +99,17 @@ function Monitor() {
     <>
       {/* get started monitor */}
 
-      <div className="flex w-full mx-auto min-w-96">
         <div
-          className="flex flex-col items-center gap-4 
-        w-full mx-auto text-center text-white 
-        pointer-events-auto sm:flex-row md:items-center"
+          className="pointer-events-auto flex flex-col items-start gap-4 w-full mx-auto text-white sm:flex-row md:items-center"
         >
           <div className="relative w-full flex-1 sm:w-96 md:max-w-96">
             {/* transition-all delay-75 duration-250 */}
+            {/* check-validation */}
             <input
               ref={inputRef}
               type="url"
               placeholder="Enter your domain to get started"
-              className={`check-validation z-30 w-sm h-12 px-4 py-3 text-gray border
+              className={`input relative flex w-full z-30 h-12 px-4 py-3 text-white border
             border-glass-secondary caret-yellow transition-all
               rounded-lg placeholder:indent-3 placeholder:text-white/30
             hover:border-gray/50 focus:border-gray/50`}
@@ -128,26 +126,19 @@ function Monitor() {
               </p>
             )} */}
           </div>
-
-          <div className="relative border-none">
+          <div className="relative h-12 sm:w-auto">
             <div
               ref={containerRef}
-              className="absolute -inset-4 z-0 overflow-hidden"
+              className="absolute inset-1/2 z-0 h-[160%] w-full -translate-x-1/2
+              -translate-y-1/2 rounded-md md:w-[160%] overflow-hidden"
             >
-              <canvas ref={canvasRef} className="absolute w-35 h-19 border-0" />
+              <canvas ref={canvasRef} className="absolute size-full border-0" />
             </div>
 
             <button
               ref={btnRef}
               className={`
-              z-30 inline-flex w-22 items-center justify-center px-4 py-2
-              btn-monitor relative h-12 
-              text-sm font-semibold text-sub-yellow
-              border border-sub-yellow overflow-hidden
-               rounded-md cursor-not-allowed
-              bg-sub-yellow/20 shadow-sm backdrop-blur-sm tracking-xs
-              transition delay-75 duration-250 ease-in-out
-              hover:text-midnight hover:bg-sub-yellow`}
+              btn-monitor relative z-30 inline-flex items-center justify-center w-22 h-12 px-4 py-2 text-sm font-semibold text-sub-yellow border border-sub-yellow overflow-hidden rounded-md cursor-not-allowed sm:w-auto bg-sub-yellow/20 shadow-sm backdrop-blur-sm tracking-xs nav-effect hover:text-midnight hover:bg-sub-yellow`}
               disabled
               onMouseOver={() => setIsChechBtnHovered(true)}
               onMouseOut={() => setIsChechBtnHovered(false)}
@@ -165,7 +156,6 @@ function Monitor() {
             </button>
           </div>
         </div>
-      </div>
     </>
   );
 }

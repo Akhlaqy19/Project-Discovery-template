@@ -26,36 +26,40 @@ export default function Community() {
 
         <div className="relative z-40 mx-auto flex justify-between">
           <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-            <div className="w-full mask-gradient-">
+            <div className="w-full mask-gradient">
               <div className="group flex overflow-hidden p-2 gap-4 [--duration:75s]">
-                {
-                  communityComments.map(comment => (
-                    <div key={comment.id} className='flex flex-row shrink-0 justify-around gap-4 *:slider'>
-                      <CommentBox {...comment}/>
-                    </div>
-                  ))
-                }
-                {
-                  communityComments.map(comment => (
-                    <div key={comment.id} className='flex flex-row shrink-0 justify-around gap-4 *:slider'>
-                      <CommentBox {...comment}/>
-                    </div>
-                  ))
-                }
-                {
-                  communityComments.map(comment => (
-                    <div key={comment.id} className='flex flex-row shrink-0 justify-around gap-4 *:slider'>
-                      <CommentBox {...comment}/>
-                    </div>
-                  ))
-                }
-                {
-                  communityComments.map(comment => (
-                    <div key={comment.id} className='flex flex-row shrink-0 justify-around gap-4 *:slider'>
-                      <CommentBox {...comment}/>
-                    </div>
-                  ))
-                }
+                {communityComments.map((comment) => (
+                  <div
+                    key={comment.id}
+                    className="flex flex-row shrink-0 justify-around gap-4 *:slider"
+                  >
+                    <CommentBox {...comment} />
+                  </div>
+                ))}
+                {communityComments.map((comment) => (
+                  <div
+                    key={comment.id}
+                    className="flex flex-row shrink-0 justify-around gap-4 *:slider"
+                  >
+                    <CommentBox {...comment} />
+                  </div>
+                ))}
+                {communityComments.map((comment) => (
+                  <div
+                    key={comment.id}
+                    className="flex flex-row shrink-0 justify-around gap-4 *:slider"
+                  >
+                    <CommentBox {...comment} />
+                  </div>
+                ))}
+                {communityComments.map((comment) => (
+                  <div
+                    key={comment.id}
+                    className="flex flex-row shrink-0 justify-around gap-4 *:slider"
+                  >
+                    <CommentBox {...comment} />
+                  </div>
+                ))}
               </div>
             </div>
           </div>

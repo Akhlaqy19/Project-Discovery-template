@@ -1,9 +1,13 @@
 import React from 'react'
+import Contact from './Contact';
 
 function Footer() {
   return (
     <>
-      <footer className="">Footer</footer>
+      <footer className="">
+
+        <Contact/>
+      </footer>
     </>
   );
 }
