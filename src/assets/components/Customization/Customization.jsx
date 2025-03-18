@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import SectionTitle from "./../SectionTitle";
 import IssueTitle from "./IssueTitle";
+import CutomizationInfo from "./CutomizationInfo";
 import { issueInfos } from "./../../datas";
-
+import { cutomizationInfo } from "./../../datas";
 import { FaGithub } from "react-icons/fa";
-// import Github from "/icons/alert-box-icons/github-gray.svg"
+
 
 export default function Customization() {
   const [rowsCount, setRowsCount] = useState(0);
-  const [selectedTitle, setSelectedTitle] = useState("Broken Authentication");
+  const [selectedTitle, setSelectedTitle] = useState(issueInfos[0].title);
 
   useEffect(() => {
     // initial set rows count (by default)
@@ -61,10 +62,13 @@ export default function Customization() {
             <div className="relative max-h-137.5">
               <div className="h-full max-h-137.5 overflow-y-auto overflow-x-hidden px-6 pb-14">
                 <pre className="row-number">
-                  {Array.from(Array(rowsCount).keys()).map((rowNumber, i) => (
-                    <div key={i} className="table-row">
-                      <span className="table-cell select-none pr-4 text-right text-sm text-[#464A4D]">
-                        {i + 1}
+                  {Array.from(Array(rowsCount).keys()).map((rowNumber) => (
+                    <div key={rowNumber} className="table-row">
+                      <span
+                        className="table-cell select-none pr-4 text-right 
+                      text-sm text-[#464A4D]"
+                      >
+                        {rowNumber + 1}
                       </span>
                       <div className="token-line table-cell text-sm leading-6 text-[#60a5fa]"></div>
                     </div>
@@ -72,7 +76,7 @@ export default function Customization() {
                 </pre>
               </div>
 
-              <div class="absolute bottom-12 left-0 z-30 block h-6 w-full bg-gradient-to-t from-midnight to-midnight/0"></div>
+              <div className="absolute bottom-12 left-0 z-30 block h-6 w-full bg-gradient-to-t from-midnight to-midnight/0"></div>
 
               <div className="absolute bottom-0 left-0 flex min-h-12 w-full items-center bg-midnight px-2">
                 <a
@@ -88,6 +92,16 @@ export default function Customization() {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="mt-20 grid grid-cols-1 gap-14 sm:grid-cols-3">
+          {
+            cutomizationInfo.map(data => (
+              <div key={data.id}>
+                <CutomizationInfo {...data}/>
+              </div>
+            ))
+          }
         </div>
       </section>
     </>

@@ -7,8 +7,9 @@ import Purpose from "./assets/components/PurposeSection/Purpose";
 import Solution from './assets/components/Solution/Solution';
 import VulnerabilityDetails from './assets/components/VulnerabilityDetails';
 import Integration from "./assets/components/Integration/Integration";
-import Community from "./assets/components/Community/Community";
+import CommunityPowered from "./assets/components/CommunityPowered/CommunityPowered";
 import Customization from './assets/components/Customization/Customization';
+import Community from "./assets/components/Community/Community";
 import Footer from './assets/components/Footer';
 import './App.css';
 
@@ -26,8 +27,9 @@ function App() {
           <Solution />
           <VulnerabilityDetails />
           <Integration />
-          <Community/>
+          <CommunityPowered/>
           <Customization />
+          <Community/>
         </main>
         <Footer />
       </div>

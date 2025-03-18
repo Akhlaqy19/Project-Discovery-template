@@ -31,7 +31,7 @@ function Hero() {
               </div>
             </div>
             <div className="pointer-events-none absolute left-0 top-0 z-50 hidden h-full w-full md:block">
-              <div className="absolute cursor-pointer left-[7%] top-[30%]">
+              <div className="absolute cursor-pointer left-[7%] top-[32%]">
                 <a
                   href="https://cloud.projectdiscovery.io/public/CVE-2024-27198"
                   target="_blank"

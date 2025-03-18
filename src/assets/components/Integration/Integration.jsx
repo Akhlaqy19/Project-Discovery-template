@@ -1,16 +1,8 @@
-import React from 'react'
-import IntegrationBox from "./IntegrationBox"
+import React from "react";
+import SectionTitle from "./../SectionTitle";
+import IntegrationBox from "./IntegrationBox";
+import { integrationBoxesInfo } from "./../../datas";
 
-// import { FaGithub } from "react-icons/fa";
-import Slack from "/icons/alert-box-icons/slack.svg";
-import Teams from "/icons/alert-box-icons/teams.svg";
-import Webhook from "/icons/alert-box-icons/webhook.svg";
-import Api from "/icons/alert-box-icons/api.svg";
-import Email from "/icons/alert-box-icons/email.svg";
-import Gitlab from "/icons/alert-box-icons/gitlab-lg.svg";
-import Jira from "/icons/alert-box-icons/jira.svg";
-import Linear from "/icons/alert-box-icons/linear.svg";
-import Github from "/icons/alert-box-icons/github.svg";
 
 function Integration() {
   return (
@@ -18,44 +10,25 @@ function Integration() {
       <section className="custom-container-sm custom-p-sm mb-36">
         <div className="relative z-40 flex w-full flex-col items-center py-10 lg:pt-20">
           <div className="flex flex-col gap-3 items-center text-center mx-auto my-6">
-            <div className="my-5">
-              <p className="text-xs font-light uppercase tracking-3 text-sub-yellow">
-                Integrations
-              </p>
-            </div>
-            <div className="">
-              <h2 className="title-section title-gradient">
-                Integrate with your platforms
-              </h2>
-            </div>
-            <div className="">
-              <p className="subtitle-section">
-                Use our integrations to get alerts sent instantly for ticketing.
-              </p>
-            </div>
+            <SectionTitle
+              mainTitle={`Integrate with your platforms`}
+              subTitle={`Integrations`}
+              description={`Use our integrations to get alerts sent instantly for ticketing.`}
+              width={`max-w-xl`}
+            />
           </div>
         </div>
 
         <div className="grid-col-1 relative grid w-full gap-4 md:grid-cols-3 md:gap-10">
-          <IntegrationBox
-            title="Alerting"
-            caption="Receive notifications about the scans and discovery in your workspace."
-            images={[Slack, Teams, Webhook, Email]}
-          />
-          <IntegrationBox
-            title="Ticketing"
-            caption="Automatically create tickets when new vulnerabilities are found."
-            images={[Jira, Github, Gitlab, Linear]}
-          />
-          <IntegrationBox
-            title="API"
-            caption="Automate all platform features through our API for custom workflows."
-            images={[Api]}
-          />
+          {integrationBoxesInfo.map((data) => (
+            <div key={data.id}>
+              <IntegrationBox {...data} />
+            </div>
+          ))}
         </div>
       </section>
     </>
   );
 }
 
-export default Integration
+export default Integration;

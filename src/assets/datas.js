@@ -1,9 +1,4 @@
-
-
 const usersRated = 101.4;
-
-const monitorValidationText = "Enter a valid domain to discover your infrastructure"
-
 const sliderLogosInfo = [
   {
     id: 1,
@@ -348,6 +343,10 @@ const rowAlertBoxInfos = [
   },
 ];
 
+
+
+
+
 //////////////////////////////////////
 // آرایه‌ای از عناوین با شناسه‌ها و برچسب‌ها
 const vulnerabilityInfo = [
@@ -396,6 +395,31 @@ const vulnerabilityInfo = [
     options: ["SOC 2", "PCI", "HIPAA"],
   },
 ];
+
+
+const integrationBoxesInfo = [
+  {
+    id: 1,
+    title: "Alerting",
+    caption:
+      "Receive notifications about the scans and discovery in your workspace.",
+    images: ["slack", "teams", "webhook", "email"],
+  },
+  {
+    id: 2,
+    title: "Ticketing",
+    caption: "Automatically create tickets when new vulnerabilities are found.",
+    images: ["jira", "github", "gitlab-lg", "linear"],
+  },
+  {
+    id: 3,
+    title: "API",
+    caption:
+      "Automate all platform features through our API for custom workflows.",
+    images: ["api"],
+  },
+];
+
 
 const communityInfo = [
   {
@@ -451,6 +475,71 @@ const issueInfos = [
   },
 ];
 
+const cutomizationInfo = [
+  {
+    id: 1,
+    img: "circle",
+    title: "Real world simulation",
+    text: "Run the vulnerability tests as an attacker would to exploit a given vulnerability. Capture full logs behind a given test to triage faster for the team.",
+  },
+  {
+    id: 2,
+    img: "stars",
+    title: "AI-powered editor",
+    text: "Use our AI-powered vulnerability automation editor to convert your internal vulnerability data into an automated detection pipeline.",
+  },
+  {
+    id: 3,
+    img: "confirm",
+    title: "Supports 6 protocols",
+    text: "Nuclei, built by our team, supports over 6 protocols as well as code protocols, so you can basically stitch almost any kind of vulnerability.",
+  },
+];
+
+
+const communityComments = [
+  {
+    id: 1,
+    fullName: "Paul Seekamp",
+    userName: "nullenc0de",
+    avatar: "1.png",
+    comment:
+      "Starting to get better results running Nuclei, than a Nessus scan these days.",
+  },
+  {
+    id: 2,
+    fullName: "STÖK",
+    userName: "stokfredrik",
+    avatar: "2.png",
+    comment:
+      "The @pdnuclei team does it again! Need to dev/null all my hacky shit, low and behold... notify!!! Not only captures it you burp colab request & passes it to slack/discord/telegram.",
+  },
+  {
+    id: 3,
+    fullName: "Daniel Miessler",
+    userName: "DanielMiessler",
+    avatar: "3.png",
+    comment:
+      "This is the best security tool released in probably 10 years. Maybe longer. It’s Nessus—except transparent and automatable—and for AppSec as well.",
+  },
+  {
+    id: 4,
+    fullName: "Jason Haddix",
+    userName: "JHaddix",
+    avatar: "4.png",
+    comment:
+      "The next level of automation in recon is targeted content discovery / directory bruteforcing for CVE's ++. Want a good start on these fingerprints/templates? They exist!",
+  },
+  {
+    id: 5,
+    fullName: "STÖK",
+    userName: "stokfredrik",
+    avatar: "5.png",
+    comment:
+      "Check out the stack from @pdnuclei sooooo many game changing tools, nuclei and chaos is the bomb.",
+  },
+];
+
 export { usersRated };
 export { sliderLogosInfo };
 export { featureInfos };
@@ -458,42 +547,8 @@ export { attackServicesInfos };
 export { toolkitsInfos };
 export { rowAlertBoxInfos };
 export { vulnerabilityInfo };
+export { integrationBoxesInfo };
 export { communityInfo };
 export { issueInfos };
-
-
-// Import Swiper React components
-// import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-// import 'swiper/css';
-// import 'swiper/css/autoplay';
-
-// import required modules
-// import { Autoplay } from 'swiper/modules';
-
-  {/* <Swiper
-  modules={[Autoplay]}
-  spaceBetween={0}
-  slidesPerView={8}
-  loop={true}
-  // translate='yes'
-  speed={2000}
-  autoplay={{
-    delay: 0,
-    disableOnInteraction: false,
-  }}
-  allowTouchMove={false}
-  resizeObserver={true}
-  className="flex justify-center items-center gap-x-2.5 *:min-w-full
-  mx-auto mt-0 text-center *:flex *:justify-center *:items-center
-  *:min-h-20 *:max-w-1/7 **:text-center
-  **:text-sm **:text-gray-600 opacity-30 grayscale"
-  >
-  ...
-  </Swiper> */}
-
-/* radial-gradient(160.33% 160.3% at 98.14% 97.73%, rgba(9, 9, 11, 0) 33.78%, rgba(255, 255, 255, 0.03) 64.91%, rgba(255, 255, 255, 0.03) 100%),
-  #09090b */
-/* linear-gradient(135deg, hsla(0, 0%, 100%, .05) 10%, hsla(0, 0%, 100%, .03) 40%),
-  #09090b */ 
+export { cutomizationInfo };
+export { communityComments };

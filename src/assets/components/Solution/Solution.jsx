@@ -1,4 +1,5 @@
 import React from 'react'
+import SectionTitle from "./../SectionTitle";
 import SolutionCase from "./SolutionCase"
 import CompanyLogo from "/icons/company-logo.svg";
 import GraphDashLines from './GraphDashLines';
@@ -10,22 +11,12 @@ export default function Solution() {
         <div className="relative z-40 mt-44 size-full">
           <div className="relative w-full flex flex-col items-center py-12 md:pb-0 md:pt-20">
             <div className="flex flex-col gap-3 items-center text-center mx-auto my-6 max-w-2xl">
-              <div className="my-5">
-                <p className="text-xs font-light uppercase tracking-3 text-sub-yellow">
-                  Our Solution
-                </p>
-              </div>
-              <div>
-                <h2 className="title-section title-gradient">
-                  Dramatically reduce scanning times, tools, and resources
-                </h2>
-              </div>
-              <div>
-                <p className="subtitle-section">
-                  Consolidate scattered scanning tools into a single, precise,
-                  customizable framework for modern teams.
-                </p>
-              </div>
+              <SectionTitle
+                mainTitle={`Dramatically reduce scanning times, tools, and resources`}
+                subTitle={`Our Solution`}
+                description={`Consolidate scattered scanning tools into a single, precise, customizable framework for modern teams.`}
+                width={`max-w-xl`}
+              />
             </div>
 
             <div
