@@ -159,10 +159,8 @@ header {
 }
 
 .input {
-	@apply h-auto rounded-lg border py-3 px-4
+	@apply h-auto py-3 px-4 text-gray rounded-lg border border-glass-secondary
 	transition-colors duration-300;
-	/* --tw-border-opacity: 1;
-	border-color: rgb(34 34 34 / var(--tw-border-opacity, 1)); */
 	--tw-bg-opacity: 1;
 	background-color: rgb(9 9 11 / var(--tw-bg-opacity, 1));
 	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
@@ -170,12 +168,8 @@ header {
 	
 }
 
-/* @keyframes input-effect {
-	
-} */
-
 .slider {
-	animation: slider-marquee 28s linear infinite;
+	animation: slider-marquee 24s linear infinite;
 }
 
 @keyframes slider-marquee {

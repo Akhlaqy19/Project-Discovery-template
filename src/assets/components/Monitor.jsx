@@ -113,7 +113,7 @@ function Monitor() {
             onChange={(e) => setUrl(e.target.value)}
             placeholder="Enter your domain to get started"
             className={`input relative flex w-full z-30 h-12 px-4 py-3
-             text-white caret-yellow
+             text-gray caret-yellow
              placeholder:indent-3 placeholder:text-white/30
             hover:border-gray/50`}
           />

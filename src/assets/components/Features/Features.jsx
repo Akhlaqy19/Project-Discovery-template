@@ -33,47 +33,56 @@ const FeatureCardBase = ({
 }) => {
   const [isSticky, setIsSticky] = useState(false);
   const elementRef = useRef(null);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
 
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       setIsSticky(entry.intersectionRatio == 1);
-  //     },
-  //     {
-  //       root: null,
-  //       rootMargin: '0px 0px 0px 0px', // منطبق با top: 0 در استایل sticky
-  //       threshold: [0, 1]
-  //     }
-  //   );
+  const scale = useTransform(scrollYProgress, [0.2, 0.8], [1, 0.5]);
+  const opacity = useTransform(scrollYProgress, [0.2, 0.8], [1, 0]);
 
-  //   if (elementRef.current) observer.observe(elementRef.current);
-    
-  //   return () => observer.disconnect();
-  // }, []);
+  // بررسی موقعیت کارت نسبت به viewport و تنظیم isSticky
+  useEffect(() => {
+    const handleScroll = () => {
+      if (elementRef.current) {
+        const rect = elementRef.current.getBoundingClientRect();
+        // زمانی که بالا (top) کارت به 0 یا کمتر می‌رسد، sticky می‌شود
 
-  const Component = isSticky ? motion.section : "section";
-  const motionProps = isSticky ? { style: { scale } } : {};
+        const treshold = 10;
+        if (rect.top <= 0) {
+          setIsSticky(true);
+        } else {
+          setIsSticky(false);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    // اجرای اولیه برای تنظیم وضعیت
+    // handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // const Component = isSticky ? motion.section : "section";
+  // const motionProps = isSticky ? { style: { scale, opacity, zIndex: 10 } } : {};
 
   return (
-    <Component
+    <motion.section
       ref={elementRef}
-      className="sticky top-0 h-screen px-7 mx-auto w-full mt-5"
-      {...motionProps}
+      className="sticky top-0 h-screen w-full mt-5 px-7 mx-auto"
+      style={isSticky ? {scale, opacity, zIndex: 10} : {}}
+      // {...motionProps}
     >
       <div className="flex flex-col gap-2 mx-auto w-full text-left items-start">
         <SectionTitle
-        mainTitle={title}
-        subTitle={subTitle}
-        description={description}
-        width={""}
+          mainTitle={title}
+          subTitle={subTitle}
+          description={description}
+          width={""}
         />
       </div>
 
       <div className="mt-6 overflow-hidden border-3 border-stone-800 rounded-2xl">
         <img src={img} alt="" className="block w-full card_feature-img" />
       </div>
-    </Component>
+    </motion.section>
   );
 };
 

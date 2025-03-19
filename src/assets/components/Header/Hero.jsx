@@ -6,7 +6,7 @@ import { bitmapsHeader } from "./../../datas";
 function Hero() {
   return (
     <>
-      <section className="relative">
+      <section className="">
         <div className="relative z-40 mb-10">
           <div className="custom-container lg:pt-48 py-42 lg:pb-14 bg-0.15 text-center text-white">
             <div className="pointer-events-none relative z-40 w-full flex flex-col items-center">

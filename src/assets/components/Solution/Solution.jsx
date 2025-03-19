@@ -23,7 +23,7 @@ export default function Solution() {
               className="relative flex flex-col gap-11 w-full md:gap-24 
             *:flex *:justify-between"
             >
-              <div className=" absolute top-0 left-0 right-0 bottom-0">
+              <div className="aspect-auto absolute top-0 left-0 right-0 bottom-0">
                 <GraphDashLines />
               </div>
               <div className="">

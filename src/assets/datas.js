@@ -644,3 +644,20 @@ export { cutomizationInfo };
 export { communityComments };
 export { BitmapsFooter };
 export { footerListInfo };
+
+// // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       setIsSticky(entry.intersectionRatio == 1);
+  //     },
+  //     {
+  //       root: null,
+  //       rootMargin: '0px 0px 0px 0px', // منطبق با top: 0 در استایل sticky
+  //       threshold: [0, 1]
+  //     }
+  //   );
+
+  //   if (elementRef.current) observer.observe(elementRef.current);
+    
+  //   return () => observer.disconnect();
+  // }, []);
