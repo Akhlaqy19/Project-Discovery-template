@@ -5,7 +5,7 @@ function ScanBoxToolkits({name, situate, code, score, img}) {
     <>
       <div className="bg-base-2 border border-black">
         <div className="">
-          <img src={`/icons/toolkits-for-vulnerability/${img}.svg`} alt="" className="size-6"/>
+          <img src={`/icons/toolkits-for-vulnerability/${img}`} alt="" className="size-6"/>
         </div>
         <div className="mt-1">
           <h5 className="text-white text-lg font-light tracking-xs">

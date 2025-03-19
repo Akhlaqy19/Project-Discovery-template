@@ -1,6 +1,6 @@
 const usersRated = 101.4;
 
-const bitmapData = [
+const bitmapsHeader = [
   {
     id: 1,
     yAxis: "top-[32%]",
@@ -30,47 +30,47 @@ const bitmapData = [
 const sliderLogosInfo = [
   {
     id: 1,
-    src: "ibm",
+    src: "ibm.svg",
   },
   {
     id: 2,
-    src: "amplify",
+    src: "amplify.svg",
   },
   {
     id: 3,
-    src: "bytedance",
+    src: "bytedance.svg",
   },
   {
     id: 4,
-    src: "chipotle",
+    src: "chipotle.svg",
   },
   {
     id: 5,
-    src: "elastic",
+    src: "elastic.svg",
   },
   {
     id: 6,
-    src: "fastly",
+    src: "fastly.svg",
   },
   {
     id: 7,
-    src: "netflix",
+    src: "netflix.svg",
   },
   {
     id: 8,
-    src: "paddle",
+    src: "paddle.svg",
   },
   {
     id: 9,
-    src: "vanta",
+    src: "vanta.svg",
   },
   {
     id: 10,
-    src: "observa",
+    src: "observa.svg",
   },
   {
     id: 11,
-    src: "salesforce",
+    src: "salesforce.svg",
   },
 ];
 
@@ -110,42 +110,42 @@ const attackServicesInfos = [
     id: 1,
     domain: "app.hooli.com",
     port: 21,
-    techs: ["php-logo", "nextjs"],
+    techs: ["php-logo.svg", "nextjs.svg"],
     ip: "193.127.236",
   },
   {
     id: 2,
     domain: "staging.hooli.com",
     port: 110,
-    techs: ["amazon-web-services", "kubernetes"],
+    techs: ["amazon-web-services.svg", "kubernetes.svg"],
     ip: "45.182.184",
   },
   {
     id: 3,
     domain: "ftp.hooli.com",
     port: 21,
-    techs: ["amazon-web-services", "cloudflare", "kubernetes"],
+    techs: ["amazon-web-services.svg", "cloudflare.svg", "kubernetes.svg"],
     ip: "196.88.248",
   },
   {
     id: 4,
     domain: "dev.hooli.com",
     port: 23,
-    techs: ["cloudflare", "google-cloud"],
+    techs: ["cloudflare.svg", "google-cloud.svg"],
     ip: "5.242.113",
   },
   {
     id: 5,
     domain: "api.hooli.com",
     port: 21,
-    techs: ["fastly", "nextjs"],
+    techs: ["fastly.svg", "nextjs.svg"],
     ip: "238.147.26",
   },
   {
     id: 6,
     domain: "breamhall.hooli.com",
     port: 25,
-    techs: ["php-logo", "fastly", "cloudflare"],
+    techs: ["php-logo.svg", "fastly.svg", "cloudflare.svg"],
     ip: "148.154.199",
   },
 ];
@@ -159,7 +159,7 @@ const toolkitsInfos = [
     situate: "Path Traversal",
     code: "CVE-2023-2825",
     score: 7.5,
-    img: "gitlab-sm",
+    img: "gitlab-sm.svg",
   },
   {
     id: 2,
@@ -167,7 +167,7 @@ const toolkitsInfos = [
     situate: "Code Execution",
     code: "CVE-2023-34362",
     score: 9.8,
-    img: "moveit-transfer",
+    img: "moveit-transfer.svg",
   },
   {
     id: 3,
@@ -175,7 +175,7 @@ const toolkitsInfos = [
     situate: "Code Execution",
     code: "CVE-2022-0543",
     score: 10,
-    img: "redis",
+    img: "redis.svg",
   },
   {
     id: 4,
@@ -183,7 +183,7 @@ const toolkitsInfos = [
     situate: "Code Execution",
     code: "CVE-2023-20887",
     score: 9.8,
-    img: "vmware",
+    img: "vmware.svg",
   },
   {
     id: 5,
@@ -191,7 +191,7 @@ const toolkitsInfos = [
     situate: "Command Injection",
     code: "CVE-2022-36804",
     score: 8.8,
-    img: "atlassian",
+    img: "atlassian.svg",
   },
 ];
 
@@ -371,10 +371,6 @@ const rowAlertBoxInfos = [
   },
 ];
 
-
-
-
-
 //////////////////////////////////////
 // آرایه‌ای از عناوین با شناسه‌ها و برچسب‌ها
 const vulnerabilityInfo = [
@@ -424,48 +420,46 @@ const vulnerabilityInfo = [
   },
 ];
 
-
 const integrationBoxesInfo = [
   {
     id: 1,
     title: "Alerting",
     caption:
       "Receive notifications about the scans and discovery in your workspace.",
-    images: ["slack", "teams", "webhook", "email"],
+    images: ["slack.svg", "teams.svg", "webhook.svg", "email.svg"],
   },
   {
     id: 2,
     title: "Ticketing",
     caption: "Automatically create tickets when new vulnerabilities are found.",
-    images: ["jira", "github", "gitlab-lg", "linear"],
+    images: ["jira.svg", "github.svg", "gitlab-lg.svg", "linear.svg"],
   },
   {
     id: 3,
     title: "API",
     caption:
       "Automate all platform features through our API for custom workflows.",
-    images: ["api"],
+    images: ["api.svg"],
   },
 ];
 
-
-const communityInfo = [
+const communityPoweredInfo = [
   {
     id: 1,
     color: "critical",
-    img: "danger-sign",
+    img: "danger-sign.svg",
     text: "Vulnerability announced — ",
   },
   {
     id: 2,
     color: "high",
-    img: "timer",
+    img: "timer.svg",
     text: "Nuclei template created — ",
   },
   {
     id: 3,
     color: "info",
-    img: "tick-green",
+    img: "tick-green.svg",
     text: "Vulnerability detected — Alert sent in",
   },
 ];
@@ -506,24 +500,23 @@ const issueInfos = [
 const cutomizationInfo = [
   {
     id: 1,
-    img: "circle",
+    img: "circle.svg",
     title: "Real world simulation",
     text: "Run the vulnerability tests as an attacker would to exploit a given vulnerability. Capture full logs behind a given test to triage faster for the team.",
   },
   {
     id: 2,
-    img: "stars",
+    img: "stars.svg",
     title: "AI-powered editor",
     text: "Use our AI-powered vulnerability automation editor to convert your internal vulnerability data into an automated detection pipeline.",
   },
   {
     id: 3,
-    img: "confirm",
+    img: "confirm.svg",
     title: "Supports 6 protocols",
     text: "Nuclei, built by our team, supports over 6 protocols as well as code protocols, so you can basically stitch almost any kind of vulnerability.",
   },
 ];
-
 
 const communityComments = [
   {
@@ -568,8 +561,76 @@ const communityComments = [
   },
 ];
 
+const BitmapsFooter = [
+  {
+    id: 1,
+    yAxis: "top-[42%]",
+    xAxis: "left-[4%]",
+    size: "size-15",
+    scale: "scale-90",
+    img: "1.svg",
+  },
+  {
+    id: 2,
+    yAxis: "top-[6.5%]",
+    xAxis: "right-[22.5%]",
+    size: "size-15",
+    scale: "scale-80",
+    img: "2.svg",
+  },
+  {
+    id: 3,
+    yAxis: "top-[20%]",
+    xAxis: "right-[9.2%]",
+    size: "size-15",
+    scale: "scale-70",
+    img: "3.svg",
+  },
+];
+
+const footerListInfo = [
+  [
+    {
+      id: 1,
+      header: "Platform",
+      items: [
+        "ProjectDiscovery",
+        "Features",
+        "Solutions",
+        "Change log",
+        "Pricing",
+      ],
+    },
+    {
+      id: 2,
+      header: "Open Source",
+      items: [
+        "Nuclei",
+        "Nuclei Templates",
+        "Subfinder",
+        "HTTPx",
+        "Naabu",
+        "CVEmap",
+        "All tools",
+      ],
+    },
+  ],
+  [
+    {
+      id: 3,
+      header: "Resources",
+      items: ["Docs", "Blog", "Community", "Pioneers", "Support"],
+    },
+    {
+      id: 4,
+      header: "Company",
+      items: ["About", "Careers", "Security", "Privacy", "Terms", "Contact"],
+    },
+  ],
+];
+
 export { usersRated };
-export { bitmapData };
+export { bitmapsHeader };
 export { sliderLogosInfo };
 export { featureInfos };
 export { attackServicesInfos };
@@ -577,7 +638,9 @@ export { toolkitsInfos };
 export { rowAlertBoxInfos };
 export { vulnerabilityInfo };
 export { integrationBoxesInfo };
-export { communityInfo };
+export { communityPoweredInfo };
 export { issueInfos };
 export { cutomizationInfo };
 export { communityComments };
+export { BitmapsFooter };
+export { footerListInfo };

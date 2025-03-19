@@ -1,7 +1,7 @@
 import React from "react";
 import Monitor from "./../Monitor";
 import Bitmap from "./../Bitmap";
-import {bitmapData} from "./../../datas";
+import { bitmapsHeader } from "./../../datas";
 
 function Hero() {
   return (
@@ -27,24 +27,11 @@ function Hero() {
               </div>
             </div>
             <div className="pointer-events-none absolute left-0 top-0 z-50 hidden h-full w-full md:block">
-              {/* <Bitmap
-                top={`[32%]`}
-                left={`left-[7%]`}
-                right={``}
-                size={`w-14 h-18`}
-                scale={``}
-                img={bitmap1}
-              />
-              <Bitmap top={`[52%]`} left={``} right={`right-[15.5%]`} size={`size-12`} scale={`scale-75`} img={bitmap2}/>
-              <Bitmap top={`[20%]`} left={``} right={`right-[4.5%]`} size={`size-8`} scale={`scale-50`} img={bitmap3}/> */}
-
-              {
-                bitmapData.map(data => (
-                  <div key={data.id}>
-                    <Bitmap {...data}/>
-                  </div>
-                ))
-              }
+              {bitmapsHeader.map((data) => (
+                <div key={data.id}>
+                  <Bitmap {...data} />
+                </div>
+              ))}
             </div>
           </div>
         </div>

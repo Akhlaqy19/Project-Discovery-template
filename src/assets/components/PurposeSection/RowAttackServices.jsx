@@ -15,7 +15,7 @@ function RowAttackServices({domain, port, techs, ip}) {
             {techs.map((tech, i) => (
               <img 
               key={i} 
-              src={`/icons/techs/${tech}.svg`} 
+              src={`/icons/techs/${tech}`} 
               alt={`${tech} technology for attack services`} />
             ))}
           </div>

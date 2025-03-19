@@ -8,7 +8,7 @@ import { usersRated } from "../../datas";
 function Navbar() {
   const handleHover = () => {
     confetti({
-      particleCount: 300,
+      particleCount: 400,
       spread: 40,
       origin: { y: 0.075, x: 0.18 },
       colors: ["#ffff00", "#ff0000"], // رنگ‌های دلخواه

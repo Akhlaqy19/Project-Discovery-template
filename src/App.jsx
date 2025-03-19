@@ -10,8 +10,7 @@ import Integration from "./assets/components/Integration/Integration";
 import CommunityPowered from "./assets/components/CommunityPowered/CommunityPowered";
 import Customization from './assets/components/Customization/Customization';
 import Community from "./assets/components/Community/Community";
-import Footer from './assets/components/Footer/Footer';
-import './App.css';
+import End from './assets/components/End/End';
 
 function App() {
 
@@ -27,11 +26,11 @@ function App() {
           <Solution />
           <VulnerabilityDetails />
           <Integration />
-          <CommunityPowered/>
+          <CommunityPowered />
           <Customization />
-          <Community/>
+          <Community />
         </main>
-        <Footer />
+        <End />
       </div>
     </>
   );

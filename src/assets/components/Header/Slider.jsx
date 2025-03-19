@@ -37,7 +37,7 @@ const SliderBase = () => {
         {sliderLogosInfo.map((logo) => (
           <div key={logo.id} className="bg-midnight">
             <img
-              src={`/icons/header-logos/${logo.src}.svg`}
+              src={`/icons/header-logos/${logo.src}`}
               alt={`${logo.src.toUpperCase()} company logo`}
               className="bg-midnight mx-auto"
             />

@@ -100,8 +100,11 @@ input {
 }
 
 button {
-	@apply outline-0;
+	@apply outline-0 transition-colors duration-300;
+	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 }
+
+
 
 .custom-container {
 	@apply relative z-50 mx-auto w-full max-w-384 lg:px-8;
@@ -155,8 +158,24 @@ header {
 	 rgba(0, 0, 0, 0));
 }
 
+.input {
+	@apply h-auto rounded-lg border py-3 px-4
+	transition-colors duration-300;
+	/* --tw-border-opacity: 1;
+	border-color: rgb(34 34 34 / var(--tw-border-opacity, 1)); */
+	--tw-bg-opacity: 1;
+	background-color: rgb(9 9 11 / var(--tw-bg-opacity, 1));
+	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+	/* animation: input-effect 0.5s ease-in-out; */
+	
+}
+
+/* @keyframes input-effect {
+	
+} */
+
 .slider {
-	animation: slider-marquee 35s 0s linear infinite;
+	animation: slider-marquee 28s linear infinite;
 }
 
 @keyframes slider-marquee {
@@ -322,13 +341,28 @@ opacity: 0.5;
 	100% {
 		transform: translateY(0);
 	}
-} 
-
-.overlay-back {
-	animation: animate-overlay-back 2s linear ease;
 }
 
-@keyframes animate-overlay-back {
+.fade-in {
+	animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+
+.overlay-back {
+	animation: animate-overlay 2s linear ease;
+}
+
+@keyframes animate-overlay {
 	0% {
 		opacity: 0;
 	}
@@ -383,4 +417,21 @@ opacity: 0.5;
 	bottom: var(--border-width);
 	left: var(--border-width); */
 	background: var(--overlay-color);
+}
+
+.animate-grid {
+	animation: grid 25s linear infinite;
+}
+
+@keyframes grid {
+	0% {
+		transform: translateY(-50%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.footer-lists-section {
+	@apply md:grid md:grid-cols-2 md:gap-8;
 }

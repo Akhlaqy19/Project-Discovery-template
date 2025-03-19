@@ -1,7 +1,6 @@
 import React from "react";
-// import imgBox from "/img/Forta.webp";
 import ExploitNotif from "./ExploitNotif";
-import { communityInfo } from "../../datas";
+import { communityPoweredInfo } from "../../datas";
 
 
 export default function CommunityPowered() {
@@ -81,7 +80,7 @@ export default function CommunityPowered() {
                     CVE-2024-0204
                   </p>
                 </div>
-                {communityInfo.map((data) => (
+                {communityPoweredInfo.map((data) => (
                   <div key={data.id}>
                     <ExploitNotif {...data} />
                   </div>
