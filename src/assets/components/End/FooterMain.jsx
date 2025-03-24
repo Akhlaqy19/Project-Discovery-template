@@ -34,19 +34,19 @@ export default function FooterMain() {
             <form className="mt-8 flex flex-col gap-3 sm:flex sm:max-w-md lg:mt-0">
               <input
                 id="email"
-                autocomplete="email"
+                autoComplete="email"
                 required=""
                 className="input autofill:bg-base w-full min-w-0 autofill:text-white
                sm:border-gray/40"
                 placeholder="Enter your email"
                 type="email"
-                value=""
+                // value=""
                 name="email"
               />
               <div className="w-full">
                 <button
                   type="submit"
-                  class="w-full rounded-md border border-sub-yellow bg-sub-yellow/10 
+                  className="w-full rounded-md border border-sub-yellow bg-sub-yellow/10 
                   p-2 text-sub-yellow hover:bg-sub-yellow/20"
                 >
                   Subscribe
