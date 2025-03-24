@@ -76,7 +76,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
-	@apply overflow-x-hidden;
+	/* @apply overflow-x-hidden; */
 }
 
 ol, ul {
@@ -128,7 +128,7 @@ button {
 
 
 header {
-	/* @apply bg-radial-[at_30%_30%_30%] from-zinc-900 via-neutral-950 to-stone-950; */
+	@apply bg-radial-[at_30%_30%_30%] from-zinc-900 via-neutral-950 to-stone-950;
 }
 
 

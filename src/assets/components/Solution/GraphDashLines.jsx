@@ -1,6 +1,33 @@
-import React from 'react'
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+
+gsap.registerPlugin(MotionPathPlugin);
 
 export default function GraphDashLines({}) {
+  const pathRefs = useRef([]); // برای نگهداری رفرنس مسیرها
+  const sparkRefs = useRef([]); // برای نگهداری رفرنس جرقه‌ها
+
+  useEffect(() => {
+    pathRefs.current.forEach((path, index) => {
+      const spark = sparkRefs.current[index];
+      // انیمیت حرکت جرقه روی مسیر
+      gsap.to(spark, {
+        duration: 3,
+        motionPath: {
+          path: path,
+          align: path,
+          autoRotate: true,
+          start: 0,
+          end: 1,
+        },
+        repeat: -1, // انیمیشن تکرارشونده
+        delay: Math.random() * 2, // تاخیر تصادفی برای شروع
+        ease: "power1.inOut",
+      });
+    });
+  }, []);
+
   return (
     <>
       <svg
@@ -36,14 +63,30 @@ export default function GraphDashLines({}) {
         <g clipPath="clip0_1_53" strokeDasharray="5,5">
           {/* up lines (left and right) */}
           <path
+            ref={(el) => (pathRefs.current[0] = el)}
             d="M32 -17C233.17 140.559 427.374 207.924 713 281M32 -17C233.17 140.559 427.374 207.924 713 281"
             stroke="url(#radial-gradient)"
             strokeWidth="2"
           />
+          <circle
+            ref={(el) => (sparkRefs.current[0] = el)}
+            cx="32"
+            cy="-17"
+            r="4"
+            fill="white"
+          />
           <path
+            ref={(el) => (pathRefs.current[1] = el)}
             d="M1392 -17C1191.42 140.559 997.788 207.924 713 281"
             stroke="url(#radial-gradient)"
             strokeWidth="2"
+          />
+          <circle
+            ref={(el) => (sparkRefs.current[1] = el)}
+            cx="32"
+            cy="-17"
+            r="4"
+            fill="white"
           />
 
           {/* center line */}
