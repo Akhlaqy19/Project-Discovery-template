@@ -1,4 +1,4 @@
-const usersRated = 101.6;
+const usersRated = 101.7;
 
 const bitmapsHeader = [
   {
