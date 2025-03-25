@@ -1,4 +1,4 @@
-const usersRated = 101.7;
+const usersRated = 101.8;
 
 const bitmapsHeader = [
   {
@@ -661,3 +661,5 @@ export { footerListInfo };
     
   //   return () => observer.disconnect();
   // }, []);
+  
+// import Particles, { initParticlesEngine } from "@tsparticles/react";

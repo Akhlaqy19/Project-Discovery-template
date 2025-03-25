@@ -23,12 +23,12 @@ function Navbar() {
     <>
       {/* wrapper */}
 
-      <nav className="">
+      <nav className="mx-auto">
         {/* navbar */}
         <div
           className="custom-container top-0 left-0 right-0 
         flex justify-between items-center mx-auto
-        px-8 py-4 leading-5 bg-black text-white lg:py-5
+        px-8 py-4 leading-5 bg-midnight/80 backdrop-blur-lg text-white lg:py-5
         "
         >
           {/* left / logo */}
@@ -92,7 +92,7 @@ function Navbar() {
               <a href="#">Sign in</a>
             </div>
 
-            <BtnSales height={""}/>
+            <BtnSales height={""} />
           </div>
         </div>
       </nav>

@@ -105,7 +105,6 @@ button {
 }
 
 
-
 .custom-container {
 	@apply relative z-50 mx-auto w-full max-w-384 lg:px-8;
 }
@@ -120,6 +119,14 @@ button {
 
 .glowBackground {
 	@apply bg-overlay relative block size-full overflow-hidden rounded-2xl;
+}
+
+.bg-line-grid-stroke {
+	background-image: url("/icons/squars.svg");
+}
+
+.bg-line-grid-gray {
+	background-image: url("/icons/gray-squars.svg");
 }
 
 .bg-custom-gradient {

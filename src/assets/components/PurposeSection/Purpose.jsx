@@ -8,7 +8,7 @@ function Purpose() {
 
   return (
     <>
-      <section className="relative z-40 px-7 mx-auto mt-120 max-w-7xl">
+      <section className="relative z-40 px-7 mx-auto mt-50 max-w-7xl">
         <div className="w-full">
           <div className="flex flex-col gap-3 items-start text-left my-6 py-10 w-full max-w-full mx-auto">
             <SectionTitle

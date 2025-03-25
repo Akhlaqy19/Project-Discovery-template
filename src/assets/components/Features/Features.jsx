@@ -49,11 +49,8 @@ const FeatureCardBase = ({
   return (
     <motion.section
       ref={ref}
-      style={{
-        scale: scale,
-        opacity: opacity,
-      }}
-      className="sticky top-0 h-screen w-full mt-5 px-7 mx-auto"
+      style={{scale, opacity}}
+      className="sticky top-0 h-screen w-full mt-0 px-7 mx-auto"
     >
       <div className="flex flex-col gap-2 mx-auto w-full text-left items-start">
         <SectionTitle

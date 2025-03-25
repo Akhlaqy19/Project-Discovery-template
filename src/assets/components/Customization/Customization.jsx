@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import SectionTitle from "./../SectionTitle";
 import IssueTitle from "./IssueTitle";
 import CutomizationInfo from "./CutomizationInfo";
+import CustomCodeRenderer from "./CustomCodeRenderer";
 import { issueInfos } from "./../../datas";
 import { cutomizationInfo } from "./../../datas";
 import { FaGithub } from "react-icons/fa";
@@ -61,18 +62,26 @@ export default function Customization() {
 
             <div className="relative max-h-137.5">
               <div className="h-full max-h-137.5 overflow-y-auto overflow-x-hidden px-6 pb-14">
-                <pre className="row-number">
-                  {Array.from(Array(rowsCount).keys()).map((rowNumber) => (
-                    <div key={rowNumber} className="table-row">
-                      <span
-                        className="table-cell select-none pr-4 text-right 
+                <pre className="row-number flex">
+                  <div className="">
+                    {Array.from(Array(rowsCount).keys()).map((rowNumber) => (
+                      <div key={rowNumber} className="table-row">
+                        <span
+                          className="table-cell select-none pr-4 text-right 
                       text-sm text-[#464A4D]"
-                      >
-                        {rowNumber + 1}
-                      </span>
-                      <div className="token-line table-cell text-sm leading-6 text-[#60a5fa]"></div>
-                    </div>
-                  ))}
+                        >
+                          {rowNumber + 1}
+                        </span>
+                        {/* <div className="token-line table-cell text-sm leading-6 text-[#60a5fa]">
+
+                      </div> */}
+                      </div>
+                    ))}
+                  </div>
+                  {/* <span className="text-white"></span> */}
+                  <CustomCodeRenderer 
+                  code="id: CVE-2024"
+                  language="english"/>
                 </pre>
               </div>
 
@@ -95,13 +104,11 @@ export default function Customization() {
         </div>
 
         <div className="mt-20 grid grid-cols-1 gap-14 sm:grid-cols-3">
-          {
-            cutomizationInfo.map(data => (
-              <div key={data.id}>
-                <CutomizationInfo {...data}/>
-              </div>
-            ))
-          }
+          {cutomizationInfo.map((data) => (
+            <div key={data.id}>
+              <CutomizationInfo {...data} />
+            </div>
+          ))}
         </div>
       </section>
     </>

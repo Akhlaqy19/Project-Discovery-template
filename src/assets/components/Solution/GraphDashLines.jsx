@@ -28,7 +28,7 @@ export default function GraphDashLines() {
 
         // تعیین تاخیر تصادفی اولیه و همچنین تاخیر بین تکرارها (repeatDelay)
         const initialDelay = Math.random() * 20;
-        const cycleDelay = Math.random() * 8;
+        const cycleDelay = Math.random() * 10;
 
         // موقعیت (position parameter) انیمیشن هر هاله به صورت افست زمانی (مثلاً index * 0.8 ثانیه)
         // اجرای انیمیشن به‌طور مستقل با delay تصادفی
