@@ -112,10 +112,7 @@ function Monitor() {
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             placeholder="Enter your domain to get started"
-            className={`input relative flex w-full z-30 h-12 px-4 py-3
-             text-gray caret-yellow
-             placeholder:indent-3 placeholder:text-white/30
-            hover:border-gray/50`}
+            className={`input relative flex w-full z-30 h-12 px-4 py-3 text-gray caret-yellow placeholder:indent-3 placeholder:text-white/30`}
           />
 
           {isBtnHovered && !isValidUrl(url) && (
@@ -140,7 +137,7 @@ function Monitor() {
           <button
             ref={btnRef}
             className={`
-              btn-monitor relative z-30 inline-flex items-center justify-center w-22 h-12 px-4 py-2 text-sm font-semibold text-sub-yellow border border-sub-yellow overflow-hidden rounded-md cursor-not-allowed sm:w-auto bg-sub-yellow/20 shadow-sm backdrop-blur-sm tracking-xs nav-effect hover:text-midnight hover:bg-sub-yellow`}
+              btn-monitor relative z-30 inline-flex items-center justify-center w-22 h-12 px-4 py-2 text-sm font-semibold text-sub-yellow border border-sub-yellow overflow-hidden rounded-md cursor-not-allowed sm:w-auto bg-sub-yellow/20 shadow-sm backdrop-blur-sm tracking-xs hover:text-midnight hover:bg-sub-yellow`}
             // دکمه تنها در صورتی فعال می‌شود که URL وارد شده معتبر باشد
             disabled={!isValidUrl(url)}
             onMouseOver={() => setIsBtnHovered(true)}

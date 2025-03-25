@@ -12,8 +12,6 @@ export default function GraphDashLines() {
   haloPathRefs.current = [];
 
   useEffect(() => {
-    // ایجاد یک timeline برای انیمیشن‌ها با تکرار بی‌نهایت
-    const tl = gsap.timeline({ repeat: -1 });
 
     // برای هر مسیر خط‌چین و هاله‌ی متناظر، انیمیشن اضافه می‌کنیم
     dashPathRefs.current.forEach((dashPath, index) => {
@@ -28,17 +26,20 @@ export default function GraphDashLines() {
           strokeDashoffset: 0,
         });
 
-        // اضافه کردن انیمیشن به timeline
-        // موقعیت (position parameter) انیمیشن هر هاله به صورت افست زمانی (مثلاً index * 0.5 ثانیه)
-        tl.to(
-          haloPath,
-          {
-            strokeDashoffset: -pathLength,
-            duration: 0.7,
-            ease: "power1.inOut",
-          },
-          index // فاصله زمانی بین شروع انیمیشن‌های هاله‌ها
-        );
+        // تعیین تاخیر تصادفی اولیه و همچنین تاخیر بین تکرارها (repeatDelay)
+        const initialDelay = Math.random() * 20;
+        const cycleDelay = Math.random() * 8;
+
+        // موقعیت (position parameter) انیمیشن هر هاله به صورت افست زمانی (مثلاً index * 0.8 ثانیه)
+        // اجرای انیمیشن به‌طور مستقل با delay تصادفی
+        gsap.to(haloPath, {
+          strokeDashoffset: -pathLength,
+          duration: 1, // مدت زمان ثابت انیمیشن
+          repeat: -1, // تکرار بی‌نهایت
+          delay: initialDelay,
+          repeatDelay: cycleDelay,
+          ease: "power1.inOut",
+        });
       }
     });
   }, []);
@@ -89,10 +90,10 @@ export default function GraphDashLines() {
         <path
           ref={(el) => (haloPathRefs.current[0] = el)}
           d="M32 -17C233.17 140.559 427.374 207.924 713 281"
-          stroke="yellow"
+          stroke="oklch(0.905 0.182 98.111)"
           strokeWidth="4"
-          strokeLinecap="round"
-          opacity="0.5"
+          strokeLinecap="square"
+          opacity="0.8"
         />
 
         {/* دومین مسیر خط‌چین و هاله مربوطه */}
@@ -105,56 +106,71 @@ export default function GraphDashLines() {
         <path
           ref={(el) => (haloPathRefs.current[1] = el)}
           d="M1392 -17C1191.42 140.559 997.788 207.924 713 281"
-          stroke="yellow"
+          stroke="oklch(0.905 0.182 98.111)"
           strokeWidth="4"
-          strokeLinecap="round"
-          opacity="0.5"
+          strokeLinecap="square"
+          opacity="0.8"
         />
 
         {/* مسیر میانی */}
         <path
           ref={(el) => (dashPathRefs.current[2] = el)}
-          d="M17 289H1407"
+          d="M17 289H712"
           stroke="url(#radial-gradient)"
           strokeWidth="2"
         />
         <path
           ref={(el) => (haloPathRefs.current[2] = el)}
-          d="M17 289H1407"
-          stroke="yellow"
+          d="M17 289H712"
+          stroke="oklch(0.905 0.182 98.111)"
           strokeWidth="4"
-          strokeLinecap="round"
-          opacity="0.5"
+          strokeLinecap="square"
+          opacity="0.8"
         />
 
-        {/* مسیرهای پایین */}
         <path
           ref={(el) => (dashPathRefs.current[3] = el)}
-          d="M32 595C233.17 437.441 427.374 370.076 713 297M32 595C233.17 437.441 427.374 370.076 713 297"
+          d="M1407 289H712"
           stroke="url(#radial-gradient)"
           strokeWidth="2"
         />
         <path
           ref={(el) => (haloPathRefs.current[3] = el)}
-          d="M32 595C233.17 437.441 427.374 370.076 713 297M32 595C233.17 437.441 427.374 370.076 713 297"
-          stroke="yellow"
+          d="M1407 289H712"
+          stroke="oklch(0.905 0.182 98.111)"
           strokeWidth="4"
-          strokeLinecap="round"
-          opacity="0.5"
+          strokeLinecap="square"
+          opacity="0.8"
         />
+
+        {/* مسیرهای پایین */}
         <path
           ref={(el) => (dashPathRefs.current[4] = el)}
-          d="M1392 595C1191.42 437.441 997.788 370.076 713 297"
+          d="M32 595C233.17 437.441 427.374 370.076 713 297M32 595C233.17 437.441 427.374 370.076 713 297"
           stroke="url(#radial-gradient)"
           strokeWidth="2"
         />
         <path
           ref={(el) => (haloPathRefs.current[4] = el)}
-          d="M1392 595C1191.42 437.441 997.788 370.076 713 297"
-          stroke="yellow"
+          d="M32 595C233.17 437.441 427.374 370.076 713 297M32 595C233.17 437.441 427.374 370.076 713 297"
+          stroke="oklch(0.905 0.182 98.111)"
           strokeWidth="4"
-          strokeLinecap="round"
-          opacity="0.5"
+          strokeLinecap="square"
+          opacity="0.8"
+        />
+        <path
+          ref={(el) => (dashPathRefs.current[5] = el)}
+          d="M1392 595C1191.42 437.441 997.788 370.076 713 297"
+          stroke="url(#radial-gradient)"
+          strokeWidth="2"
+        />
+        <path
+          ref={(el) => (haloPathRefs.current[5] = el)}
+          d="M1392 595C1191.42 437.441 997.788 370.076 713 297"
+          stroke="oklch(0.905 0.182 98.111)"
+          strokeWidth="4"
+          strokeLinecap="square"
+          opacity="0.8"
         />
 
         {/* clipPath برای برش ناحیه */}

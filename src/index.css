@@ -133,8 +133,8 @@ header {
 
 
 .nav-effect {
-	@apply transition-all delay-50 duration-275 ease-in-out;
-	 /* **:transition **:delay-50 **:duration-275 **:ease-in-out; */
+	@apply transition-all delay-50 duration-275 ease-in-out
+	 **:transition **:delay-50 **:duration-275 **:ease-in-out;
 }
 
 .box-title-effect {
@@ -164,12 +164,18 @@ header {
 	--tw-bg-opacity: 1;
 	background-color: rgb(9 9 11 / var(--tw-bg-opacity, 1));
 	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-	/* animation: input-effect 0.5s ease-in-out; */
-	
+}
+
+.input:hover {
+	@apply border-gray/50;
+}
+
+.input:focus {
+	@apply border-gray/50;
 }
 
 .slider {
-	animation: slider-marquee 24s linear infinite;
+	animation: slider-marquee 30s linear infinite;
 }
 
 @keyframes slider-marquee {
@@ -230,6 +236,10 @@ header {
 .bg-base-2 {
 	border: 1px solid hsla(0, 0%, 100%, .05);
 	background: linear-gradient(135deg, hsla(0, 0%, 100%, .05) 10%, hsla(0, 0%, 100%, .03) 40%), #09090b;
+}
+
+.btn-monitor {
+	@apply transition-all delay-50 duration-275 ease-in-out;
 }
 
 .bg-graph-gradient {
