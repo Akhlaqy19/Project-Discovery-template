@@ -8,7 +8,7 @@ function Slider() {
         <div className="w-full opacity-30 grayscale">
           <div
             className="custom-container-sm swiper-container py-2
-            px-8 flex w-full flex-col items-center justify-center *:items-center mx-auto text-center overflow-hidden"
+            px-8 w-full flex-col center *:items-center mx-auto text-center overflow-hidden"
           >
             <div
               className="group transform-none opacity-100 

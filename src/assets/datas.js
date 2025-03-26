@@ -446,8 +446,35 @@ const integrationBoxesInfo = [
 const communityPoweredInfo = [
   {
     id: 1,
+    img: "Forta.webp",
+    mainFid: "Fortra GoAnywhere MFT - Authentication Bypass",
+    mainFidCode: "0204",
+    fids: ["01/23/24 at 12:43 PM", "01/23/2024 at 1:05 PM", "22 min"],
+  },
+  {
+    id: 2,
+    img: "ACSC.webp",
+    mainFid: "Unauthenticated Command Injection In Progress Kemp LoadMaster",
+    mainFidCode: "1212",
+    fids: [
+      "03/19/2024 at 9:00 AM",
+      "03/19/2024 at 12:49 PM",
+      "3 hr and 49 min",
+    ],
+  },
+  {
+    id: 3,
+    img: "ConnectWise.webp",
+    mainFid: "ConnectWise ScreenConnect 23.9.7 - Authentication Bypass",
+    mainFidCode: "1709",
+    fids: ["2/21/2024 at 8:59 AM", "02/21/2024 at 9:29 AM", "30 min"],
+  },
+];
+
+const communityPoweredFidsInfo = [
+  {
+    id: 1,
     color: "critical",
-    img: "danger-sign.svg",
     text: "Vulnerability announced — ",
   },
   {
@@ -459,7 +486,6 @@ const communityPoweredInfo = [
   {
     id: 3,
     color: "info",
-    img: "tick-green.svg",
     text: "Vulnerability detected — Alert sent in",
   },
 ];
@@ -639,6 +665,7 @@ export { rowAlertBoxInfos };
 export { vulnerabilityInfo };
 export { integrationBoxesInfo };
 export { communityPoweredInfo };
+export { communityPoweredFidsInfo };
 export { issueInfos };
 export { cutomizationInfo };
 export { communityComments };
@@ -663,3 +690,17 @@ export { footerListInfo };
   // }, []);
   
 // import Particles, { initParticlesEngine } from "@tsparticles/react";
+
+// Button
+// Chip
+// Card
+// Paper
+// Link
+// Pagination
+// Grid v2
+
+/* <div className="
+ pointer-events-none absolute inset-0 rounded-[inherit] [border:calc(var(--border-width)*1px)_solid_transparent] ![mask-clip:padding-box,
+border-box] ![mask-composite:intersect] [mask:linear-gradient(transparent, transparent),
+linear-gradient(white, white)] after:absolute after:aspect-square after:w-10 after:animate-border-beam after:[animation-delay:-0s] after:[background:linear-gradient(to_left, #FFF, #EEF35F, transparent)] after:[offset-anchor:90%_50%] after:[offset-path:rect(0_auto_auto_0_round_40px))]"
+></div> */

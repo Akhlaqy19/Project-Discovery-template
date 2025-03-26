@@ -1,35 +1,44 @@
-import React from "react";
-import Particles from "@tsparticles/react";
+import React, { useEffect, useState } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 
 export default function StarryBackground() {
+
+     const [init, setInit] = useState(false);
+
+     // this should be run only once per application lifetime
+     useEffect(() => {
+       initParticlesEngine(async (engine) => {
+         // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+         // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+         // starting from v2 you can add only the features you need reducing the bundle size
+         //await loadAll(engine);
+         //await loadFull(engine);
+         await loadSlim(engine);
+         //await loadBasic(engine);
+       }).then(() => {
+         setInit(true);
+       });
+     }, []);
+
   return (
     <>
+     { init && 
       <Particles
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: 0,
-        }}
         options={{
-          background: {
-            color: { value: "#000" }, // رنگ پس‌زمینه
-          },
           particles: {
             number: {
-              value: 500,
+              value: 30,
               density: {
                 enable: true,
-                area: 800,
+                area: 300,
               },
             },
             color: {
-              value: "#ffff00",
+              value: "#b4b4bb",
             },
             size: {
-              value: 8, // اندازه کوچک‌تر
+              value: 1,
             },
             move: {
               enable: false,
@@ -40,6 +49,7 @@ export default function StarryBackground() {
           },
         }}
       />
+      }
     </>
   );
 }

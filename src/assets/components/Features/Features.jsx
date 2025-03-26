@@ -4,6 +4,7 @@ import { featureInfos } from "./../../datas";
 import { motion, useTransform, useScroll, useInView } from "framer-motion";
 
 function Features() {
+
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -49,7 +50,7 @@ const FeatureCardBase = ({
   return (
     <motion.section
       ref={ref}
-      style={{scale, opacity}}
+      style={{ scale, opacity }}
       className="sticky top-0 h-screen w-full mt-0 px-7 mx-auto"
     >
       <div className="flex flex-col gap-2 mx-auto w-full text-left items-start">
@@ -63,7 +64,7 @@ const FeatureCardBase = ({
       <motion.img
         src={img}
         alt=""
-        className="block mt-6 overflow-hidden border-3 border-stone-800 rounded-2xl card_feature-img"
+        className="block mt-6 w-full overflow-hidden border-3 border-stone-800 rounded-2xl card_feature-img"
       />
     </motion.section>
   );

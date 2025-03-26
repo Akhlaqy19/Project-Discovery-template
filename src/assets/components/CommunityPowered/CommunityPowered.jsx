@@ -1,9 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import ExploitNotif from "./ExploitNotif";
+
 import { communityPoweredInfo } from "../../datas";
+import { communityPoweredFidsInfo } from "../../datas";
+import { Pagination, PaginationItem } from "@mui/material";
+import { motion } from "framer-motion";
 
 
 export default function CommunityPowered() {
+  const [page, setPage] = useState(1);
+  const handlePageChange = (event, value) => setPage(value);
+
+  const PaginationButtonStyle = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "44px",
+    height: "50px",
+    margin: "0",
+    color: "white",
+    fontSize: "17px",
+    fontWeight: "500",
+    border: "1px solid rgb(34, 34, 34)", // سفارشی‌سازی استایل
+    backgroundColor: "rgb(17, 17, 18)",
+    "&:hover": {
+      backgroundColor: "rgb(9, 9, 11)",
+    },
+    paddingInline: "16px",
+    paddingBlock: "12px",
+  };
+
   return (
     <>
       <section className="custom-container py-20">
@@ -12,32 +38,24 @@ export default function CommunityPowered() {
             <div className="relative h-auto w-full overflow-hidden rounded-xl xl:h-full">
               <div className="relative size-full">
                 <div className="absolute left-0 top-0 z-30 size-full bg-midnight/60 hover:overlay-back"></div>
+
                 <div className="overlay absolute left-[38%] top-[44%] z-40">
                   <a
-                    className="relative inline-flex items-center gap-x-1.5 overflow-hidden rounded-md px-4 py-2 text-sm tracking-xs shadow-sm border border-sub-yellow text-sub-yellow font-medium bg-sub-yellow/20 hover:text-midnight hover:bg-sub-yellow backdrop-blur-sm"
+                    className="btn-monitor relative inline-flex items-center gap-x-1.5 overflow-hidden rounded-md px-4 py-2 text-sm tracking-xs shadow-sm border border-sub-yellow text-sub-yellow font-medium bg-sub-yellow/20 hover:text-midnight hover:bg-sub-yellow backdrop-blur-sm"
                     target="_self"
                     href="https://cloud.projectdiscovery.io/public/CVE-2024-0204"
                   >
                     View template
                     <div className="rounded-md">
-                      <div
-                        className="pointer-events-none absolute inset-0 rounded-[inherit] 
-                        [border:calc(var(--border-width)*1px)_solid_transparent] ![mask-clip:padding-box,border-box] 
-                        ![mask-composite:intersect] 
-                        [mask:linear-gradient(transparent,transparent),linear-gradient(white,white)] after:absolute after:aspect-square 
-                        after:w-10 after:animate-border-beam 
-                        after:[animation-delay:-0s] 
-                        after:[background:linear-gradient(to_left,#FFF,#EEF35F,transparent)] 
-                        after:[offset-anchor:90%_50%] 
-                        after:[offset-path:rect(0_auto_auto_0_round_40px))]"
-                        // style="--size: 40; --duration: 15; --anchor: 90; --color-from: #ffffff; --color-to: #EEF35F; --delay: -0s;"
-                      ></div>
+                      <div className="overlay-layout1"></div>
                     </div>
                   </a>
                 </div>
 
-                <img
-                  src="/img/Forta.webp"
+                <motion.img
+                  initial={{ opacity: 0, y: "4%" }}
+                  animate={{ opacity: 1, y: 0 }}
+                  src={`/img/${communityPoweredInfo[page - 1].img}`}
                   alt="hero"
                   className="relative z-20 h-auto w-full text-transparent lg:mt-auto xl:mt-0 xl:h-full"
                 />
@@ -52,19 +70,22 @@ export default function CommunityPowered() {
                 </p>
               </div>
               <div>
-                <h3 className="title-section title-gradient">
+                <h3 className="section-gradient-title xl:max-w-139">
                   The fastest exploits feed on the Internet
                 </h3>
               </div>
               <div>
-                <p className="text-base xl:text-lg text-gray font-light tracking-xs w-full">
+                <p className="text-left max-w-140.5 text-base xl:text-lg text-gray font-light tracking-xs w-full">
                   ProjectDiscovery is powered by our Nuclei open source project.
                   A global security community that streamlines exploits in
                   real-time.
-                  <span className="block font-semibold">
-                    Nuclei is used by Fortune 500 organizations, security firms,
-                    and government-led agencies
-                  </span>
+                  <strong className="font-semibold">
+                    <span className="inline-block -translate-x-0.25">
+                      Nuclei
+                    </span>{" "}
+                    is used by Fortune 500 organizations, security firms, and
+                    government-led agencies&nbsp;
+                  </strong>
                   to tackle the emerging exploitable vulnerabilities.
                 </p>
               </div>
@@ -74,15 +95,18 @@ export default function CommunityPowered() {
               <div className="relative z-30 flex w-full flex-col gap-4">
                 <div className="bg-base-2 z-30 w-full rounded-xl bg-custom-gradient px-5 py-2 transform-none">
                   <p className="font-light text-sm md:text-base w-full leading-6 tracking-normal text-white">
-                    Fortra GoAnywhere MFT - Authentication Bypass
+                    {communityPoweredInfo[page - 1].mainFid}
                   </p>
                   <p className="font-light text-sm text-gray w-full leading-5 tracking-normal">
-                    CVE-2024-0204
+                    CVE-2024-{communityPoweredInfo[page - 1].mainFidCode}
                   </p>
                 </div>
-                {communityPoweredInfo.map((data) => (
+                {communityPoweredFidsInfo.map((data, i) => (
                   <div key={data.id}>
-                    <ExploitNotif {...data} />
+                    <ExploitNotif
+                      {...data}
+                      fidsData={communityPoweredInfo[page - 1].fids[i]}
+                    />
                   </div>
                 ))}
               </div>
@@ -93,33 +117,33 @@ export default function CommunityPowered() {
         <div className="absolute left-0 top-0 z-20 size-full">
           <div className="custom-container-sm relative z-40 mx-auto size-full px-3 py-2 lg:px-8">
             <div className="relative overflow-hidden bg-base size-full rounded-2xl border">
-              <div
-                className="
-                pointer-events-none
-                absolute 
-                inset-0 
-                rounded-[inherit] 
-                [border:calc(var(--border-width)*1px)_solid_transparent] 
-                ![mask-clip:padding-box,border-box] 
-                ![mask-composite:intersect] 
-                [mask:linear-gradient(transparent,transparent),linear-gradient(white,white)] after:absolute after:aspect-square 
-                after:w-75 
-                after:animate-border-beam 
-                after:[animation-delay:0s]
-                after:[background:linear-gradient(to_left, #111112, #444444, transparent)] 
-                after:[offset-anchor:90%_50%] 
-                after:[offset-path:rect(0_auto_auto_0_round_300*1px))]"
-              ></div>
+              <div className={`overlay-layout2`}></div>
             </div>
             <div className="absolute -bottom-5 right-12 z-30 w-auto md:right-24">
               <div className="flex items-center gap-0">
-                <PaginationNumber number="1" rounded="rounded-l-xl" border="" />
-                <PaginationNumber
-                  number="2"
-                  rounded=""
-                  border="border-x-none"
+                <Pagination
+                  count={3} // تعداد کل صفحات
+                  page={page} // صفحه فعلی
+                  onChange={handlePageChange} // تغییر صفحه
+                  hidePrevButton={true}
+                  hideNextButton={true}
+                  renderItem={(item) => {
+                    const isFirst = item.page === 1;
+                    const isLast = item.page === 3;
+                    return (
+                      <PaginationItem
+                        {...item}
+                        sx={{
+                          ...PaginationButtonStyle,
+                          borderTopLeftRadius: isFirst ? "12px" : 0,
+                          borderBottomLeftRadius: isFirst ? "12px" : 0,
+                          borderTopRightRadius: isLast ? "12px" : 0,
+                          borderBottomRightRadius: isLast ? "12px" : 0,
+                        }}
+                      />
+                    );
+                  }}
                 />
-                <PaginationNumber number="3" rounded="rounded-r-xl" border="" />
               </div>
             </div>
           </div>
@@ -129,19 +153,6 @@ export default function CommunityPowered() {
   );
 }
 
-
-
-const PaginationNumber = ({ number, rounded, border }) => {
-  return (
-    <>
-      {/* sm:bg-midnight */}
-      <button
-        className={`bg-base-smoke ${rounded} px-4 py-3 font-medium ${border} text-white hover:bg-midnight`}
-      >
-        {number}
-      </button>
-    </>
-  );
-};
-
-export { PaginationNumber };
+{
+  /* sm:bg-midnight */
+}

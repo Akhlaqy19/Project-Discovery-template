@@ -36,3 +36,9 @@ export default function WavyPlaneWireframe() {
     </>
   );
 }
+
+{/* <Canvas
+  className="absolute top-0 left-0"
+  camera={{ position: [0, 10, 10] }}
+  style={{ position: "absolute", top: 0, left: 0 }}
+></Canvas> */}

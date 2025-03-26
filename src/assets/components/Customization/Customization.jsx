@@ -68,7 +68,7 @@ export default function Customization() {
                       <div key={rowNumber} className="table-row">
                         <span
                           className="table-cell select-none pr-4 text-right 
-                      text-sm text-[#464A4D]"
+                          text-sm text-[#464A4D]"
                         >
                           {rowNumber + 1}
                         </span>
@@ -79,9 +79,9 @@ export default function Customization() {
                     ))}
                   </div>
                   {/* <span className="text-white"></span> */}
-                  <CustomCodeRenderer 
+                  {/* <CustomCodeRenderer 
                   code="id: CVE-2024"
-                  language="english"/>
+                  language="english"/> */}
                 </pre>
               </div>
 

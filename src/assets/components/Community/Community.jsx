@@ -25,7 +25,7 @@ export default function Community() {
         </div>
 
         <div className="relative z-40 mx-auto flex justify-between">
-          <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+          <div className="relative center w-full flex-col overflow-hidden">
             <div className="w-full mask-gradient">
               <div className="group flex overflow-hidden p-2 gap-4 [--duration:75s]">
                 {communityComments.map((comment) => (

@@ -19,8 +19,6 @@ function App() {
   return (
     <>
       <div className="relative mx-auto max-w-384 font-main">
-     
-        
         <StarryBackground />
         <Header />
         <main className="relative z-30 min-h-screen">
