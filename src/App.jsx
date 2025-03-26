@@ -1,11 +1,10 @@
 import React from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+// import { Canvas, useFrame } from "@react-three/fiber";
 
 import StarryBackground from "./assets/components/StarryBackground";
 import WavyPlaneWireframe from "./assets/components/WavyPlaneWireframe";
 import Header from "./assets/components/Header/Header";
-import Hero from "./assets/components/Header/Hero";
-import Slider from "./assets/components/Header/Slider";
+import Starter from "./assets/components/Header/Starter";
 import Features from "./assets/components/Features/Features";
 import Purpose from "./assets/components/PurposeSection/Purpose";
 import OurSolution from "./assets/components/Solution/OurSolution";
@@ -22,8 +21,10 @@ function App() {
         <StarryBackground />
         <Header />
         <main className="relative z-30 min-h-screen">
-          <Hero />
-          <Slider />
+          <Starter />
+          <div className="max-w-screen">
+            <WavyPlaneWireframe />
+          </div>
           <Features />
           <Purpose />
           <OurSolution />

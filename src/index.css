@@ -439,11 +439,6 @@ opacity: 0.5;
 .GlowBackground_glowBorderBg__g39y_ {
 	@apply absolute z-1 pointer-events-none rounded-2xl opacity-100 
 	transition-opacity duration-500 ease-out;
-	/* --border-width-1: 1px; */
-	/* top: var(--border-width);
-	right: var(--border-width);
-	bottom: var(--border-width);
-	left: var(--border-width); */
 	background: var(--overlay-color);
 }
 

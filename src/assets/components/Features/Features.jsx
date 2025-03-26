@@ -4,7 +4,6 @@ import { featureInfos } from "./../../datas";
 import { motion, useTransform, useScroll, useInView } from "framer-motion";
 
 function Features() {
-
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -14,11 +13,11 @@ function Features() {
   return (
     <section
       ref={sectionRef}
-      className="relative top-20 mx-auto mt-60 max-w-7xl h-[300vh]"
+      className="relative z-50 top-20 pt-44 mx-auto max-w-7xl h-[300vh]"
     >
-      <FeatureCard1 scrollProgress={scrollYProgress} {...featureInfos[0]} />
-      <FeatureCard2 scrollProgress={scrollYProgress} {...featureInfos[1]} />
-      <FeatureCard3 scrollProgress={scrollYProgress} {...featureInfos[2]} />
+        <FeatureCard1 scrollProgress={scrollYProgress} {...featureInfos[0]} />
+        <FeatureCard2 scrollProgress={scrollYProgress} {...featureInfos[1]} />
+        <FeatureCard3 scrollProgress={scrollYProgress} {...featureInfos[2]} />
     </section>
   );
 }
