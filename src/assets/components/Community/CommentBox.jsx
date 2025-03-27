@@ -39,10 +39,9 @@ export default function CommentBox({ fullName, userName, avatar, comment }) {
           <div className="absolute left-0 top-0 z-10 h-full w-full">
             {/* bg-glass-secondary */}
             <div
-              className="GlowBackground_glowBackground__jasUQ 
+              className="GlowBackground_glowBackground 
                bg-base-2 border rounded-2xl"
             >
-              <div className="GlowBackground_glowBorderBg__g39y_"></div>
             </div>
           </div>
         </figure>

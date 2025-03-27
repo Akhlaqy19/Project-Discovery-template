@@ -47,7 +47,28 @@ export default function CommunityPowered() {
                   >
                     View template
                     <div className="rounded-md">
-                      <div className="overlay-layout1"></div>
+                      {/* <div className="overlay-layout1 after:[offset-path:rect(0_auto_auto_0_round_40px)]"></div> */}
+
+                      <div
+                        className="
+                        pointer-events-none
+                         absolute
+                          inset-0
+                           rounded-[inherit]
+                            [border:0.75px_solid_transparent] 
+                            ![mask-clip:padding-box,border-box] 
+                            ![mask-composite:intersect] 
+                            [mask:linear-gradient(transparent,transparent),linear-gradient(white,white)] 
+                            after:absolute 
+                            after:aspect-square 
+                            after:w-10 
+                            after:animate-border-beam 
+                            after:[animation-delay:0s] 
+                            after:[background:linear-gradient(to_left,#ffffff,#EEF35F,transparent)] 
+                            after:[offset-anchor:90%_50%] 
+                            after:[offset-path:rect(0_auto_auto_0_round_40px))]"
+                        // style="--size: 40; --duration: 15; --anchor: 90; --border-width: 0.75; --color-from: #ffffff; --color-to: #EEF35F; --delay: -0s;"
+                      ></div>
                     </div>
                   </a>
                 </div>
@@ -82,7 +103,7 @@ export default function CommunityPowered() {
                   <strong className="font-semibold">
                     <span className="inline-block -translate-x-0.25">
                       Nuclei
-                    </span>{" "}
+                    </span>
                     is used by Fortune 500 organizations, security firms, and
                     government-led agencies&nbsp;
                   </strong>
@@ -117,7 +138,8 @@ export default function CommunityPowered() {
         <div className="absolute left-0 top-0 z-20 size-full">
           <div className="custom-container-sm relative z-40 mx-auto size-full px-3 py-2 lg:px-8">
             <div className="relative overflow-hidden bg-base size-full rounded-2xl border">
-              <div className={`overlay-layout2`}></div>
+              {/* <div className={`overlay-layout2`}></div> */}       
+
             </div>
             <div className="absolute -bottom-5 right-12 z-30 w-auto md:right-24">
               <div className="flex items-center gap-0">

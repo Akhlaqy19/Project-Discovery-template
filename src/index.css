@@ -149,7 +149,7 @@ video {
 }
 
 .bg-line-grid-stroke {
-	background-image: url("/icons/squars.svg");
+	background-image: url("/icons/stroke-squars.svg");
 }
 
 .bg-line-grid-gray {
@@ -443,16 +443,16 @@ opacity: 0.5;
 	font-family: GeistMono, ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
 }
 
-.GlowBackground_glowBackground__jasUQ {
+.GlowBackground_glowBackground {
 	@apply relative block size-full overflow-hidden;
 } 
 
-.GlowBackground_glowBackground__jasUQ:before {
+.GlowBackground_glowBackground:before {
 	@apply size-0;
 	background: radial-gradient(circle closest-side, var(--glow-color), transparent);
 }
 
-.GlowBackground_glowBackground__jasUQ:after {
+.GlowBackground_glowBackground:after {
 	--blur-size: var(--glow-size-start);
 	width: calc(var(--blur-size) + 10px);
 	height: calc(var(--blur-size) + 10px);
@@ -461,11 +461,11 @@ opacity: 0.5;
 	margin: -5px;
 }
 
-.GlowBackground_glowBorderBg__g39y_ {
+/* .GlowBackground_glowBorderBg {
 	@apply absolute z-1 pointer-events-none rounded-2xl opacity-100 
 	transition-opacity duration-500 ease-out;
 	background: var(--overlay-color);
-}
+} */
 
 .animate-grid {
 	animation: grid 25s linear infinite;

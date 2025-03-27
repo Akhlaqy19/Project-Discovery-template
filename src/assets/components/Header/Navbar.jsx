@@ -59,11 +59,11 @@ function Navbar() {
                 href="#"
                 onMouseEnter={handleHover}
                 className="leading-5 font-normal text-white hover:text-gray cursor-pointer sm:text-gray sm:hover:text-white max-lg:hidden group
-             flex items-center gap-2 text-sm *:transition *:delay-75 *:duration-150 *:ease-in-out"
+                flex items-center gap-2 text-sm *:transition *:delay-75 *:duration-150 *:ease-in-out"
               >
                 <FaGithub className="scale-95 text-lg group-hover:text-white" />
                 <span className="pl-0.5 group-hover:text-white">
-                  {usersRated}k
+                  {usersRated.toFixed(1)}k
                 </span>
                 {/* star icon */}
                 <TiStar className="scale-90 -translate-x-0.5 text-sm group-hover:text-white" />

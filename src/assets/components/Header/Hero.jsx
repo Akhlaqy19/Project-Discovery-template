@@ -1,7 +1,8 @@
 import React from "react";
 import Monitor from "./../Monitor";
 import Bitmap from "./../Bitmap";
-import { bitmapsHeader } from "./../../datas";
+import { bitmapsInfo } from "./../../datas";
+import { bitmapTooltipInfo } from "./../../datas";
 import { motion } from "framer-motion";
 
 const wrapperVariants = {
@@ -51,20 +52,18 @@ function Hero() {
               vulnerabilities that can actually be exploited.
             </motion.p>
             <motion.div variants={childVariants} className="mt-6">
-              {/* mt-6 flex w-full min-w-96 */}
               <div className="flex w-full mx-auto min-w-96">
                 {/* <div className="mx-auto flex w-full"> */}
-
-                  <Monitor />
+                <Monitor />
                 {/* </div> */}
               </div>
             </motion.div>
           </motion.div>
         </div>
         <div className="pointer-events-none absolute left-0 top-[0] z-50 hidden h-full w-full md:block">
-          {bitmapsHeader.map((data) => (
+          {bitmapsInfo[0].map((data) => (
             <div key={data.id}>
-              <Bitmap {...data} />
+              <Bitmap {...data} {...bitmapTooltipInfo[data.id - 1]} />
             </div>
           ))}
         </div>

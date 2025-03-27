@@ -1,4 +1,4 @@
-const usersRated = 101.9;
+const usersRated = 102.0;
 
 const navLinksData = [
   {
@@ -28,32 +28,117 @@ const navLinksData = [
   },
 ];
 
-const bitmapsHeader = [
+//////////////////////////////////////
+
+const bitmapsInfo = [
+  [
+    {
+      id: 1,
+      yAxis: "top-[32%]",
+      xAxis: "left-[7%]",
+      size: "w-14 h-18",
+      scale: "scale-110",
+      img: "1.svg",
+    },
+    {
+      id: 2,
+      yAxis: "top-[52%]",
+      xAxis: "right-[15.5%]",
+      size: "size-12",
+      scale: "scale-75",
+      img: "2.svg",
+    },
+    {
+      id: 3,
+      yAxis: "top-[26%]",
+      xAxis: "right-[5%]",
+      size: "size-7",
+      scale: "scale-90",
+      img: "3.svg",
+    },
+  ],
+  [
+    {
+      id: 4,
+      yAxis: "top-[42%]",
+      xAxis: "left-[4%]",
+      size: "size-15",
+      scale: "scale-90",
+      img: "1.svg",
+    },
+    {
+      id: 5,
+      yAxis: "top-[6%]",
+      xAxis: "right-[21.5%]",
+      size: "size-15",
+      scale: "scale-80",
+      img: "2.svg",
+    },
+    {
+      id: 6,
+      yAxis: "top-[21%]",
+      xAxis: "right-[10%]",
+      size: "size-7",
+      scale: "scale-115",
+      img: "3.svg",
+    },
+  ],
+];
+
+//////////////////////////////////////
+
+const bitmapTooltipInfo = [
   {
     id: 1,
-    yAxis: "top-[32%]",
-    xAxis: "left-[7%]",
-    size: "w-14 h-18",
-    scale: "scale-105",
-    img: "1.svg",
+    color: "text-critical",
+    text: "WhatsUp Gold Has",
+    code: "2024-6670",
+    tooltipScale: 1.1,
+    margin: "",
   },
   {
     id: 2,
-    yAxis: "top-[52%]",
-    xAxis: "right-[15.5%]",
-    size: "size-12",
-    scale: "scale-75",
-    img: "2.svg",
+    color: "text-medium",
+    text: "WP AmASIN - The",
+    code: "2014-4577",
+    tooltipScale: 0.82,
+    margin: "",
   },
   {
     id: 3,
-    yAxis: "top-[20%]",
-    xAxis: "right-[4.5%]",
-    size: "size-8",
-    scale: "scale-50",
-    img: "3.svg",
+    color: "text-high",
+    text: "Duplicator < 1.5",
+    code: "2023-6114",
+    tooltipScale: 0.4,
+    margin: "translate-y-4",
+  },
+  {
+    id: 4,
+    color: "text-critical",
+    text: "Rebuild <= 3.5.5",
+    code: "2024-1021",
+    tooltipScale: 1.1,
+    margin: "",
+  },
+  {
+    id: 5,
+    color: "text-medium",
+    text: "LearnDash LMS < ",
+    code: "2024-1208",
+    tooltipScale: 0.82,
+    margin: "",
+  },
+  {
+    id: 6,
+    color: "text-high",
+    text: "IBM Operational ",
+    code: "2024-22320",
+    tooltipScale: 0.4,
+    margin: "translate-y-4",
   },
 ];
+
+//////////////////////////////////////
 
 const sliderLogosInfo = [
   {
@@ -419,7 +504,7 @@ const rowAlertBoxInfos = [
 ];
 
 //////////////////////////////////////
-// آرایه‌ای از عناوین با شناسه‌ها و برچسب‌ها
+
 const vulnerabilityInfo = [
   {
     id: "vulnerability",
@@ -467,6 +552,8 @@ const vulnerabilityInfo = [
   },
 ];
 
+//////////////////////////////////////
+
 const integrationBoxesInfo = [
   {
     id: 1,
@@ -489,6 +576,8 @@ const integrationBoxesInfo = [
     images: ["api.svg"],
   },
 ];
+
+//////////////////////////////////////
 
 const communityPoweredInfo = [
   {
@@ -518,6 +607,8 @@ const communityPoweredInfo = [
   },
 ];
 
+//////////////////////////////////////
+
 const communityPoweredFidsInfo = [
   {
     id: 1,
@@ -536,6 +627,8 @@ const communityPoweredFidsInfo = [
     text: "Vulnerability detected — Alert sent in",
   },
 ];
+
+//////////////////////////////////////
 
 const issueInfos = [
   {
@@ -570,6 +663,8 @@ const issueInfos = [
   },
 ];
 
+//////////////////////////////////////
+
 const cutomizationInfo = [
   {
     id: 1,
@@ -590,6 +685,8 @@ const cutomizationInfo = [
     text: "Nuclei, built by our team, supports over 6 protocols as well as code protocols, so you can basically stitch almost any kind of vulnerability.",
   },
 ];
+
+//////////////////////////////////////
 
 const communityComments = [
   {
@@ -634,32 +731,7 @@ const communityComments = [
   },
 ];
 
-const BitmapsFooter = [
-  {
-    id: 1,
-    yAxis: "top-[42%]",
-    xAxis: "left-[4%]",
-    size: "size-15",
-    scale: "scale-90",
-    img: "1.svg",
-  },
-  {
-    id: 2,
-    yAxis: "top-[6.5%]",
-    xAxis: "right-[22.5%]",
-    size: "size-15",
-    scale: "scale-80",
-    img: "2.svg",
-  },
-  {
-    id: 3,
-    yAxis: "top-[20%]",
-    xAxis: "right-[9.2%]",
-    size: "size-15",
-    scale: "scale-70",
-    img: "3.svg",
-  },
-];
+//////////////////////////////////////
 
 const footerListInfo = [
   [
@@ -704,7 +776,8 @@ const footerListInfo = [
 
 export { navLinksData };
 export { usersRated };
-export { bitmapsHeader };
+export { bitmapsInfo };
+export { bitmapTooltipInfo };
 export { sliderLogosInfo };
 export { featureInfos };
 export { attackServicesInfos };
@@ -717,40 +790,4 @@ export { communityPoweredFidsInfo };
 export { issueInfos };
 export { cutomizationInfo };
 export { communityComments };
-export { BitmapsFooter };
 export { footerListInfo };
-
-// // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       setIsSticky(entry.intersectionRatio == 1);
-  //     },
-  //     {
-  //       root: null,
-  //       rootMargin: '0px 0px 0px 0px', // منطبق با top: 0 در استایل sticky
-  //       threshold: [0, 1]
-  //     }
-  //   );
-
-  //   if (elementRef.current) observer.observe(elementRef.current);
-    
-  //   return () => observer.disconnect();
-  // }, []);
-  
-// import Particles, { initParticlesEngine } from "@tsparticles/react";
-
-// Button
-// Chip
-// Card
-// Paper
-// Link
-// Pagination
-// Grid v2
-
-/* <div className="
- pointer-events-none absolute inset-0 rounded-[inherit] [border:calc(var(--border-width)*1px)_solid_transparent] ![mask-clip:padding-box,
-border-box] ![mask-composite:intersect] [mask:linear-gradient(transparent, transparent),
-linear-gradient(white, white)] after:absolute after:aspect-square after:w-10 after:animate-border-beam after:[animation-delay:-0s] after:[background:linear-gradient(to_left, #FFF, #EEF35F, transparent)] after:[offset-anchor:90%_50%] after:[offset-path:rect(0_auto_auto_0_round_40px))]"
-></div> */
-
-// {/* <span className="sr-only">Open menu</span> */}

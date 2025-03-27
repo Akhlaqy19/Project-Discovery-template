@@ -21,7 +21,7 @@ export default function OurSolution() {
         onMouseMove={handleMouseMove}
         className="group relative flex-col size-full items-center justify-center bg-midnight"
       >
-        <div className="pointer-events-none absolute inset-0 opacity-25 bg-line-grid-stroke b"></div>
+        <div className="pointer-events-none absolute inset-0 opacity-25 bg-line-grid-stroke"></div>
         <div
           className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 bg-line-grid-gray group-hover:opacity-50"
           style={{ maskImage: maskImageStyle }}

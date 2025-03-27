@@ -4,7 +4,7 @@ import { sliderLogosInfo } from "./../../datas";
 function Slider() {
   return (
     <>
-      <section className="custom-container-sm py-0">
+      <section className="custom-container-sm py-0 mt-6">
         <div className="w-full opacity-30 grayscale">
           <div
             className="custom-container-sm swiper-container py-2
