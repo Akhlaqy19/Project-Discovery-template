@@ -19,7 +19,7 @@ function AlertBox() {
   return (
     <>
       <section
-        className="group col-span-2 relative m-0 p-0 w-full pb-7 h-75 bg-glass-primary rounded-xl
+        className="group relative col-span-4 md:col-span-4 m-0 p-0 w-full pb-7 h-75 bg-glass-primary rounded-xl
       "
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}

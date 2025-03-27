@@ -23,6 +23,7 @@ function Monitor() {
   const animationFrameRef = useRef();
 
   useEffect(() => {
+    
     const canvas = canvasRef.current;
     const container = containerRef.current;
     const button = container.parentElement.querySelector("button");
@@ -64,7 +65,12 @@ function Monitor() {
 
     const resizeCanvas = () => {
       const rect = button.getBoundingClientRect();
-      canvas.width = rect.width + 40;
+
+      if (window.innerWidth < 640) 
+        canvas.width = rect.width;
+      else 
+        canvas.width = rect.width + 40;
+
       canvas.height = rect.height + 40;
       container.style.width = `${canvas.width}px`;
       container.style.height = `${canvas.height}px`;
@@ -102,8 +108,8 @@ function Monitor() {
   return (
     <>
       {/* get started monitor */}
-
-      <div className="pointer-events-auto flex flex-col items-start gap-4 w-full mx-auto text-white sm:flex-row md:items-center">
+      {/* pointer-events-auto flex w-full flex-col items-start gap-4 sm:flex-row md:items-center */}
+      <div className="pointer-events-auto flex flex-col items-start gap-4 w-full text-white sm:flex-row md:items-center">
         <div className="relative w-full flex-1 sm:w-96 md:max-w-96">
           {/* check-validation */}
           <input
@@ -125,19 +131,21 @@ function Monitor() {
             </p>
           )}
         </div>
-        <div className="relative h-12 sm:w-auto">
+
+        <div className="relative w-full h-12 sm:w-auto">
           <div
             ref={containerRef}
-            className="absolute inset-1/2 z-0 h-[160%] w-full -translate-x-1/2
-              -translate-y-1/2 rounded-md md:w-[160%] overflow-hidden"
+            className="block absolute inset-1/2 z-0 h-[160%] w-full -translate-x-1/2 -translate-y-1/2 rounded-md md:w-[160%] overflow-hidden"
           >
-            <canvas ref={canvasRef} className="absolute size-full border-0" />
+            <canvas
+              ref={canvasRef}
+              className="absolute size-full border-0"
+            />
           </div>
 
           <button
             ref={btnRef}
-            className={`
-              btn-monitor relative z-30 center w-22 h-12 px-4 py-2 text-sm font-semibold text-sub-yellow border border-sub-yellow overflow-hidden rounded-md cursor-not-allowed sm:w-auto bg-sub-yellow/20 shadow-sm backdrop-blur-sm tracking-xs hover:text-midnight hover:bg-sub-yellow`}
+            className={`btn-monitor relative z-30 size-full center h-12 px-4 py-2 text-sm font-semibold text-sub-yellow border border-sub-yellow overflow-hidden rounded-md cursor-not-allowed bg-sub-yellow/20 shadow-sm backdrop-blur-sm tracking-xs hover:text-midnight hover:bg-sub-yellow`}
             // دکمه تنها در صورتی فعال می‌شود که URL وارد شده معتبر باشد
             disabled={!isValidUrl(url)}
             onMouseOver={() => setIsBtnHovered(true)}

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import AttackServicesBase from "./AttackServicesBase";
 
 function AttackServices() {
@@ -16,7 +16,7 @@ function AttackServices() {
   return (
     <>
       <section
-        className="group flex flex-col gap-y-7 py-7 h-75.5"
+        className="group col-span-4 md:col-span-2 flex flex-col gap-y-7 py-7 h-75.5"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >

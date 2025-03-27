@@ -11,14 +11,19 @@ function Features() {
   });
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative z-50 top-20 pt-44 mx-auto max-w-7xl h-[300vh]"
-    >
+    <>
+      {/* <section className="relative z-50" id="features"> */}
+      <section
+        id="features"
+        ref={sectionRef}
+        className="relative z-50 top-20 pt-44 mx-auto max-w-7xl h-[300vh]"
+      >
         <FeatureCard1 scrollProgress={scrollYProgress} {...featureInfos[0]} />
         <FeatureCard2 scrollProgress={scrollYProgress} {...featureInfos[1]} />
         <FeatureCard3 scrollProgress={scrollYProgress} {...featureInfos[2]} />
-    </section>
+      </section>
+      {/* </section> */}
+    </>
   );
 }
 

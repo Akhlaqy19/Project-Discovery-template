@@ -16,11 +16,13 @@ export default function Community() {
               width={""}
             />
           </div>
+     
           <img
-            src="https://projectdiscovery.io/_next/static/media/GridWormHole.de67f92e.svg"
             alt="wormhole"
             loading="lazy"
-            className="absolute -top-12 left-0 z-10 h-[300%] w-full text-transparent opacity-50"
+            decoding="async"
+            className="absolute h-120.5 -top-12 left-0 z-10 w-full opacity-50"
+            src="/icons/GridWormHole.de67f92e.svg"
           />
         </div>
 

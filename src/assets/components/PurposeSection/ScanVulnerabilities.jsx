@@ -17,9 +17,8 @@ function ScanVulnerabilities() {
 
   return (
     <>
- 
       <section
-        className="group"
+        className="group col-span-4 md:col-span-2"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >

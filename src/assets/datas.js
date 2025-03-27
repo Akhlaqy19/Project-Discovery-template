@@ -1,4 +1,32 @@
-const usersRated = 101.8;
+const usersRated = 101.9;
+
+const navLinksData = [
+  {
+    id: 1,
+    route: "/#features",
+    navItem: "Features",
+  },
+  {
+    id: 2,
+    route: "/#solutions",
+    navItem: "Solutions",
+  },
+  {
+    id: 3,
+    route: "https://docs.projectdiscovery.io/cloud/introduction",
+    navItem: "Docs",
+  },
+  {
+    id: 4,
+    route: "/pricing",
+    navItem: "Pricing",
+  },
+  {
+    id: 5,
+    route: "https://cloud.projectdiscovery.io/sign-in",
+    navItem: "Sign in",
+  },
+];
 
 const bitmapsHeader = [
   {
@@ -6,7 +34,7 @@ const bitmapsHeader = [
     yAxis: "top-[32%]",
     xAxis: "left-[7%]",
     size: "w-14 h-18",
-    scale: "",
+    scale: "scale-105",
     img: "1.svg",
   },
   {
@@ -200,7 +228,8 @@ const toolkitsInfos = [
 const rowAlertBoxInfos = [
   {
     id: 1,
-    type: "Medium",
+    type: "medium",
+    styles: "bg-medium/10 border-medium/10 text-medium sm:text-medium",
     code: "CVE-2014-4941",
     details: "Cross RSS 1.7 - Local File Inclusion",
     count: 4,
@@ -209,7 +238,8 @@ const rowAlertBoxInfos = [
   },
   {
     id: 2,
-    type: "Critical",
+    type: "critical",
+    styles: "bg-critical/10 border-critical/10 text-critical sm:text-critical",
     code: "CVE-2024-28255",
     details: "OpenMetadata - Authentication Bypass",
     count: 5,
@@ -218,7 +248,8 @@ const rowAlertBoxInfos = [
   },
   {
     id: 3,
-    type: "High",
+    type: "high",
+    styles: "bg-high/10 border-high/10 text-high sm:text-high",
     code: "CVE-2024-20767",
     details: "Adobe ColdFusion - Arbitrary File Read",
     count: 1,
@@ -227,7 +258,8 @@ const rowAlertBoxInfos = [
   },
   {
     id: 4,
-    type: "Info",
+    type: "info",
+    styles: "bg-info/10 border-info/10 text-info sm:text-info",
     code: "PRIVATEBIN-DET",
     details: "PrivateBin - Detect",
     count: 18,
@@ -236,7 +268,8 @@ const rowAlertBoxInfos = [
   },
   {
     id: 5,
-    type: "Medium",
+    type: "medium",
+    styles: "bg-medium/10 border-medium/10 text-medium sm:text-medium",
     code: "CVE-2024-28734",
     details: "Coda v.2024Q1 - Cross-Site Scripting",
     count: 3,
@@ -245,7 +278,8 @@ const rowAlertBoxInfos = [
   },
   {
     id: 6,
-    type: "High",
+    type: "high",
+    styles: "bg-high/10 border-high/10 text-high sm:text-high",
     code: "CVE-2019-9632",
     details: "ESAFENET CDG - Arbitrary File Download",
     count: 12,
@@ -254,7 +288,8 @@ const rowAlertBoxInfos = [
   },
   {
     id: 7,
-    type: "Critical",
+    type: "critical",
+    styles: "bg-critical/10 border-critical/10 text-critical sm:text-critical",
     code: "CVE-2024-27954",
     details: "WordPress Automatic Plugin <3.92.1 - Arbitrary Fil...",
     count: 21,
@@ -263,7 +298,8 @@ const rowAlertBoxInfos = [
   },
   {
     id: 8,
-    type: "Medium",
+    type: "medium",
+    styles: "bg-medium/10 border-medium/10 text-medium sm:text-medium",
     code: "CVE-2014-4577",
     details: "WP AmASIN – The Amazon Affiliate Shop - Local File...",
     count: 3,
@@ -272,7 +308,8 @@ const rowAlertBoxInfos = [
   },
   {
     id: 9,
-    type: "Info",
+    type: "info",
+    styles: "bg-info/10 border-info/10 text-info sm:text-info",
     code: "DIRECTUS-DETEC",
     details: "Directus - Detect",
     count: 7,
@@ -281,7 +318,8 @@ const rowAlertBoxInfos = [
   },
   {
     id: 10,
-    type: "High",
+    type: "high",
+    styles: "bg-high/10 border-high/10 text-high sm:text-high",
     code: "quick-cms-sqli",
     details: "Quick.CMS v6.7 - SQL Injection",
     count: 9,
@@ -290,7 +328,8 @@ const rowAlertBoxInfos = [
   },
   {
     id: 11,
-    type: "High",
+    type: "high",
+    styles: "bg-high/10 border-high/10 text-high sm:text-high",
     code: "UPS-NETWORK-LF",
     details: "UPS Network Management Card 4 Path Traversal",
     count: 1,
@@ -299,7 +338,8 @@ const rowAlertBoxInfos = [
   },
   {
     id: 12,
-    type: "Medium",
+    type: "medium",
+    styles: "bg-medium/10 border-medium/10 text-medium sm:text-medium",
     code: "CVE-2012-2122",
     details: "MySQL - Authentication Bypass",
     count: 14,
@@ -308,7 +348,8 @@ const rowAlertBoxInfos = [
   },
   {
     id: 13,
-    type: "Critical",
+    type: "critical",
+    styles: "bg-critical/10 border-critical/10 text-critical sm:text-critical",
     code: "CVE-2024-1212",
     details: "Progress Kemp LoadMaster - Command Injection",
     count: 6,
@@ -317,7 +358,8 @@ const rowAlertBoxInfos = [
   },
   {
     id: 14,
-    type: "High",
+    type: "high",
+    styles: "bg-high/10 border-high/10 text-high sm:text-high",
     code: "CVE-2023-34105",
     details: "SRS - Command Injection",
     count: 2,
@@ -326,7 +368,8 @@ const rowAlertBoxInfos = [
   },
   {
     id: 15,
-    type: "Critical",
+    type: "critical",
+    styles: "bg-critical/10 border-critical/10 text-critical sm:text-critical",
     code: "CVE-2023-5830",
     details: "ColumbiaSoft DocumentLocator - Improper Authentica...",
     count: 6,
@@ -335,7 +378,8 @@ const rowAlertBoxInfos = [
   },
   {
     id: 16,
-    type: "Medium",
+    type: "medium",
+    styles: "bg-medium/10 border-medium/10 text-medium sm:text-medium",
     code: "CVE-2014-4941",
     details: "Cross RSS 1.7 - Local File Inclusion",
     count: 14,
@@ -344,7 +388,8 @@ const rowAlertBoxInfos = [
   },
   {
     id: 17,
-    type: "Critical",
+    type: "critical",
+    styles: "bg-critical/10 border-critical/10 text-critical sm:text-critical",
     code: "CVE-2024-28255",
     details: "OpenMetadata - Authentication Bypass",
     count: 10,
@@ -353,7 +398,8 @@ const rowAlertBoxInfos = [
   },
   {
     id: 18,
-    type: "High",
+    type: "high",
+    styles: "bg-high/10 border-high/10 text-high sm:text-high",
     code: "CVE-2024-20767",
     details: "Adobe ColdFusion - Arbitrary File Read",
     count: 1,
@@ -362,7 +408,8 @@ const rowAlertBoxInfos = [
   },
   {
     id: 19,
-    type: "Info",
+    type: "info",
+    styles: "bg-info/10 border-info/10 text-info sm:text-info",
     code: "PRIVATEBIN-DET",
     details: "PrivateBin - Detect",
     count: 18,
@@ -655,6 +702,7 @@ const footerListInfo = [
   ],
 ];
 
+export { navLinksData };
 export { usersRated };
 export { bitmapsHeader };
 export { sliderLogosInfo };
@@ -704,3 +752,5 @@ export { footerListInfo };
 border-box] ![mask-composite:intersect] [mask:linear-gradient(transparent, transparent),
 linear-gradient(white, white)] after:absolute after:aspect-square after:w-10 after:animate-border-beam after:[animation-delay:-0s] after:[background:linear-gradient(to_left, #FFF, #EEF35F, transparent)] after:[offset-anchor:90%_50%] after:[offset-path:rect(0_auto_auto_0_round_40px))]"
 ></div> */
+
+// {/* <span className="sr-only">Open menu</span> */}

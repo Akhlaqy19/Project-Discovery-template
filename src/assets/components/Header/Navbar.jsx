@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import BtnSales from "./../BtnSales";
+import Menu from './Menu';
 import { FaGithub } from "react-icons/fa";
 import { TiStar } from "react-icons/ti";
 import confetti from "canvas-confetti";
 import { usersRated } from "../../datas";
+import BurgerMenu from "/icons/menu/burger.svg";
+import CloseMenu from "/icons/menu/close.svg";
+
 
 function Navbar() {
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const handleHover = () => {
     confetti({
       particleCount: 400,
@@ -18,6 +25,8 @@ function Navbar() {
       ticks: 90, // تعداد فریم‌های انیمیشن (تقریباً 0.5 ثانیه در 60fps)
     });
   };
+
+  const handleToggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
   return (
     <>
@@ -52,12 +61,12 @@ function Navbar() {
                 className="leading-5 font-normal text-white hover:text-gray cursor-pointer sm:text-gray sm:hover:text-white max-lg:hidden group
              flex items-center gap-2 text-sm *:transition *:delay-75 *:duration-150 *:ease-in-out"
               >
-                <FaGithub className="text-lg group-hover:text-white" />
+                <FaGithub className="scale-95 text-lg group-hover:text-white" />
                 <span className="pl-0.5 group-hover:text-white">
                   {usersRated}k
                 </span>
                 {/* star icon */}
-                <TiStar className="-translate-x-0.5 text-sm group-hover:text-white" />
+                <TiStar className="scale-90 -translate-x-0.5 text-sm group-hover:text-white" />
               </a>
             </div>
           </div>
@@ -69,18 +78,19 @@ function Navbar() {
               className="hidden lg:flex lg:gap-x-12 justify-between text-sm nav-effect **:capitalize *:*:block *:*:leading-5 *:*:font-normal 
             *:*:text-white *:*:hover:text-gray"
             >
-              {/* *:*:cursor-pointer */}
               <li>
-                <a href="#">Features</a>
+                <a href="#features">Features</a>
               </li>
               <li>
-                <a href="#">Solutions</a>
+                <a href="#solutions">Solutions</a>
               </li>
               <li>
-                <a href="#">Docs</a>
+                <a href="https://docs.projectdiscovery.io/cloud/introduction">
+                  Docs
+                </a>
               </li>
               <li>
-                <a href="#">Pricing</a>
+                <a href="https://projectdiscovery.io/pricing">Pricing</a>
               </li>
             </ul>
           </div>
@@ -88,12 +98,28 @@ function Navbar() {
           {/* right / sign in */}
           <div className="z-50 flex justify-end items-center w-full gap-4 sm:gap-8 lg:flex-1 text-sm">
             {/* sign in */}
-            <div className="max-lg:hidden nav-effect *:hover:text-gray">
-              <a href="#">Sign in</a>
+            <div className="hidden lg:flex nav-effect">
+              <a
+                href="https://cloud.projectdiscovery.io/sign-in"
+                className="block text-sm leading-5 font-normal text-white hover:text-gray cursor-pointer"
+              >
+                Sign in
+              </a>
             </div>
 
             <BtnSales height={""} />
+            <button
+              type="button"
+              onClick={handleToggleMenu}
+              className="lg:hidden"
+            >
+              <img
+                src={isMenuOpen ? CloseMenu : BurgerMenu}
+                alt="Menu Icon in Mobile Screen"
+              />
+            </button>
           </div>
+          {isMenuOpen && <Menu />}
         </div>
       </nav>
     </>

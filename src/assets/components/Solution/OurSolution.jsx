@@ -27,7 +27,7 @@ export default function OurSolution() {
           style={{ maskImage: maskImageStyle }}
         ></div>
         <div className="relative z-40 mt-12 size-full">
-          <section className="custom-container-sm pb-0">
+          <section className="custom-container-sm pb-0" id="solutions">
             <Solution />
             <VulnerabilityDetails />
           </section>

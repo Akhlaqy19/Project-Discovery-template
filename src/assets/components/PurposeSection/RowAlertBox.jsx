@@ -1,19 +1,14 @@
 import React from 'react'
 
-function RowAlertBox({type, code, details, count, img, name}) {
+function RowAlertBox({type, styles, code, details, count, img, name}) {
 
-  const color = type.toLowerCase();
 
   return (
     <>
-      <div
-        className="flex flex-col items-start gap-2 px-3 py-5 border-b border-b-[#222] border-stroke 
-        md:flex-row md:items-center md:gap-8 md:px-0 *:w-auto"
-      >
+      <div className="flex flex-col items-start gap-2 px-3 py-5 border-b border-b-glass-secondary border-glass-secondary md:flex-row md:items-center md:gap-8 md:px-0">
         <div className="flex gap-4 md:pl-4">
           <p
-            className={`px-3 py-2 text-center text-${color} leading-4 text-sm font-medium rounded-full border md:w-24 
-            bg-opacity-10 border-opacity-10 backdrop-blur-sm`}
+            className={`${styles} px-3 py-2 text-center leading-4 text-sm font-medium rounded-full border w-auto text-gray md:w-24 capitalize`}
           >
             {type}
           </p>
@@ -25,7 +20,7 @@ function RowAlertBox({type, code, details, count, img, name}) {
           </p>
         </div>
         <div className="my-2 flex items-center gap-4 pr-4 text-left md:my-0">
-          <p className="text-sm text-gray font-medium leading-3.5 tracking-wide text-moon">
+          <p className="text-sm font-medium leading-3.5 tracking-wide text-white">
             {details}
           </p>
           {/* sm:bg-opacity-0 */}

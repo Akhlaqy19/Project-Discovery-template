@@ -28,7 +28,6 @@ const childVariants = {
 function Hero() {
   return (
     <>
-      {/*  relative z-40 flex w-full flex-col items-center */}
       <section className="custom-container custome-p lg:pt-48 py-42 lg:pb-14 bg-0.15 text-center text-white">
         <div className="pointer-events-none relative z-40 w-full flex flex-col items-center">
           <motion.div
@@ -52,8 +51,12 @@ function Hero() {
               vulnerabilities that can actually be exploited.
             </motion.p>
             <motion.div variants={childVariants} className="mt-6">
+              {/* mt-6 flex w-full min-w-96 */}
               <div className="flex w-full mx-auto min-w-96">
-                <Monitor />
+                {/* <div className="mx-auto flex w-full"> */}
+
+                  <Monitor />
+                {/* </div> */}
               </div>
             </motion.div>
           </motion.div>

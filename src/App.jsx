@@ -17,14 +17,12 @@ import End from "./assets/components/End/End";
 function App() {
   return (
     <>
+      <WavyPlaneWireframe />
       <div className="relative mx-auto max-w-384 font-main">
         <StarryBackground />
         <Header />
-        <main className="relative z-30 min-h-screen">
+        <main className="relative z-40 min-h-screen">
           <Starter />
-          <div className="max-w-screen">
-            <WavyPlaneWireframe />
-          </div>
           <Features />
           <Purpose />
           <OurSolution />
