@@ -1,6 +1,6 @@
 import React from 'react'
 
-function RowAlertBox({type, styles, code, details, count, img, name, isHovered}) {
+function RowAlertBox({type, styles, code, details, count, img, name}) {
 
 
   return (

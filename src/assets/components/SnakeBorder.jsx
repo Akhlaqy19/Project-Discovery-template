@@ -1,10 +1,16 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function SnakeBorder({specialStyles}) {
+/**
+ * SnakeBorder component creates an animated border effect
+ * @param {Object} props - Component props
+ * @param {string} props.specialStyles - Additional CSS styles for the border effect
+ * @returns {JSX.Element} SnakeBorder component
+ */
+const SnakeBorder = ({ specialStyles }) => {
   return (
-    <>
     <div
-        className={`
+      className={`
         pointer-events-none
         absolute
         inset-0
@@ -18,8 +24,19 @@ export default function SnakeBorder({specialStyles}) {
         after:aspect-square 
         animate-border-beam 
         after:[offset-anchor:90%_50%]  
-        `}
-    ></div>
-    </>
+      `}
+      role="presentation"
+      aria-hidden="true"
+    />
   );
-}
+};
+
+SnakeBorder.propTypes = {
+  specialStyles: PropTypes.string
+};
+
+SnakeBorder.defaultProps = {
+  specialStyles: ''
+};
+
+export default SnakeBorder;

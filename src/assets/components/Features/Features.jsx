@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useCallback } from "react";
 import SectionTitle from "./../SectionTitle";
 import { featureInfos } from "./../../datas";
 import { motion, useTransform, useScroll, useInView } from "framer-motion";
@@ -11,19 +11,15 @@ function Features() {
   });
 
   return (
-    <>
-      {/* <section className="relative z-50" id="features"> */}
-      <section
-        id="features"
-        ref={sectionRef}
-        className="relative z-50 top-20 pt-44 mx-auto max-w-7xl h-[300vh]"
-      >
-        <FeatureCard1 scrollProgress={scrollYProgress} {...featureInfos[0]} />
-        <FeatureCard2 scrollProgress={scrollYProgress} {...featureInfos[1]} />
-        <FeatureCard3 scrollProgress={scrollYProgress} {...featureInfos[2]} />
-      </section>
-      {/* </section> */}
-    </>
+    <section
+      id="features"
+      ref={sectionRef}
+      className="relative z-50 top-20 pt-44 mx-auto max-w-7xl h-[300vh]"
+    >
+      <FeatureCard1 scrollProgress={scrollYProgress} {...featureInfos[0]} />
+      <FeatureCard2 scrollProgress={scrollYProgress} {...featureInfos[1]} />
+      <FeatureCard3 scrollProgress={scrollYProgress} {...featureInfos[2]} />
+    </section>
   );
 }
 
@@ -39,22 +35,27 @@ const FeatureCardBase = ({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 1 });
 
-  // وقتی کارت بعدی وارد viewport شد، کارت قبلی کوچک و کم‌رنگ شود
-  const scale = useTransform(
-    scrollProgress,
-    [0, 1],
-    isInView ? [1, 0.5] : [1, 1]
-  );
-  const opacity = useTransform(
-    scrollProgress,
-    [0, 1],
-    isInView ? [1, 0] : [1, 1]
-  );
+  // Memoize transform calculations with useCallback
+  const getTransforms = useCallback(() => {
+    const scale = useTransform(
+      scrollProgress,
+      [0, 1],
+      isInView ? [1, 0.5] : [1, 1]
+    );
+    const opacity = useTransform(
+      scrollProgress,
+      [0, 1],
+      isInView ? [1, 0] : [1, 1]
+    );
+    return { scale, opacity };
+  }, [scrollProgress, isInView]);
+
+  const transforms = getTransforms();
 
   return (
     <motion.section
       ref={ref}
-      style={{ scale, opacity }}
+      style={transforms}
       className="sticky top-0 h-screen w-full mt-0 px-7 mx-auto"
     >
       <div className="flex flex-col gap-2 mx-auto w-full text-left items-start">
