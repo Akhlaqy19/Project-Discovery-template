@@ -27,8 +27,8 @@ export default function GraphDashLines() {
         });
 
         // تعیین تاخیر تصادفی اولیه و همچنین تاخیر بین تکرارها (repeatDelay)
-        const initialDelay = Math.random() * 20;
-        const cycleDelay = Math.random() * 10;
+        const initialDelay = Math.random() * 30;
+        const cycleDelay = Math.random() * 20;
 
         // موقعیت (position parameter) انیمیشن هر هاله به صورت افست زمانی (مثلاً index * 0.8 ثانیه)
         // اجرای انیمیشن به‌طور مستقل با delay تصادفی
@@ -60,7 +60,7 @@ export default function GraphDashLines() {
       });
 
       if (viewportWidth < 640) {
-        svgRef.current.classList.add("h-200");
+        // svgRef.current.classList.add("h-200");
       }
     }
 
@@ -94,14 +94,14 @@ export default function GraphDashLines() {
           gradientUnits="userSpaceOnUse"
         >
           <stop offset="0%" stopColor="oklch(0.637 0.237 25.331)" />
-          <stop offset="100%" stopColor="oklch(0.852 0.199 91.936)" />
+          <stop offset="100%" stopColor="oklch(0.795 0.184 86.047)" />
         </radialGradient>
       </defs>
 
       <g
         ref={dashLinesRef}
         clipPath="url(#clip0_1_53)"
-        strokeDasharray="5.5,3"
+        strokeDasharray="6,3"
         className=""
       >
         {/* اولین مسیر خط‌چین و هاله مربوطه */}
@@ -109,7 +109,7 @@ export default function GraphDashLines() {
           ref={(el) => (dashPathRefs.current[0] = el)}
           d="M32 -17C233.17 140.559 427.374 207.924 713 281"
           stroke="url(#radial-gradient)"
-          strokeWidth="2.5"
+          strokeWidth="2"
         />
         <path
           ref={(el) => (haloPathRefs.current[0] = el)}
@@ -125,7 +125,7 @@ export default function GraphDashLines() {
           ref={(el) => (dashPathRefs.current[1] = el)}
           d="M1392 -17C1191.42 140.559 997.788 207.924 713 281"
           stroke="url(#radial-gradient)"
-          strokeWidth="2.5"
+          strokeWidth="2"
         />
         <path
           ref={(el) => (haloPathRefs.current[1] = el)}
@@ -141,7 +141,7 @@ export default function GraphDashLines() {
           ref={(el) => (dashPathRefs.current[2] = el)}
           d="M17 289H712"
           stroke="url(#radial-gradient)"
-          strokeWidth="2.5"
+          strokeWidth="2"
         />
         <path
           ref={(el) => (haloPathRefs.current[2] = el)}
@@ -156,7 +156,7 @@ export default function GraphDashLines() {
           ref={(el) => (dashPathRefs.current[3] = el)}
           d="M1407 289H712"
           stroke="url(#radial-gradient)"
-          strokeWidth="2.5"
+          strokeWidth="2"
         />
         <path
           ref={(el) => (haloPathRefs.current[3] = el)}
@@ -172,7 +172,7 @@ export default function GraphDashLines() {
           ref={(el) => (dashPathRefs.current[4] = el)}
           d="M32 595C233.17 437.441 427.374 370.076 713 297M32 595C233.17 437.441 427.374 370.076 713 297"
           stroke="url(#radial-gradient)"
-          strokeWidth="2.5"
+          strokeWidth="2"
         />
         <path
           ref={(el) => (haloPathRefs.current[4] = el)}
@@ -186,7 +186,7 @@ export default function GraphDashLines() {
           ref={(el) => (dashPathRefs.current[5] = el)}
           d="M1392 595C1191.42 437.441 997.788 370.076 713 297"
           stroke="url(#radial-gradient)"
-          strokeWidth="2.5"
+          strokeWidth="2"
         />
         <path
           ref={(el) => (haloPathRefs.current[5] = el)}

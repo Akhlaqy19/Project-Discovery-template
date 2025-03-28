@@ -9,7 +9,7 @@ import BurgerMenu from "/icons/menu/burger.svg";
 import CloseMenu from "/icons/menu/close.svg";
 
 
-function Navbar() {
+export default function Navbar() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -37,7 +37,7 @@ function Navbar() {
         <div
           className="custom-container top-0 left-0 right-0 
         flex justify-between items-center mx-auto
-        px-8 py-4 leading-5 bg-midnight/80 backdrop-blur-lg text-white lg:py-5
+        px-6 py-4 leading-5 bg-midnight/80 backdrop-blur-lg text-white lg:py-5
         "
         >
           {/* left / logo */}
@@ -125,5 +125,3 @@ function Navbar() {
     </>
   );
 }
-
-export default Navbar;

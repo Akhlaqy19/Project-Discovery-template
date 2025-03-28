@@ -4,13 +4,15 @@ function ScanBoxToolkits({name, situate, code, score, img}) {
   return (
     <>
       <div className="bg-base-2 border border-black">
-        <div className="">
-          <img src={`/icons/toolkits-for-vulnerability/${img}`} alt="" className="size-6"/>
+        <div className="bg-base rounded-full bg-gradient-radial from-white/15 to-transparent p-2.5">
+          <img
+            src={`/icons/toolkits-for-vulnerability/${img}`}
+            alt=""
+            className="size-4"
+          />
         </div>
         <div className="mt-1">
-          <h5 className="text-white text-lg font-light tracking-xs">
-            {name}
-          </h5>
+          <h5 className="text-white text-lg font-light tracking-xs">{name}</h5>
           <div className="">
             <p className="text-base font-light tracking-xs leading-6">
               {situate}
@@ -25,7 +27,6 @@ function ScanBoxToolkits({name, situate, code, score, img}) {
             {score}
           </p>
         </button>
-    
       </div>
     </>
   );

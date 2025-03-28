@@ -1,6 +1,6 @@
 import React from 'react'
 import { navLinksData } from '../../datas';
-import { easeIn, motion } from 'framer-motion'; 
+import { motion } from 'framer-motion'; 
 
 export default function Menu() {
 
@@ -12,7 +12,6 @@ export default function Menu() {
          duration: 1.5,
          staggerChildren: 0.3,
          type: "spring",
-        //  easeIn: "true"
        },
      },
    };

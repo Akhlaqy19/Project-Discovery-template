@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ExploitNotif from "./ExploitNotif";
+import SnakeBorder from "./../SnakeBorder";
 
 import { communityPoweredInfo } from "../../datas";
 import { communityPoweredFidsInfo } from "../../datas";
@@ -47,28 +48,12 @@ export default function CommunityPowered() {
                   >
                     View template
                     <div className="rounded-md">
-                      {/* <div className="overlay-layout1 after:[offset-path:rect(0_auto_auto_0_round_40px)]"></div> */}
-
-                      <div
-                        className="
-                        pointer-events-none
-                         absolute
-                          inset-0
-                           rounded-[inherit]
-                            [border:0.75px_solid_transparent] 
-                            ![mask-clip:padding-box,border-box] 
-                            ![mask-composite:intersect] 
-                            [mask:linear-gradient(transparent,transparent),linear-gradient(white,white)] 
-                            after:absolute 
-                            after:aspect-square 
-                            after:w-10 
-                            after:animate-border-beam 
-                            after:[animation-delay:0s] 
-                            after:[background:linear-gradient(to_left,#ffffff,#EEF35F,transparent)] 
-                            after:[offset-anchor:90%_50%] 
-                            after:[offset-path:rect(0_auto_auto_0_round_40px))]"
-                        // style="--size: 40; --duration: 15; --anchor: 90; --border-width: 0.75; --color-from: #ffffff; --color-to: #EEF35F; --delay: -0s;"
-                      ></div>
+                      <SnakeBorder
+                        specialStyles="
+                      after:w-10 
+                      after:[background:linear-gradient(to_left,#ffffff,#EEF35F,transparent)] 
+                      after:[offset-path:rect(0_auto_auto_0_round_40px)]"
+                      />
                     </div>
                   </a>
                 </div>
@@ -138,9 +123,16 @@ export default function CommunityPowered() {
         <div className="absolute left-0 top-0 z-20 size-full">
           <div className="custom-container-sm relative z-40 mx-auto size-full px-3 py-2 lg:px-8">
             <div className="relative overflow-hidden bg-base size-full rounded-2xl border">
-              {/* <div className={`overlay-layout2`}></div> */}       
 
+              <SnakeBorder
+                specialStyles="
+                after:w-75
+                after:[background:linear-gradient(to_left,#111112,#444444,transparent)] 
+                after:[offset-path:rect(0_auto_auto_0_round_300px)]
+                "
+              />
             </div>
+
             <div className="absolute -bottom-5 right-12 z-30 w-auto md:right-24">
               <div className="flex items-center gap-0">
                 <Pagination
@@ -161,6 +153,9 @@ export default function CommunityPowered() {
                           borderBottomLeftRadius: isFirst ? "12px" : 0,
                           borderTopRightRadius: isLast ? "12px" : 0,
                           borderBottomRightRadius: isLast ? "12px" : 0,
+                          "sm:": {
+                            backgroundColor: isFirst && "#09090b",
+                          },
                         }}
                       />
                     );
@@ -173,8 +168,4 @@ export default function CommunityPowered() {
       </section>
     </>
   );
-}
-
-{
-  /* sm:bg-midnight */
 }

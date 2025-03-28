@@ -26,7 +26,7 @@ const childVariants = {
   },
 };
 
-function Hero() {
+export default function Hero() {
   return (
     <>
       <section className="custom-container custome-p lg:pt-48 py-42 lg:pb-14 bg-0.15 text-center text-white">
@@ -72,4 +72,3 @@ function Hero() {
   );
 }
 
-export default Hero;

@@ -1,7 +1,7 @@
 import React from "react";
 import { sliderLogosInfo } from "./../../datas";
 
-function Slider() {
+export default function Slider() {
   return (
     <>
       <section className="custom-container-sm py-0 mt-6">
@@ -20,15 +20,12 @@ function Slider() {
               <SliderBase />
               <SliderBase />
             </div>
-
           </div>
         </div>
       </section>
     </>
   );
 }
-
-export default Slider;
 
 const SliderBase = () => {
   return (

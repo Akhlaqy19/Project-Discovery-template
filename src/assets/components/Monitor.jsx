@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import SnakeBorder from "./SnakeBorder";
 
 function Monitor() {
   const [url, setUrl] = useState("");
@@ -147,8 +148,9 @@ function Monitor() {
           >
             <a
               href={
-                isValidUrl(url) &&
-                "https://cloud.projectdiscovery.io/sign-in?redirect_url=https%3A%2F%2Fcloud.projectdiscovery.io%2Fassets%3Fdomain%3Dgoogle.com"
+                isValidUrl(url)
+                  ? "https://cloud.projectdiscovery.io/sign-in?redirect_url=https%3A%2F%2Fcloud.projectdiscovery.io%2Fassets%3Fdomain%3Dgoogle.com"
+                  : undefined
               }
               className={`${!isValidUrl(url) && "cursor-not-allowed"}`}
             >
@@ -156,6 +158,14 @@ function Monitor() {
                 Monitor
               </span>
             </a>
+            <div className="rounded-md">
+              <SnakeBorder
+                specialStyles="
+              after:w-10 
+              after:[background:linear-gradient(to_left,#ffffff,#EEF35F,transparent)] 
+              after:[offset-path:rect(0_auto_auto_0_round_40px)]"
+              />
+            </div>
           </button>
         </div>
       </div>

@@ -104,10 +104,10 @@ const Tooltip = ({ rotate, id, color, text, code, tooltipScale, margin }) => {
         variants={textVariants}
         style={{ rotate }}
       >
-        <div class={`relative z-30 text-base font-semibold ${color}`}>
+        <div className={`relative z-30 text-base font-semibold ${color}`}>
           {text}...
         </div>
-        <div class="text-xs text-white">CVE-{code}</div>
+        <div className="text-xs text-white">CVE-{code}</div>
       </motion.div>
     </>
   );
