@@ -25,8 +25,6 @@ export default function AttackServices() {
               </div>
             </div>
 
-            {/* bg-base-2 pointer-events-none relative z-20 mx-5 h-full w-auto rounded-xl bg-custom-gradient */}
-
             <div className="bg-base-2 pointer-events-none relative z-20 mx-5 h-full max-h-48 w-auto rounded-xl bg-custom-gradient">
               <div className="relative top-0 z-40 h-auto w-full rounded-xl pb-1">
                 <div
@@ -49,7 +47,6 @@ export default function AttackServices() {
               </div>
               <section className="relative top-0 z-40 h-auto w-full rounded-b-xl overflow-hidden">
                 <div
-                  // ref={marqueeRef}
                   className="group flex overflow-hidden p-2 flex-col relative z-20 max-h-36 gap-y-4"
                 >
                   <AttackServicesBase isHovered={isHovered} />
@@ -82,8 +79,3 @@ const AttackServicesBase = ({ isHovered }) => {
     </>
   );
 };
-
-// h-78
-//  *:tracking-widest *:*:*:block *:*:*:h-full *:*:first:w-2/5 *:*:not-first:w-1/5
-// *:*:nth-[2]:pl-4  *:*:nth-[3]:pl-0 *:*:nth-[3]:*:gap-x-1.75 *:
-// transition-transform

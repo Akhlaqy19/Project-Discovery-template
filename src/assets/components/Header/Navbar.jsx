@@ -15,14 +15,14 @@ export default function Navbar() {
 
   const handleHover = () => {
     confetti({
-      particleCount: 400,
-      spread: 40,
+      particleCount: 100,
+      spread: 50,
       origin: { y: 0.075, x: 0.18 },
-      colors: ["#ffff00", "#ff0000"], // رنگ‌های دلخواه
+      colors: ["#fbbf24", "#de632e"], // رنگ‌های دلخواه
       scalar: 0.3,
-      startVelocity: 20,
-      gravity: 0.8,
-      ticks: 90, // تعداد فریم‌های انیمیشن (تقریباً 0.5 ثانیه در 60fps)
+      startVelocity: 15,
+      gravity: 0.5,
+      ticks: 180, // تعداد فریم‌های انیمیشن (تقریباً 0.5 ثانیه در 60fps)
     });
   };
 
@@ -30,8 +30,6 @@ export default function Navbar() {
 
   return (
     <>
-      {/* wrapper */}
-
       <nav className="mx-auto">
         {/* navbar */}
         <div
@@ -56,7 +54,7 @@ export default function Navbar() {
 
             <div className="hidden lg:flex">
               <a
-                href="#"
+                href="https://github.com/projectdiscovery/"
                 onMouseEnter={handleHover}
                 className="leading-5 font-normal text-white hover:text-gray cursor-pointer sm:text-gray sm:hover:text-white max-lg:hidden group
                 flex items-center gap-2 text-sm *:transition *:delay-75 *:duration-150 *:ease-in-out"

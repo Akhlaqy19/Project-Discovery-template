@@ -1,11 +1,13 @@
 import React from 'react'
 
-function RowAlertBox({type, styles, code, details, count, img, name}) {
+function RowAlertBox({type, styles, code, details, count, img, name, isHovered}) {
 
 
   return (
     <>
-      <div className="flex flex-col items-start gap-2 px-3 py-5 border-b border-b-glass-secondary border-glass-secondary md:flex-row md:items-center md:gap-8 md:px-0">
+      <div
+        className={`flex flex-col items-start gap-2 px-3 py-5 border-b border-b-glass-secondary border-glass-secondary md:flex-row md:items-center md:gap-8 md:px-0`}
+      >
         <div className="flex gap-4 md:pl-4">
           <p
             className={`${styles} px-3 py-2 text-center leading-4 text-sm font-medium rounded-full border w-auto text-gray md:w-24 capitalize`}

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function FooterList({id, header, items}) {
+export default function FooterList({id, header, items, links}) {
   return (
     <>
       <div className="">
@@ -11,7 +11,7 @@ export default function FooterList({id, header, items}) {
           {items.map((item, i) => (
             <li key={i + 1}>
               <a
-                href="https://cloud.projectdiscovery.io/"
+                href={links[i]}
                 target="_self"
                 className="flex text-sm leading-5 text-white hover:text-gray w-fit cursor-pointer"
               >

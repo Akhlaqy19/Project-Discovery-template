@@ -1,7 +1,7 @@
 import React from "react";
 import Tilt from "react-parallax-tilt";
 
-export default function IntegrationBox({ title, caption, images }) {
+export default function IntegrationBox({ title, caption, images, url }) {
   return (
     <>
       <Tilt 
@@ -16,7 +16,7 @@ export default function IntegrationBox({ title, caption, images }) {
         <div className="col-span-1">
           <a
             target="_blank"
-            href="https://docs.projectdiscovery.io/cloud/examples/slackalert#generate-alerts-in-slack"
+            href={url}
           >
             <div
               className="center"

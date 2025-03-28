@@ -192,7 +192,6 @@ header {
 	 **:transition **:delay-50 **:duration-275 **:ease-in-out;
 }
 
-/* text-base xl:text-lg text-fog font-light tracking-[0.3px] font-semibold text-fog */
 .box-title-effect {
 	@apply transition-colors duration-200 ease-in-out;
 }
@@ -355,7 +354,7 @@ header {
 }
 
 .vertical-marquee-slower {
-	animation: scrollUp 95s linear infinite;
+	animation: scrollUp 28s linear infinite;
 	animation-play-state: paused;
 }
 

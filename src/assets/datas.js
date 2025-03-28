@@ -561,12 +561,14 @@ const integrationBoxesInfo = [
     caption:
       "Receive notifications about the scans and discovery in your workspace.",
     images: ["slack.svg", "teams.svg", "webhook.svg", "email.svg"],
+    url: "https://docs.projectdiscovery.io/cloud/examples/slackalert#generate-alerts-in-slack",
   },
   {
     id: 2,
     title: "Ticketing",
     caption: "Automatically create tickets when new vulnerabilities are found.",
     images: ["jira.svg", "github.svg", "gitlab-lg.svg", "linear.svg"],
+    url: "https://docs.projectdiscovery.io/cloud/examples/connectjira",
   },
   {
     id: 3,
@@ -574,6 +576,7 @@ const integrationBoxesInfo = [
     caption:
       "Automate all platform features through our API for custom workflows.",
     images: ["api.svg"],
+    url: "https://docs.projectdiscovery.io/api-reference/introduction",
   },
 ];
 
@@ -584,14 +587,14 @@ const communityPoweredInfo = [
     id: 1,
     img: "Forta.webp",
     mainFid: "Fortra GoAnywhere MFT - Authentication Bypass",
-    mainFidCode: "0204",
+    mainFidCode: "2024-0204",
     fids: ["01/23/24 at 12:43 PM", "01/23/2024 at 1:05 PM", "22 min"],
   },
   {
     id: 2,
     img: "ACSC.webp",
     mainFid: "Unauthenticated Command Injection In Progress Kemp LoadMaster",
-    mainFidCode: "1212",
+    mainFidCode: "2024-1212",
     fids: [
       "03/19/2024 at 9:00 AM",
       "03/19/2024 at 12:49 PM",
@@ -602,7 +605,7 @@ const communityPoweredInfo = [
     id: 3,
     img: "ConnectWise.webp",
     mainFid: "ConnectWise ScreenConnect 23.9.7 - Authentication Bypass",
-    mainFidCode: "1709",
+    mainFidCode: "2024-1709",
     fids: ["2/21/2024 at 8:59 AM", "02/21/2024 at 9:29 AM", "30 min"],
   },
 ];
@@ -745,6 +748,13 @@ const footerListInfo = [
         "Change log",
         "Pricing",
       ],
+      links: [
+        "https://cloud.projectdiscovery.io/",
+        "/#features",
+        "/#solutions",
+        "https://feedback.projectdiscovery.io/changelog",
+        "https://projectdiscovery.io/pricing",
+      ],
     },
     {
       id: 2,
@@ -758,6 +768,15 @@ const footerListInfo = [
         "CVEmap",
         "All tools",
       ],
+      links: [
+        "https://projectdiscovery.io/nuclei",
+        "https://cloud.projectdiscovery.io/templates",
+        "https://github.com/projectdiscovery/subfinder",
+        "https://github.com/projectdiscovery/httpx",
+        "https://github.com/projectdiscovery/naabu",
+        "https://github.com/projectdiscovery/cvemap",
+        "https://projectdiscovery/open-source",
+      ],
     },
   ],
   [
@@ -765,11 +784,26 @@ const footerListInfo = [
       id: 3,
       header: "Resources",
       items: ["Docs", "Blog", "Community", "Pioneers", "Support"],
+      links: [
+        "https://docs.projectdiscovery.io/cloud/introduction",
+        "https://projectdiscovery.io/blog",
+        "https://projectdiscovery.io/community",
+        "https://projectdiscovery.io/pioneers",
+        "mailto:support@projectdiscovery.io",
+      ],
     },
     {
       id: 4,
       header: "Company",
       items: ["About", "Careers", "Security", "Privacy", "Terms", "Contact"],
+      links: [
+        "https://projectdiscovery.io/about-us",
+        "https://boards.greenhouse.io/projectdiscoveryinc",
+        "https://security.projectdiscovery.io",
+        "https://projectdiscovery.io/privacy",
+        "https://projectdiscovery.io/terms",
+        "https://projectdiscovery.io/contact",
+      ],
     },
   ],
 ];

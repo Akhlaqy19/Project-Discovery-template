@@ -42,9 +42,9 @@ export default function CommunityPowered() {
 
                 <div className="overlay absolute left-[38%] top-[44%] z-40">
                   <a
+                    href={`https://cloud.projectdiscovery.io/public/CVE-${communityPoweredInfo[page - 1].mainFidCode}`}
                     className="btn-monitor relative inline-flex items-center gap-x-1.5 overflow-hidden rounded-md px-4 py-2 text-sm tracking-xs shadow-sm border border-sub-yellow text-sub-yellow font-medium bg-sub-yellow/20 hover:text-midnight hover:bg-sub-yellow backdrop-blur-sm"
                     target="_self"
-                    href="https://cloud.projectdiscovery.io/public/CVE-2024-0204"
                   >
                     View template
                     <div className="rounded-md">
@@ -104,7 +104,7 @@ export default function CommunityPowered() {
                     {communityPoweredInfo[page - 1].mainFid}
                   </p>
                   <p className="font-light text-sm text-gray w-full leading-5 tracking-normal">
-                    CVE-2024-{communityPoweredInfo[page - 1].mainFidCode}
+                    CVE-{communityPoweredInfo[page - 1].mainFidCode}
                   </p>
                 </div>
                 {communityPoweredFidsInfo.map((data, i) => (
@@ -123,7 +123,6 @@ export default function CommunityPowered() {
         <div className="absolute left-0 top-0 z-20 size-full">
           <div className="custom-container-sm relative z-40 mx-auto size-full px-3 py-2 lg:px-8">
             <div className="relative overflow-hidden bg-base size-full rounded-2xl border">
-
               <SnakeBorder
                 specialStyles="
                 after:w-75
