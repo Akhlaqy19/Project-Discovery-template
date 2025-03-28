@@ -1,19 +1,14 @@
-import React, { useRef, useState } from "react";
-import ScanBoxToolkits from "./ScanBoxToolkits"
-import {toolkitsInfos} from "./../../datas";
-
+import React, { useState } from "react";
+import ScanBoxToolkits from "./ScanBoxToolkits";
+import { toolkitsInfos } from "./../../datas";
 
 function ScanVulnerabilities() {
 
-  const marqueeRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
 
-    const handleMouseEnter = () => {
-      marqueeRef.current.classList.add("running");
-    };
+  const handleMouseEnter = () => setIsHovered(true)
+  const handleMouseLeave = () => setIsHovered(false)
 
-    const handleMouseLeave = () => {
-      marqueeRef.current.classList.remove("running");
-    };
 
   return (
     <>
@@ -22,31 +17,65 @@ function ScanVulnerabilities() {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <div className="flex items-center justify-between pb-3 pt-6">
-          <h3 className="group-hover:text-white box-title-effect">
-            Continuously scan for exploitable vulnerabilities
-          </h3>
-        </div>
+        <div className="relative z-50 m-0 h-auto w-full p-0 py-0">
+          <div className="size-full">
+            <div className="pointer-events-none relative z-20 h-auto w-full">
+              <div className="flex items-center justify-between px-6 pb-3 pt-6">
+                <h3
+                  className="group-hover:text-white text-base xl:text-lg text-gray 
+                tracking-xs font-semibold box-title-effect"
+                >
+                  Continuously scan for exploitable vulnerabilities
+                </h3>
+              </div>
+            </div>
 
-        <div className="group relative h-full w-full pb-2 overflow-hidden">
-          <div className="w-[calc(100%-2px)] py-2 transition-colors">
-            <div
-              ref={marqueeRef}
-              className="flex gap-3 shrink-0 *:bg-base-2 
-            *:flex *:flex-col *:items-start *:justify-between *:gap-1
-            *:w-full *:min-w-48 *:min-h-48 *:rounded-xl *:p-4
-            *:*:first:p-2.5 *:*:first:rounded-full *:*:first:bg-black horizontal-marquee"
-            >
-              {toolkitsInfos.map((toolkitData) => (
-                <ScanBoxToolkits key={toolkitData.id} {...toolkitData} />
-              ))}
-              {/* تکرار محتوای انیمیشن برای ایجاد افکت پیوسته */}
-              {toolkitsInfos.map((toolkitData) => (
-                <ScanBoxToolkits
-                  key={toolkitData.id + "-duplicate"}
-                  {...toolkitData}
-                />
-              ))}
+            <div className="group pointer-events-none relative z-20 size-full pb-2 overflow-hidden">
+              <div className="relative top-0 z-40 h-auto w-full pb-2 transition-colors">
+                <div className="mask-x-sm mx-auto w-[calc(100%-2px)] py-2 transition-colors">
+                  <div
+                    className="group pointer-events-none flex flex-row gap-3 shrink-0 p-2 overflow-hidden [--duration:30s]"
+                  >
+                    <div className={`flex shrink-0 justify-around [gap:var(--gap)] horizontal-marquee flex-row ${isHovered ? "running" : "" }`}>
+                      {toolkitsInfos.map((toolkitData) => (
+                        <ScanBoxToolkits
+                          key={toolkitData.id}
+                          {...toolkitData}
+                        />
+                      ))}
+                    </div>
+
+
+                    {/* تکرار محتوای انیمیشن برای ایجاد افکت پیوسته */}
+                    <div className={`flex shrink-0 justify-around [gap:var(--gap)] horizontal-marquee flex-row ${isHovered ? "running" : "" }`}>
+                      {toolkitsInfos.map((toolkitData) => (
+                        <ScanBoxToolkits
+                          key={toolkitData.id + "-duplicate"}
+                          {...toolkitData}
+                        />
+                      ))}
+                    </div>
+
+                    <div className={`flex shrink-0 justify-around [gap:var(--gap)] horizontal-marquee flex-row ${isHovered ? "running" : "" }`}>
+                      {toolkitsInfos.map((toolkitData) => (
+                        <ScanBoxToolkits
+                          key={toolkitData.id + "-duplicate"}
+                          {...toolkitData}
+                        />
+                      ))}
+                    </div>
+
+                    <div className={`flex shrink-0 justify-around [gap:var(--gap)] horizontal-marquee flex-row ${isHovered ? "running" : "" }`}>
+                      {toolkitsInfos.map((toolkitData) => (
+                        <ScanBoxToolkits
+                          key={toolkitData.id + "-duplicate"}
+                          {...toolkitData}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
