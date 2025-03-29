@@ -9,6 +9,12 @@ import { motion } from "framer-motion";
 
 
 export default function CommunityPowered() {
+
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
+
   const [page, setPage] = useState(1);
   const handlePageChange = (event, value) => setPage(value);
 
@@ -36,13 +42,29 @@ export default function CommunityPowered() {
       <section className="custom-container py-20">
         <div className="relative z-40 flex w-full flex-col-reverse gap-10 px-2 md:px-0 lg:flex-row">
           <div className="relative flex h-auto w-full flex-col justify-center lg:flex lg:w-2/5 lg:pl-8 xl:w-2/5 xl:pl-0 2xl:min-h-170 2xl:w-2/5">
-            <div className="relative h-auto w-full overflow-hidden rounded-xl xl:h-full">
+            <div
+              className="relative h-auto w-full overflow-hidden rounded-xl xl:h-full"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
               <div className="relative size-full">
-                <div className="absolute left-0 top-0 z-30 size-full bg-midnight/60 hover:overlay-back"></div>
+                <div
+                  className={`absolute left-0 top-0 z-30 size-full bg-midnight/60 duration-500 ${
+                    isHovered ? "opacity-100" : "opacity-0"
+                  }`}
+                ></div>
 
-                <div className="overlay absolute left-[38%] top-[44%] z-40">
+                <div
+                  className={`absolute left-[38%] top-[44%] z-40  duration-500 ${
+                    isHovered
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-12.5"
+                  }`}
+                >
                   <a
-                    href={`https://cloud.projectdiscovery.io/public/CVE-${communityPoweredInfo[page - 1].mainFidCode}`}
+                    href={`https://cloud.projectdiscovery.io/public/CVE-${
+                      communityPoweredInfo[page - 1].mainFidCode
+                    }`}
                     className="btn-monitor relative inline-flex items-center gap-x-1.5 overflow-hidden rounded-md px-4 py-2 text-sm tracking-xs shadow-sm border border-sub-yellow text-sub-yellow font-medium bg-sub-yellow/20 hover:text-midnight hover:bg-sub-yellow backdrop-blur-sm"
                     target="_self"
                   >

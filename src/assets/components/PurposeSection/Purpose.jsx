@@ -7,7 +7,7 @@ import AlertBox from "./AlertBox";
 function Purpose() {
   return (
     <>
-      <section className="custom-container-sm custom-p-sm mt-120">
+      <section className="custom-container-sm custom-p-sm mt-30">
         <div className="relative z-40 flex w-full flex-col items-center py-10">
           <div className="flex flex-col gap-3 items-start text-left my-6 w-full max-w-full">
             <SectionTitle

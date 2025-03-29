@@ -94,7 +94,7 @@ To contribute to the project:
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👥 Authors
-- [Your Name] - Lead Developer
+- Hossein Akhlaqy - Lead Developer
 
 ## 🙏 Acknowledgments
 - Thanks to all contributors who participated in this project
