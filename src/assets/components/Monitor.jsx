@@ -1,10 +1,3 @@
-import React, { useRef, useEffect, useState, useMemo } from "react";
-import PropTypes from "prop-types";
-import SnakeBorder from "./SnakeBorder";
-import UrlInput from "../../components/common/UrlInput";
-import { CANVAS_CONFIG } from "../../constants/config";
-import { isValidUrl, getMonitorUrl } from "../../utils/urlUtils";
-
 /**
  * Monitor Component
  * 
@@ -18,6 +11,15 @@ import { isValidUrl, getMonitorUrl } from "../../utils/urlUtils";
  * @component
  * @returns {JSX.Element} A monitoring interface with URL input and animated effects
  */
+
+
+import React, { useRef, useEffect, useState, useMemo } from "react";
+import PropTypes from "prop-types";
+import SnakeBorder from "./SnakeBorder";
+import UrlInput from "../../components/common/UrlInput";
+import { CANVAS_CONFIG } from "../../constants/config";
+import { isValidUrl, getMonitorUrl } from "../../utils/urlUtils";
+
 
 function Monitor() {
   const [url, setUrl] = useState("");
