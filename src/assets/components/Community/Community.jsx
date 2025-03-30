@@ -1,3 +1,19 @@
+/**
+ * Community Component
+ * 
+ * A section component that displays community testimonials in an infinite scroll.
+ * Features:
+ * - Infinite scroll animation
+ * - Responsive grid layout
+ * - Background effects
+ * - Section title with description
+ * - Dynamic comment rendering
+ * 
+ * @component
+ * @example
+ * <Community />
+ */
+
 import React from 'react'
 import SectionTitle from "./../SectionTitle";
 import CommentBox from "./CommentBox";

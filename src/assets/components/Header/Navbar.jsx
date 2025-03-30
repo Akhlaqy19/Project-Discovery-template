@@ -1,4 +1,22 @@
+/**
+ * Navbar Component
+ * 
+ * A responsive navigation bar component with interactive features.
+ * Features:
+ * - Responsive design with mobile menu
+ * - GitHub stats display with confetti effect
+ * - Navigation links with hover effects
+ * - Sign in and sales buttons
+ * - Animated transitions
+ * - Mobile menu toggle
+ * 
+ * @component
+ * @example
+ * <Navbar />
+ */
+
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import BtnSales from "./../BtnSales";
 import Menu from './Menu';
 import { FaGithub } from "react-icons/fa";
@@ -11,6 +29,16 @@ import CloseMenu from "/icons/menu/close.svg";
 
 export default function Navbar() {
 
+  const wrapperVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleHover = () => {
@@ -18,11 +46,11 @@ export default function Navbar() {
       particleCount: 100,
       spread: 50,
       origin: { y: 0.075, x: 0.18 },
-      colors: ["#fbbf24", "#de632e"], // رنگ‌های دلخواه
+      colors: ["#fbbf24", "#de632e"], 
       scalar: 0.3,
       startVelocity: 15,
       gravity: 0.5,
-      ticks: 180, // تعداد فریم‌های انیمیشن (تقریباً 0.5 ثانیه در 60fps)
+      ticks: 180,
     });
   };
 
@@ -34,9 +62,9 @@ export default function Navbar() {
         {/* navbar */}
         <div
           className="custom-container top-0 left-0 right-0 
-        flex justify-between items-center mx-auto
-        px-6 py-4 leading-5 bg-midnight/80 backdrop-blur-lg text-white lg:py-5
-        "
+          flex justify-between items-center mx-auto
+          px-6 py-4 leading-5 bg-midnight/80 backdrop-blur-lg text-white lg:py-5
+          "
         >
           {/* left / logo */}
           <div className="relative z-50 flex items-center gap-8 lg:flex-1">
@@ -52,7 +80,12 @@ export default function Navbar() {
 
             {/* github score */}
 
-            <div className="hidden lg:flex">
+            <motion.div
+              variants={wrapperVariants}
+              initial="hidden"
+              animate="visible"
+              className="hidden lg:flex"
+            >
               <a
                 href="https://github.com/projectdiscovery/"
                 onMouseEnter={handleHover}
@@ -66,7 +99,7 @@ export default function Navbar() {
                 {/* star icon */}
                 <TiStar className="scale-90 -translate-x-0.5 text-sm group-hover:text-white" />
               </a>
-            </div>
+            </motion.div>
           </div>
 
           {/* mid / navbar links */}

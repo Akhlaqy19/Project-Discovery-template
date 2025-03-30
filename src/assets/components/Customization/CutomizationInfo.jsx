@@ -1,3 +1,27 @@
+/**
+ * CutomizationInfo Component
+ * 
+ * A component that displays customization information with icons and text.
+ * Features:
+ * - Icon display
+ * - Responsive text sizing
+ * - Custom styling
+ * - Semantic HTML structure
+ * 
+ * @param {Object} props
+ * @param {string} props.img - Path to icon image
+ * @param {string} props.title - Title text
+ * @param {string} props.text - Description text
+ * 
+ * @component
+ * @example
+ * <CutomizationInfo
+ *   img="icon.png"
+ *   title="Custom Templates"
+ *   text="Create your own detection templates"
+ * />
+ */
+
 import React from 'react'
 
 export default function CutomizationInfo({ img, title, text }) {

@@ -76,8 +76,10 @@
 	@apply bg-[#333] rounded-[0];
 }
 
+
 :root {
-	@apply box-border m-0 p-0 border-0 outline-0 text-base align-baseline bg-midnight;
+	@apply box-border m-0 p-0 border-0 outline-0 text-base align-baseline bg-midnight 
+	scroll-smooth;
 }
 
 /* Reset CSS / HTML5 display-role reset for older browsers */
@@ -88,6 +90,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	/* @apply overflow-x-hidden; */
+	@apply scroll-smooth;
 }
 
 ol, ul {

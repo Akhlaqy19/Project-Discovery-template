@@ -1,3 +1,18 @@
+/**
+ * FooterBitmaps Component
+ * 
+ * A component that displays interactive bitmaps in the footer section.
+ * Features:
+ * - Responsive display (hidden on mobile)
+ * - Interactive bitmap elements
+ * - Tooltip integration
+ * - Absolute positioning
+ * 
+ * @component
+ * @example
+ * <FooterBitmaps />
+ */
+
 import React from "react";
 import Bitmap from "./../Bitmap";
 import { bitmapsInfo } from "../../datas";

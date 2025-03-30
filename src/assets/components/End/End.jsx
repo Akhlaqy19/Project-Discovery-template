@@ -1,3 +1,18 @@
+/**
+ * End Component
+ * 
+ * A footer section component that combines contact, bitmaps, and main footer sections.
+ * Features:
+ * - Animated grid background
+ * - Gradient overlays
+ * - Responsive layout
+ * - Multiple footer sections
+ * 
+ * @component
+ * @example
+ * <End />
+ */
+
 import React from 'react'
 import Contact from "./Contact";
 import FooterBitmaps from "./FooterBitmaps";

@@ -1,3 +1,18 @@
+/**
+ * ScanVulnerabilities Component
+ * 
+ * A component that displays an animated horizontal marquee of vulnerability scanning toolkits.
+ * Features:
+ * - Interactive hover effects
+ * - Continuous horizontal scrolling animation
+ * - Responsive grid layout
+ * - Seamless infinite scroll effect
+ * 
+ * @component
+ * @example
+ * <ScanVulnerabilities />
+ */
+
 import React, { useState } from "react";
 import ScanBoxToolkits from "./ScanBoxToolkits";
 import { toolkitsInfos } from "./../../datas";

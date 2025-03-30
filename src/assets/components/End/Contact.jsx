@@ -1,3 +1,19 @@
+/**
+ * Contact Component
+ * 
+ * A contact section component with interactive elements.
+ * Features:
+ * - Gradient background
+ * - Two-column layout
+ * - Monitor component integration
+ * - Sales button integration
+ * - Responsive design
+ * 
+ * @component
+ * @example
+ * <Contact />
+ */
+
 import React from 'react'
 import ContactBox from "./ContactBox";
 import Monitor from './../Monitor';

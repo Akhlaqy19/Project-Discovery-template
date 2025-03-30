@@ -1,3 +1,30 @@
+/**
+ * ScanBoxToolkits Component
+ * 
+ * A component that displays individual toolkit information in a card format.
+ * Features:
+ * - Icon display with gradient background
+ * - Vulnerability score indicator
+ * - Responsive text sizing
+ * - Custom gradient background
+ * 
+ * @param {Object} props
+ * @param {string} props.name - Toolkit name
+ * @param {string} props.situate - Situation or description
+ * @param {string} props.code - Vulnerability code
+ * @param {string} props.score - Vulnerability score
+ * @param {string} props.img - Icon image filename
+ * 
+ * @example
+ * <ScanBoxToolkits
+ *   name="SQL Injection"
+ *   situate="Critical vulnerability detected"
+ *   code="CVE-2023-123"
+ *   score="9.8"
+ *   img="sql-injection.svg"
+ * />
+ */
+
 import React from "react";
 
 function ScanBoxToolkits({name, situate, code, score, img}) {

@@ -638,8 +638,8 @@ const issueInfos = [
     id: 1,
     title: "Broken Authentication",
     count: 37,
-    code: `
-id: CVE-2024-27199
+    code: 
+`id: CVE-2024-27199
 
 info:
   name: TeamCity < 2023.11.4 - Authentication Bypass
@@ -675,15 +675,14 @@ info:
           - 'contains(header, "text/html")'
           - 'contains_all(body, "Debug Logging", "CPU & Memory Usage")'
         condition: and
-# digest: 490a0046304402207d46ec6991f8498ff8c74ec6ebfe0f59f19210620cab88c23c7761c7701b640102201246e4baea4f5b436b45be21c4f66bbe35e8a5f3769b78de38ee94253f331fa7:922c64590222798bb761d5b6d8e72950
-  `,
+# digest: 490a0046304402207d46ec6991f8498ff8c74ec6ebfe0f59f19210620cab88c23c7761c7701b640102201246e4baea4f5b436b45be21c4f66bbe35e8a5f3769b78de38ee94253f331fa7:922c64590222798bb761d5b6d8e72950`,
   },
   {
     id: 2,
     title: "Weak password",
     count: 62,
-    code: `
-id: CVE-2023-38433
+    code: 
+`id: CVE-2023-38433
 
 info:
   name: Fujitsu IP Series - Hardcoded Credentials
@@ -744,15 +743,14 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220339e122342e81795d73baca010a14f5f18ebda3889eb36b5df9ad2052cc451f90220310bcf82220b0bcebf3650c9eed525433112c6c74a38dfdced33aecf17eb6784:922c64590222798bb761d5b6d8e72950
-    `,
+# digest: 490a004630440220339e122342e81795d73baca010a14f5f18ebda3889eb36b5df9ad2052cc451f90220310bcf82220b0bcebf3650c9eed525433112c6c74a38dfdced33aecf17eb6784:922c64590222798bb761d5b6d8e72950`,
   },
   {
     id: 3,
     title: "Out of band",
     count: 50,
-    code: `
-id: CVE-2024-34351
+    code: 
+`id: CVE-2024-34351
 
 info:
   name: Next.js - Server Side Request Forgery (SSRF)
@@ -801,15 +799,14 @@ http:
         part: body
         words:
           - "The requested resource isn't a valid image"
-# digest: 4a0a0047304502201cb22b31416f184c4beeafb402db2f170f661e1cb990d6fd5ab034d847bfa51c022100fdeb601572c1a7b843247ef5294a0243a39df1a90310dcb0fc97a3edd48bde6f:922c64590222798bb761d5b6d8e72950
-    `,
+# digest: 4a0a0047304502201cb22b31416f184c4beeafb402db2f170f661e1cb990d6fd5ab034d847bfa51c022100fdeb601572c1a7b843247ef5294a0243a39df1a90310dcb0fc97a3edd48bde6f:922c64590222798bb761d5b6d8e72950`,
   },
   {
     id: 4,
     title: "SQL Injection",
     count: 43,
-    code: `
-id: CVE-2024-32640
+    code: 
+`id: CVE-2024-32640
 
 info:
   name: Mura/Masa CMS - SQL Injection
@@ -851,15 +848,14 @@ http:
           - 'contains_all(body, "Unhandled Exception")'
           - 'contains_all(header,"cfid","cftoken")'
         condition: and
-# digest: 490a0046304402206eccd0783b81a569061e6e996a33b917a1eca34bb2e26b04e47993cf4137690f02203413cd6642c7e01f2dbd3b6bf10fba063c483073a1da5349b56a666d945f008e:922c64590222798bb761d5b6d8e72950
-    `,
+# digest: 490a0046304402206eccd0783b81a569061e6e996a33b917a1eca34bb2e26b04e47993cf4137690f02203413cd6642c7e01f2dbd3b6bf10fba063c483073a1da5349b56a666d945f008e:922c64590222798bb761d5b6d8e72950`,
   },
   {
     id: 5,
     title: "Secrets",
     count: 31,
-    code: `
-id: aws-access-secret-key
+    code: 
+`id: aws-access-secret-key
 
 info:
   name: AWS Access/Secret Key Disclosure
@@ -889,15 +885,14 @@ http:
         status:
           - 200
 
-# digest: 4b0a00483046022100a18f27b205b0f4d3b502a4ad5a326cc65b76afe8be03898378095eb657a54250022100a2ccd7b2cc4d37ff5a84631a0feed54b5fb00f69b5ec7da55a1957a58e73020c:922c64590222798bb761d5b6d8e72950
-    `,
+# digest: 4b0a00483046022100a18f27b205b0f4d3b502a4ad5a326cc65b76afe8be03898378095eb657a54250022100a2ccd7b2cc4d37ff5a84631a0feed54b5fb00f69b5ec7da55a1957a58e73020c:922c64590222798bb761d5b6d8e72950`,
   },
   {
     id: 6,
     title: "IDOR",
     count: 55,
-    code: `
-id: CVE-2020-13700
+    code: 
+`id: CVE-2020-13700
 
 info:
   name: WordPresss acf-to-rest-api <=3.1.0 - Insecure Direct Object Reference
@@ -951,8 +946,7 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100aec7e7c4fcb60c57ef25e6cc1ae2372d27bb9b95b632e0fb4e3c7c0c9feb7766022015ad75e81bbe30e6cf1acedf96073238c86309f593297993c44d0d7f7b49189b:922c64590222798bb761d5b6d8e72950
-    `,
+# digest: 4a0a00473045022100aec7e7c4fcb60c57ef25e6cc1ae2372d27bb9b95b632e0fb4e3c7c0c9feb7766022015ad75e81bbe30e6cf1acedf96073238c86309f593297993c44d0d7f7b49189b:922c64590222798bb761d5b6d8e72950`,
   },
 ];
 

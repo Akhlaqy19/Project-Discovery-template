@@ -1,3 +1,34 @@
+/**
+ * RowAlertBox Component
+ * 
+ * A component that displays individual alert information in a row format.
+ * Features:
+ * - Responsive layout (flex-col on mobile, flex-row on desktop)
+ * - Customizable alert type styling
+ * - Asset count display
+ * - Alert recipient information
+ * 
+ * @param {Object} props
+ * @param {string} props.type - Alert type (e.g., "Critical", "High")
+ * @param {string} props.styles - Custom CSS classes for type styling
+ * @param {string} props.code - Alert code or identifier
+ * @param {string} props.details - Alert details or description
+ * @param {string} props.count - Number of affected assets
+ * @param {string} props.img - Recipient icon image filename
+ * @param {string} props.name - Recipient name
+ * 
+ * @example
+ * <RowAlertBox
+ *   type="Critical"
+ *   styles="bg-red-500/20 text-red-500"
+ *   code="CVE-2023-123"
+ *   details="SQL Injection vulnerability detected"
+ *   count="5"
+ *   img="team-icon.svg"
+ *   name="Security Team"
+ * />
+ */
+
 import React from 'react'
 
 function RowAlertBox({type, styles, code, details, count, img, name}) {

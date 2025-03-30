@@ -1,14 +1,76 @@
+/**
+ * CommunityPowered Component
+ * 
+ * A section component that displays community-powered exploit information with pagination.
+ * Features:
+ * - Framer Motion animations
+ * - Pagination system
+ * - Hover effects
+ * - Dynamic content loading
+ * - Snake border effects
+ * - Responsive design
+ * 
+ * @component
+ * @example
+ * <CommunityPowered />
+ */
+
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import ExploitNotif from "./ExploitNotif";
 import SnakeBorder from "./../SnakeBorder";
-
 import { communityPoweredInfo } from "../../datas";
 import { communityPoweredFidsInfo } from "../../datas";
 import { Pagination, PaginationItem } from "@mui/material";
-import { motion } from "framer-motion";
 
 
 export default function CommunityPowered() {
+
+    const titleVariants = {
+      hidden: { opacity: 0, y: "30%" },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 1,
+          staggerChildren: 0.2,
+        },
+      },
+    };
+
+    const textVariants = {
+      hidden: {
+        opacity: 0,
+        y: "20%"
+      },
+      visible: {
+        opacity: 1,
+        y: 0
+      },
+    };
+
+    const notifsVariants = {
+      hidden: { opacity: 0 },
+      visible: {
+        opacity: 1,
+        transition: {
+          duration: 1,
+          staggerChildren: 0.3,
+        },
+      },
+    };
+
+    const notifVariants = {
+      hidden: {
+        opacity: 0,
+        y: "15%",
+      },
+      visible: {
+        opacity: 1,
+        y: 0,
+      },
+    };
+
 
   const [isHovered, setIsHovered] = useState(false);
 
@@ -91,18 +153,28 @@ export default function CommunityPowered() {
             </div>
           </div>
           <div className="relative flex h-full flex-col items-center px-1 lg:w-3/5 lg:pl-4 lg:pr-10 xl:w-2/5 xl:pr-0">
-            <div className="flex flex-col gap-3 items-start text-left mb-8 mt-16 *:transform-none">
-              <div className="my-5">
+            <motion.div
+              variants={titleVariants}
+              whileHover={titleVariants}
+              initial="hidden"
+              animate="visible"
+              className="flex flex-col gap-3 items-start text-left mb-8 mt-16 *:transform-none"
+            >
+              <motion.div
+                className="my-5"
+                variants={textVariants}
+                whileHover={textVariants}
+              >
                 <p className="text-xs font-light uppercase tracking-3 text-sub-yellow">
                   COMMUNITY POWERED
                 </p>
-              </div>
-              <div>
+              </motion.div>
+              <motion.div variants={textVariants} whileHover={textVariants}>
                 <h3 className="section-gradient-title xl:max-w-139">
                   The fastest exploits feed on the Internet
                 </h3>
-              </div>
-              <div>
+              </motion.div>
+              <motion.div variants={textVariants} whileHover={textVariants}>
                 <p className="text-left max-w-140.5 text-base xl:text-lg text-gray font-light tracking-xs w-full">
                   ProjectDiscovery is powered by our Nuclei open source project.
                   A global security community that streamlines exploits in
@@ -116,29 +188,43 @@ export default function CommunityPowered() {
                   </strong>
                   to tackle the emerging exploitable vulnerabilities.
                 </p>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            <div className="relative flex min-h-72 w-full">
+            <motion.div
+              className="relative flex min-h-72 w-full"
+              variants={notifsVariants}
+              whileHover={notifsVariants}
+              initial="hidden"
+              animate="visible"
+            >
               <div className="relative z-30 flex w-full flex-col gap-4">
-                <div className="bg-base-2 z-30 w-full rounded-xl bg-custom-gradient px-5 py-2 transform-none">
+                <motion.div
+                  variants={notifVariants}
+                  whileHover={notifVariants}
+                  className="bg-base-2 z-30 w-full rounded-xl bg-custom-gradient px-5 py-2 transform-none"
+                >
                   <p className="font-light text-sm md:text-base w-full leading-6 tracking-normal text-white">
                     {communityPoweredInfo[page - 1].mainFid}
                   </p>
                   <p className="font-light text-sm text-gray w-full leading-5 tracking-normal">
                     CVE-{communityPoweredInfo[page - 1].mainFidCode}
                   </p>
-                </div>
+                </motion.div>
                 {communityPoweredFidsInfo.map((data, i) => (
-                  <div key={data.id}>
+                  <motion.div
+                    variants={notifVariants}
+                    whileHover={notifVariants}
+                    key={data.id}
+                  >
                     <ExploitNotif
                       {...data}
                       fidsData={communityPoweredInfo[page - 1].fids[i]}
                     />
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 

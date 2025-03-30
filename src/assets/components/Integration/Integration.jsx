@@ -1,10 +1,49 @@
+/**
+ * Integration Component
+ * 
+ * A section component that displays integration options with animated boxes.
+ * Features:
+ * - Animated grid layout
+ * - Framer Motion animations
+ * - Responsive design
+ * - Staggered children animations
+ * - Section title with description
+ * 
+ * @component
+ * @example
+ * <Integration />
+ */
+
 import React from "react";
 import SectionTitle from "./../SectionTitle";
 import IntegrationBox from "./IntegrationBox";
 import { integrationBoxesInfo } from "./../../datas";
-
+import { motion } from "framer-motion";
 
 function Integration() {
+
+  const wrapperVariants = {
+    hidden: { opacity: 0},
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 1.4,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const childVariants = {
+    hidden: {
+      opacity: 0,
+      y: "10%",
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
   return (
     <>
       <section className="custom-container-sm custom-p-sm mb-36">
@@ -19,13 +58,23 @@ function Integration() {
           </div>
         </div>
 
-        <div className="grid-col-1 relative grid w-full gap-4 md:grid-cols-3 md:gap-10">
+        <motion.div
+          variants={wrapperVariants}
+          whileInView={wrapperVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid-col-1 relative grid w-full gap-4 md:grid-cols-3 md:gap-10"
+        >
           {integrationBoxesInfo.map((data) => (
-            <div key={data.id}>
+            <motion.div
+              variants={childVariants}
+              whileInView={childVariants}
+              key={data.id}
+            >
               <IntegrationBox {...data} />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
     </>
   );

@@ -1,3 +1,19 @@
+/**
+ * Hero Component
+ * 
+ * A hero section component with animated content and interactive elements.
+ * Features:
+ * - Animated text and content using Framer Motion
+ * - Monitor component integration
+ * - Interactive bitmaps with tooltips
+ * - Responsive layout
+ * - Gradient text effects
+ * 
+ * @component
+ * @example
+ * <Hero />
+ */
+
 import React from "react";
 import Monitor from "./../Monitor";
 import Bitmap from "./../Bitmap";

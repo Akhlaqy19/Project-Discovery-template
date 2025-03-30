@@ -1,3 +1,30 @@
+/**
+ * CommentBox Component
+ * 
+ * A component that displays a single community testimonial with user information.
+ * Features:
+ * - Twitter integration
+ * - User avatar display
+ * - Glowing background effect
+ * - Responsive design
+ * - External link support
+ * 
+ * @param {Object} props
+ * @param {string} props.fullName - User's full name
+ * @param {string} props.userName - User's Twitter handle
+ * @param {string} props.avatar - Path to user's avatar image
+ * @param {string} props.comment - User's testimonial text
+ * 
+ * @component
+ * @example
+ * <CommentBox
+ *   fullName="John Doe"
+ *   userName="johndoe"
+ *   avatar="avatar.png"
+ *   comment="Great product!"
+ * />
+ */
+
 import React from 'react'
 import X from "/icons/X.svg";
 

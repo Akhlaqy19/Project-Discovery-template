@@ -1,3 +1,18 @@
+/**
+ * AttackServices Component
+ * 
+ * A component that displays a monitoring interface for attack surface information.
+ * Features:
+ * - Interactive hover effects
+ * - Animated data display
+ * - Responsive grid layout
+ * - Real-time data updates
+ * 
+ * @component
+ * @example
+ * <AttackServices />
+ */
+
 import React, { useState } from "react";
 import { attackServicesInfos } from "./../../datas";
 import RowAttackServices from "./RowAttackServices";
@@ -62,6 +77,19 @@ export default function AttackServices() {
     </>
   );
 }
+
+/**
+ * AttackServicesBase Component
+ * 
+ * A subcomponent that handles the animated display of attack service data.
+ * Features:
+ * - Vertical marquee animation
+ * - Hover-based animation control
+ * - Dynamic data rendering
+ * 
+ * @param {Object} props
+ * @param {boolean} props.isHovered - Controls the animation state
+ */
 
 const AttackServicesBase = ({ isHovered }) => {
   return (

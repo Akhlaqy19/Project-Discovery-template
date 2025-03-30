@@ -1,3 +1,18 @@
+/**
+ * Purpose Component
+ * 
+ * A section component that showcases the main purpose and value proposition of ProjectDiscovery.
+ * Features:
+ * - Section title with description
+ * - Grid layout of feature boxes
+ * - Glassmorphism design elements
+ * - Responsive layout
+ * 
+ * @component
+ * @example
+ * <Purpose />
+ */
+
 import React from "react";
 import SectionTitle from "../SectionTitle";
 import AttackServices from "./AttackServices";

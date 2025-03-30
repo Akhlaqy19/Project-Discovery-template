@@ -1,3 +1,29 @@
+/**
+ * ContactBox Component
+ * 
+ * A container component for contact section content.
+ * Features:
+ * - Customizable styling
+ * - Responsive layout
+ * - Flexible content area
+ * - Consistent spacing
+ * 
+ * @param {Object} props
+ * @param {string} props.title - Box title text
+ * @param {string} props.description - Box description text
+ * @param {string} props.styles - Additional CSS classes for styling
+ * @param {React.ReactNode} props.children - Child components to render
+ * 
+ * @example
+ * <ContactBox
+ *   title="Get Started"
+ *   description="Start your journey with us"
+ *   styles="gap-4"
+ * >
+ *   <Button>Click Me</Button>
+ * </ContactBox>
+ */
+
 import React from 'react'
 
 export default function ContactBox({ title, description, styles, children }) {

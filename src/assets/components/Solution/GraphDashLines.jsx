@@ -1,3 +1,19 @@
+/**
+ * GraphDashLines Component
+ * 
+ * A component that renders animated dashed lines with halo effects in an SVG.
+ * Features:
+ * - GSAP animations
+ * - Responsive dash patterns
+ * - Halo effects
+ * - Gradient strokes
+ * - Viewport-based adjustments
+ * 
+ * @component
+ * @example
+ * <GraphDashLines />
+ */
+
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 

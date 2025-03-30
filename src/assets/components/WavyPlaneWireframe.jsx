@@ -1,3 +1,18 @@
+/**
+ * WavyPlaneWireframe Component
+ * 
+ * A portal-based background component that displays a mountain grid image.
+ * Features:
+ * - Uses React Portal for rendering outside the main DOM hierarchy
+ * - Lazy loading for better performance
+ * - Sticky positioning for parallax-like effect
+ * - Responsive image sizing
+ * 
+ * @component
+ * @example
+ * <WavyPlaneWireframe />
+ */
+
 import React from 'react'
 import ReactDOM from "react-dom";
 

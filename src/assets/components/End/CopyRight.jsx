@@ -1,3 +1,18 @@
+/**
+ * CopyRight Component
+ * 
+ * A footer component displaying copyright information and social media links.
+ * Features:
+ * - Social media icons with hover effects
+ * - Responsive layout
+ * - External links to social platforms
+ * - Copyright text
+ * 
+ * @component
+ * @example
+ * <CopyRight />
+ */
+
 import React from 'react'
 import { FaDiscord } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";

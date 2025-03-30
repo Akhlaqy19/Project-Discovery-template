@@ -1,3 +1,18 @@
+/**
+ * AlertBox Component
+ * 
+ * A component that displays an animated vertical marquee of alert notifications.
+ * Features:
+ * - Interactive hover effects
+ * - Continuous vertical scrolling animation
+ * - Glassmorphism design
+ * - Responsive layout
+ * 
+ * @component
+ * @example
+ * <AlertBox />
+ */
+
 import React, { useRef, useState } from "react";
 import RowAlertBox from "./RowAlertBox";
 import { rowAlertBoxInfos } from "./../../datas";

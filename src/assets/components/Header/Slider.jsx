@@ -1,3 +1,18 @@
+/**
+ * Slider Component
+ * 
+ * A component that displays a continuous scrolling banner of company logos.
+ * Features:
+ * - Infinite scroll effect
+ * - Grayscale and opacity styling
+ * - Responsive layout
+ * - Multiple instances for seamless animation
+ * 
+ * @component
+ * @example
+ * <Slider />
+ */
+
 import React from "react";
 import { sliderLogosInfo } from "./../../datas";
 
@@ -26,6 +41,18 @@ export default function Slider() {
     </>
   );
 }
+
+/**
+ * SliderBase Component
+ * 
+ * A subcomponent that renders a single row of company logos.
+ * Features:
+ * - Dynamic logo rendering from data
+ * - Consistent spacing and alignment
+ * - Background color matching
+ * 
+ * @component
+ */
 
 const SliderBase = () => {
   return (

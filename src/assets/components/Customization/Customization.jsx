@@ -1,4 +1,22 @@
-import React, { useEffect, useState } from "react";
+/**
+ * Customization Component
+ * 
+ * A section component that displays code customization options with interactive features.
+ * Features:
+ * - Code template display
+ * - Dynamic tab switching
+ * - Framer Motion animations
+ * - GitHub integration
+ * - Responsive grid layout
+ * - Custom code rendering
+ * 
+ * @component
+ * @example
+ * <Customization />
+ */
+
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 import SectionTitle from "./../SectionTitle";
 import IssueTitle from "./IssueTitle";
 import CutomizationInfo from "./CutomizationInfo";
@@ -9,6 +27,43 @@ import { FaGithub } from "react-icons/fa";
 
 
 export default function Customization() {
+
+  const codeTemplateVariants = {
+    hidden: { opacity: 0, y: "20%" },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        staggerChildren: 0.3,
+        damping: 100
+      },
+    },
+  };
+
+  const boxesVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  
+  const boxVariants = {
+    hidden: {
+      opacity: 0,
+      y: "10%",
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
   const [selectedTitle, setSelectedTitle] = useState(issueInfos[0].title);
   const [codeTemplate, setCodeTemplate] = useState(issueInfos[0].code);
 
@@ -34,7 +89,13 @@ export default function Customization() {
           />
         </div>
 
-        <div className="">
+        <motion.div
+          variants={codeTemplateVariants}
+          whileInView={codeTemplateVariants}
+          initial="hidden"
+          animate="visible"
+          className=""
+        >
           <div className="bg-base flex flex-col overflow-hidden rounded-2xl">
             <div className="flex min-w-full justify-between overflow-x-scroll bg-midnight px-8 py-1 pr-24 lg:overflow-x-hidden">
               {issueInfos.map((data) => {
@@ -73,15 +134,21 @@ export default function Customization() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="mt-20 grid grid-cols-1 gap-14 sm:grid-cols-3">
+        <motion.div
+          variants={boxesVariants}
+          whileInView={boxesVariants}
+          initial="hidden"
+          animate="visible"
+          className="mt-20 grid grid-cols-1 gap-14 sm:grid-cols-3"
+        >
           {cutomizationInfo.map((data) => (
-            <div key={data.id}>
+            <motion.div variants={boxVariants} whileInView={boxVariants} key={data.id}>
               <CutomizationInfo {...data} />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
     </>
   );

@@ -1,3 +1,28 @@
+/**
+ * RowAttackServices Component
+ * 
+ * A component that displays individual attack service information in a row format.
+ * Features:
+ * - Technology stack icons display
+ * - Domain and IP information
+ * - Port information
+ * - Responsive layout
+ * 
+ * @param {Object} props
+ * @param {string} props.domain - Domain name or host
+ * @param {string} props.port - Port number
+ * @param {string[]} props.techs - Array of technology icon filenames
+ * @param {string} props.ip - IP address
+ * 
+ * @example
+ * <RowAttackServices
+ *   domain="example.com"
+ *   port="443"
+ *   techs={["react.svg", "node.svg"]}
+ *   ip="192.168.1.1"
+ * />
+ */
+
 import React from 'react'
 
 function RowAttackServices({domain, port, techs, ip}) {

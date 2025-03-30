@@ -1,3 +1,20 @@
+/**
+ * SnakeBorder Component
+ * 
+ * A decorative border component that creates an animated beam effect.
+ * Features:
+ * - Animated border beam effect
+ * - Customizable styles through specialStyles prop
+ * - Accessible with proper ARIA attributes
+ * - Non-interactive (pointer-events-none)
+ * 
+ * @param {Object} props
+ * @param {string} [props.specialStyles] - Additional CSS classes for custom styling
+ * 
+ * @example
+ * <SnakeBorder specialStyles="border-blue-500" />
+ */
+
 import React from "react";
 import PropTypes from "prop-types";
 

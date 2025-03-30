@@ -1,3 +1,18 @@
+/**
+ * Solution Component
+ * 
+ * A comprehensive solution showcase component displaying different scanning capabilities.
+ * Features:
+ * - Grid layout of solution cases
+ * - Animated section titles
+ * - Background grid lines
+ * - Company logo integration
+ * 
+ * @component
+ * @example
+ * <Solution />
+ */
+
 import React from 'react'
 import SectionTitle from "./../SectionTitle";
 import SolutionCase from "./SolutionCase"

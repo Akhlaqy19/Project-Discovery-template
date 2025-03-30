@@ -1,3 +1,20 @@
+/**
+ * BtnSales Component
+ * 
+ * A styled button component for sales contact with hover effects.
+ * Features:
+ * - Glassmorphism design with backdrop blur
+ * - Hover state transitions
+ * - Customizable height
+ * - External link to sales demo request
+ * 
+ * @param {Object} props
+ * @param {string} [props.height] - Custom height class for the button
+ * 
+ * @example
+ * <BtnSales height="h-10" />
+ */
+
 import React from "react";
 import { Button } from "@mui/material";
 

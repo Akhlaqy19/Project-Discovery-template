@@ -107,7 +107,7 @@ const CustomCodeRenderer = ({ yamlTemplate }) => {
   };
 
   return (
-    <div className="relative w-full rounded-xl overflow-hidden">
+    <div className="relative w-full rounded-xl overflow-x-hidden">
       <div className="relative">
         <SyntaxHighlighter
           language="yaml"
@@ -116,6 +116,7 @@ const CustomCodeRenderer = ({ yamlTemplate }) => {
             background: "transparent",
             padding: "0 0",
             margin: 0,
+            overflowX: "hidden"
           }}
           showLineNumbers={true}
           wrapLines={true}

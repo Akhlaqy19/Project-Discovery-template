@@ -1,3 +1,19 @@
+/**
+ * FooterMain Component
+ * 
+ * A comprehensive footer component that includes newsletter subscription, company links, and copyright information.
+ * Features:
+ * - Newsletter subscription form with loading state
+ * - Company logo display
+ * - Dynamic footer lists
+ * - Responsive grid layout
+ * - Loading and submission states
+ * 
+ * @component
+ * @example
+ * <FooterMain />
+ */
+
 import React, { useState } from "react";
 import FooterList from "./FooterList";
 import CopyRight from "./CopyRight";
@@ -18,6 +34,7 @@ export default function FooterMain() {
     // });
     // return response.json();
 
+    // this loop for test
     let i = 0;
     while (i < 1000000000) {
       i++;
@@ -115,6 +132,22 @@ export default function FooterMain() {
   );
 }
 
+/**
+ * PairOfLists Component
+ * 
+ * A helper component that renders two FooterList components side by side.
+ * Features:
+ * - Responsive layout
+ * - Dynamic spacing
+ * - Mobile-first design
+ * 
+ * @param {Object} props
+ * @param {Object} props.itemsInfo - Array containing two FooterList configurations
+ * 
+ * @component
+ * @example
+ * <PairOfLists itemsInfo={footerListInfo[0]} />
+ */
 const PairOfLists = ({ itemsInfo }) => {
   return (
     <>

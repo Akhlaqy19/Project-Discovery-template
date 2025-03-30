@@ -1,3 +1,19 @@
+/**
+ * Features Component
+ * 
+ * A section component that displays feature cards with scroll-based animations.
+ * Features:
+ * - Scroll-based animations
+ * - Sticky positioning
+ * - Responsive design
+ * - Framer Motion integration
+ * - Snake border effects
+ * 
+ * @component
+ * @example
+ * <Features />
+ */
+
 import React, { useRef, useCallback } from "react";
 import SectionTitle from "./../SectionTitle";
 import { featureInfos } from "./../../datas";
@@ -25,7 +41,35 @@ function Features() {
   );
 }
 
-// ================== FeatureCard Components ==================
+/**
+ * FeatureCardBase Component
+ * 
+ * Base component for feature cards with scroll-based animations.
+ * Features:
+ * - Scroll progress tracking
+ * - Scale and opacity animations
+ * - Image display with border effects
+ * - Responsive layout
+ * 
+ * @param {Object} props
+ * @param {number} props.scrollProgress - Current scroll progress (0-1)
+ * @param {string} props.subTitle - Subtitle text for the feature
+ * @param {string} props.title - Main title text
+ * @param {string} props.description - Feature description
+ * @param {string} props.img - Image URL
+ * @param {string} props.id - Unique identifier
+ * 
+ * @component
+ * @example
+ * <FeatureCardBase
+ *   scrollProgress={0.5}
+ *   subTitle="Feature"
+ *   title="Main Feature"
+ *   description="Feature description"
+ *   img="/path/to/image.png"
+ *   id="feature-1"
+ * />
+ */
 const FeatureCardBase = ({
   scrollProgress,
   subTitle,
@@ -87,7 +131,22 @@ const FeatureCardBase = ({
   );
 };
 
-// Dummy component for handling the last card's animation
+/**
+ * DummyCard Component
+ * 
+ * A placeholder component for handling the last card's animation.
+ * Features:
+ * - Scroll-based animations
+ * - Scale and opacity transitions
+ * - Viewport detection
+ * 
+ * @param {Object} props
+ * @param {number} props.scrollProgress - Current scroll progress (0-1)
+ * 
+ * @component
+ * @example
+ * <DummyCard scrollProgress={0.5} />
+ */
 const DummyCard = ({ scrollProgress }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 1 });

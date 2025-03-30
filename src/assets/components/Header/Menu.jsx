@@ -1,3 +1,18 @@
+/**
+ * Menu Component
+ * 
+ * A mobile navigation menu component with animated transitions.
+ * Features:
+ * - Animated menu items using Framer Motion
+ * - Backdrop overlay
+ * - Responsive design
+ * - Staggered animation effects
+ * 
+ * @component
+ * @example
+ * <Menu />
+ */
+
 import React from 'react'
 import { navLinksData } from '../../datas';
 import { motion } from 'framer-motion'; 
@@ -52,6 +67,28 @@ export default function Menu() {
     </>
   );
 }
+
+/**
+ * MenuItem Component
+ * 
+ * A subcomponent that renders individual menu items with animations.
+ * Features:
+ * - Individual item animations
+ * - Hover effects
+ * - Customizable routes
+ * 
+ * @param {Object} props
+ * @param {number} props.id - Unique identifier for animation timing
+ * @param {string} props.route - Navigation route or URL
+ * @param {string} props.navItem - Display text for the menu item
+ * 
+ * @example
+ * <MenuItem
+ *   id={1}
+ *   route="/features"
+ *   navItem="Features"
+ * />
+ */
 
 const MenuItem = ({id, route, navItem}) => {
     return (

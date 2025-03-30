@@ -1,3 +1,19 @@
+/**
+ * SolutionCase Component
+ * 
+ * A circular case display component for solution features.
+ * Features:
+ * - Responsive sizing
+ * - Centered text alignment
+ * - Consistent styling with the solution section
+ * 
+ * @param {Object} props
+ * @param {string} props.title - The title text to display in the case
+ * 
+ * @example
+ * <SolutionCase title="Application Security" />
+ */
+
 import React from 'react'
 
 export default function SolutionCase({title}) {

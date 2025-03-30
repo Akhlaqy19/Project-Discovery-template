@@ -2,6 +2,22 @@ import React, { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 
+/**
+ * StarryBackground Component
+ * 
+ * A component that creates an interactive starry background effect using tsParticles.
+ * Features:
+ * - Particle system
+ * - Static star effect
+ * - Customizable particle properties
+ * - Responsive density
+ * - Performance optimized
+ * 
+ * @component
+ * @example
+ * <StarryBackground />
+ */
+
 export default function StarryBackground() {
 
      const [init, setInit] = useState(false);

@@ -1,3 +1,39 @@
+/**
+ * Bitmap Component
+ * 
+ * An interactive bitmap component with mouse-follow rotation and animated tooltips.
+ * Features:
+ * - Mouse-follow rotation effect
+ * - Animated tooltips with CVE information
+ * - Customizable positioning and scaling
+ * - Smooth animations using Framer Motion
+ * 
+ * @param {Object} props
+ * @param {string} props.yAxis - Vertical positioning class
+ * @param {string} props.xAxis - Horizontal positioning class
+ * @param {string} props.size - Size class for the bitmap container
+ * @param {string} props.scale - Scale class for the bitmap image
+ * @param {string} props.img - Image filename in the bitmaps directory
+ * @param {Object} props.tooltip - Tooltip configuration object
+ * 
+ * @example
+ * <Bitmap
+ *   yAxis="top-10"
+ *   xAxis="left-10"
+ *   size="size-12"
+ *   scale="scale-100"
+ *   img="bitmap1.png"
+ *   tooltip={{
+ *     id: "123",
+ *     color: "text-red-500",
+ *     text: "Critical Vulnerability",
+ *     code: "2023-123",
+ *     tooltipScale: 1,
+ *     margin: "mt-2"
+ *   }}
+ * />
+ */
+
 import React from "react";
 import { motion, useMotionValue } from "framer-motion";
 
@@ -37,6 +73,8 @@ export default function Bitmap({ yAxis, xAxis, size, scale, img, ...tooltip }) {
     <>
       <motion.div
         variants={wrapperVariants}
+        initial="hidden"
+        animate="visible"
         className={`absolute cursor-pointer ${yAxis} ${xAxis}`}
       >
         <motion.a
@@ -62,6 +100,24 @@ export default function Bitmap({ yAxis, xAxis, size, scale, img, ...tooltip }) {
   );
 }
 
+/**
+ * Tooltip Component
+ * 
+ * A subcomponent of Bitmap that displays animated tooltips with vulnerability information.
+ * Features:
+ * - Spring-based animation
+ * - Customizable styling and positioning
+ * - CVE code display
+ * 
+ * @param {Object} props
+ * @param {MotionValue} props.rotate - Rotation value from parent Bitmap
+ * @param {string} props.id - Unique identifier for the tooltip
+ * @param {string} props.color - Text color class
+ * @param {string} props.text - Tooltip text content
+ * @param {string} props.code - CVE code to display
+ * @param {number} props.tooltipScale - Scale factor for the tooltip
+ * @param {string} props.margin - Margin class for positioning
+ */
 
 const Tooltip = ({ rotate, id, color, text, code, tooltipScale, margin }) => {
 
