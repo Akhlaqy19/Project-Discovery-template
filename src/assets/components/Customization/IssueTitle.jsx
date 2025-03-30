@@ -8,9 +8,7 @@ export default function IssueTitle({ title, titleHandler, color: textColor }) {
            hover:text-white`}
       >
         <p
-          onClick={() => {
-            titleHandler(title);
-          }}
+          onClick={() => titleHandler(title)}
           className={`tracking-xs text-sm md:text-base leading-base text-${textColor} 
             py-6 font-semibold hover:text-white`}
         >

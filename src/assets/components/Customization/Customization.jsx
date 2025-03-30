@@ -9,22 +9,14 @@ import { FaGithub } from "react-icons/fa";
 
 
 export default function Customization() {
-  const [rowsCount, setRowsCount] = useState(0);
   const [selectedTitle, setSelectedTitle] = useState(issueInfos[0].title);
-
-  useEffect(() => {
-    // initial set rows count (by default)
-    const initialIssue = issueInfos.find(
-      (item) => item.title === selectedTitle
-    );
-    setRowsCount(initialIssue ? initialIssue.count : 0);
-  }, []);
+  const [codeTemplate, setCodeTemplate] = useState(issueInfos[0].code);
 
   // click management on title and set rows count
   const handleIssueClick = (title) => {
     setSelectedTitle(title);
-    const selectedIssue = issueInfos.find((item) => item.title === title);
-    if (selectedIssue) setRowsCount(selectedIssue.count);
+    const selectedCode = issueInfos.find((item) => item.title === title);
+    if (selectedCode) setCodeTemplate(selectedCode.code);
   };
 
   return (
@@ -62,27 +54,7 @@ export default function Customization() {
 
             <div className="relative max-h-137.5">
               <div className="h-full max-h-137.5 overflow-y-auto overflow-x-hidden px-6 pb-14">
-                <pre className="row-number flex">
-                  <div className="">
-                    {Array.from(Array(rowsCount).keys()).map((rowNumber) => (
-                      <div key={rowNumber} className="table-row">
-                        <span
-                          className="table-cell select-none pr-4 text-right 
-                          text-sm text-[#464A4D]"
-                        >
-                          {rowNumber + 1}
-                        </span>
-                        {/* <div className="token-line table-cell text-sm leading-6 text-[#60a5fa]">
-
-                      </div> */}
-                      </div>
-                    ))}
-                  </div>
-                  {/* <span className="text-white"></span> */}
-                  {/* <CustomCodeRenderer 
-                  code="id: CVE-2024"
-                  language="english"/> */}
-                </pre>
+                <CustomCodeRenderer yamlTemplate={codeTemplate} />
               </div>
 
               <div className="absolute bottom-12 left-0 z-30 block h-6 w-full bg-gradient-to-t from-midnight to-midnight/0"></div>

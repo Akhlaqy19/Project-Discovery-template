@@ -193,7 +193,8 @@ header {
 }
 
 .box-title-effect {
-	@apply transition-colors duration-200 ease-in-out;
+	@apply transition-colors duration-300;
+	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 }
 
 .section-gradient-title {

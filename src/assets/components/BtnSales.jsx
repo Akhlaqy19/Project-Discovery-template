@@ -4,11 +4,8 @@ import { Button } from "@mui/material";
 function BtnSales({ height }) {
   return (
     <>
-      {/* start to talk btn */}
       <Button
-        sx={{
-          all: "unset",
-        }}
+        sx={{all: "unset"}}
       >
         <a
           href="https://projectdiscovery.io/request-demo"
