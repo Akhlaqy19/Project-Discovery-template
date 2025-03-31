@@ -14,9 +14,9 @@
  * <Features />
  */
 
-import React, { useRef, useCallback } from "react";
+import React, { useRef, useCallback, useState, useEffect } from "react";
 import SectionTitle from "./../SectionTitle";
-import { featuresInfo } from "./../../datas";
+import axios from 'axios';
 import { motion, useTransform, useScroll, useInView } from "framer-motion";
 import SnakeBorder from "../SnakeBorder";
 
@@ -25,7 +25,31 @@ function Features() {
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end end"],
+    layoutEffect: false
   });
+  const [featuresInfo, setFeaturesInfo] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3001/featuresInfo');
+        setFeaturesInfo(response.data);
+        setLoading(false);
+      } catch (err) {
+        setError('Failed to fetch features data');
+        setLoading(false);
+        console.error('Error fetching data:', err);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) return null;
+  if (error) return null;
+  if (!featuresInfo.length) return null;
 
   return (
     <section
@@ -86,7 +110,7 @@ const FeatureCardBase = ({
     const scale = useTransform(
       scrollProgress,
       [0, 1],
-      isInView ? [1, 0.5] : [1, 1]
+      isInView ? [1, 0.3] : [1, 1]
     );
     const opacity = useTransform(
       scrollProgress,
@@ -155,7 +179,7 @@ const DummyCard = ({ scrollProgress }) => {
     const scale = useTransform(
       scrollProgress,
       [0, 1],
-      isInView ? [1, 0.5] : [1, 1]
+      isInView ? [1, 0.3] : [1, 1]
     );
     const opacity = useTransform(
       scrollProgress,

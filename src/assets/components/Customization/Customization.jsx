@@ -15,18 +15,50 @@
  * <Customization />
  */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import SectionTitle from "./../SectionTitle";
 import IssueTitle from "./IssueTitle";
 import CutomizationInfo from "./CutomizationInfo";
 import CustomCodeRenderer from "./CustomCodeRenderer";
-import { issueInfo } from "./../../datas";
-import { cutomizationInfo } from "./../../datas";
 import { FaGithub } from "react-icons/fa";
-
+import axios from 'axios';
 
 export default function Customization() {
+  const [issueInfo, setIssueInfo] = useState([]);
+  const [cutomizationInfo, setCutomizationInfo] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [selectedTitle, setSelectedTitle] = useState('');
+  const [codeTemplate, setCodeTemplate] = useState('');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [issueResponse, customizationResponse] = await Promise.all([
+          axios.get('http://localhost:3001/issueInfo'),
+          axios.get('http://localhost:3001/cutomizationInfo')
+        ]);
+        setIssueInfo(issueResponse.data);
+        setCutomizationInfo(customizationResponse.data);
+        if (issueResponse.data.length > 0) {
+          setSelectedTitle(issueResponse.data[0].title);
+          setCodeTemplate(issueResponse.data[0].code);
+        }
+        setLoading(false);
+      } catch (err) {
+        setError('Failed to fetch customization data');
+        setLoading(false);
+        console.error('Error fetching data:', err);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) return <div className="text-center py-10">Loading...</div>;
+  if (error) return <div className="text-center py-10 text-red-500">{error}</div>;
+  if (!issueInfo.length || !cutomizationInfo.length) return null;
 
   const codeTemplateVariants = {
     hidden: { opacity: 0, y: "20%" },
@@ -63,9 +95,6 @@ export default function Customization() {
       y: 0,
     },
   };
-
-  const [selectedTitle, setSelectedTitle] = useState(issueInfo[0].title);
-  const [codeTemplate, setCodeTemplate] = useState(issueInfo[0].code);
 
   // click management on title and set rows count
   const handleIssueClick = (title) => {

@@ -14,13 +14,32 @@
  * <Integration />
  */
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import SectionTitle from "./../SectionTitle";
 import IntegrationBox from "./IntegrationBox";
-import { integrationBoxesInfo } from "./../../datas";
+import axios from 'axios';
 import { motion } from "framer-motion";
 
 function Integration() {
+  const [integrationBoxesInfo, setIntegrationBoxesInfo] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3001/integrationBoxesInfo');
+        setIntegrationBoxesInfo(response.data);
+        setLoading(false);
+      } catch (err) {
+        setError('Failed to fetch integration boxes data');
+        setLoading(false);
+        console.error('Error fetching data:', err);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const wrapperVariants = {
     hidden: { opacity: 0},
@@ -43,6 +62,10 @@ function Integration() {
       y: 0,
     },
   };
+
+  if (loading) return null;
+  if (error) return null;
+  if (!integrationBoxesInfo.length) return null;
 
   return (
     <>

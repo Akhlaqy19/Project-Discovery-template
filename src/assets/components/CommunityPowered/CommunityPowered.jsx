@@ -15,69 +15,93 @@
  * <CommunityPowered />
  */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import ExploitNotif from "./ExploitNotif";
 import SnakeBorder from "./../SnakeBorder";
-import { communityPoweredInfo } from "../../datas";
-import { communityPoweredFidsInfo } from "../../datas";
 import { Pagination, PaginationItem } from "@mui/material";
-
+import axios from 'axios';
 
 export default function CommunityPowered() {
-
-    const titleVariants = {
-      hidden: { opacity: 0, y: "30%" },
-      visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-          duration: 1,
-          staggerChildren: 0.2,
-        },
-      },
-    };
-
-    const textVariants = {
-      hidden: {
-        opacity: 0,
-        y: "20%"
-      },
-      visible: {
-        opacity: 1,
-        y: 0
-      },
-    };
-
-    const notifsVariants = {
-      hidden: { opacity: 0 },
-      visible: {
-        opacity: 1,
-        transition: {
-          duration: 1,
-          staggerChildren: 0.3,
-        },
-      },
-    };
-
-    const notifVariants = {
-      hidden: {
-        opacity: 0,
-        y: "15%",
-      },
-      visible: {
-        opacity: 1,
-        y: 0,
-      },
-    };
-
-
+  // All useState hooks must be at the top
+  const [communityPoweredInfo, setCommunityPoweredInfo] = useState([]);
+  const [communityPoweredFidsInfo, setCommunityPoweredFidsInfo] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
+  const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [infoResponse, fidsResponse] = await Promise.all([
+          axios.get('http://localhost:3001/communityPoweredInfo'),
+          axios.get('http://localhost:3001/communityPoweredFidsInfo')
+        ]);
+        setCommunityPoweredInfo(infoResponse.data);
+        setCommunityPoweredFidsInfo(fidsResponse.data);
+        setLoading(false);
+      } catch (err) {
+        setError('Failed to fetch community powered data');
+        setLoading(false);
+        console.error('Error fetching data:', err);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) return <div className="text-center py-10">Loading...</div>;
+  if (error) return <div className="text-center py-10 text-red-500">{error}</div>;
+  if (!communityPoweredInfo.length || !communityPoweredFidsInfo.length) return null;
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: "30%" },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const textVariants = {
+    hidden: {
+      opacity: 0,
+      y: "20%"
+    },
+    visible: {
+      opacity: 1,
+      y: 0
+    },
+  };
+
+  const notifsVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const notifVariants = {
+    hidden: {
+      opacity: 0,
+      y: "15%",
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  };
 
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
-
-  const [page, setPage] = useState(1);
   const handlePageChange = (event, value) => setPage(value);
 
   const PaginationButtonStyle = {
@@ -90,7 +114,7 @@ export default function CommunityPowered() {
     color: "white",
     fontSize: "17px",
     fontWeight: "500",
-    border: "1px solid rgb(34, 34, 34)", // سفارشی‌سازی استایل
+    border: "1px solid rgb(34, 34, 34)",
     backgroundColor: "rgb(17, 17, 18)",
     "&:hover": {
       backgroundColor: "rgb(9, 9, 11)",

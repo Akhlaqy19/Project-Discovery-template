@@ -13,10 +13,34 @@
  * <Slider />
  */
 
-import React from "react";
-import { sliderLogosInfo } from "./../../datas";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 
 export default function Slider() {
+  const [sliderLogosInfo, setSliderLogosInfo] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3001/sliderLogosInfo');
+        setSliderLogosInfo(response.data);
+        setLoading(false);
+      } catch (err) {
+        setError('Failed to fetch slider logos data');
+        setLoading(false);
+        console.error('Error fetching data:', err);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) return null;
+  if (error) return null;
+  if (!sliderLogosInfo.length) return null;
+
   return (
     <>
       <section className="custom-container-sm py-0 mt-6">
@@ -30,10 +54,10 @@ export default function Slider() {
               flex items-center shrink-0 gap-x-4 overflow-hidden
               *:shrink-0 *:flex *:items-center *:gap-x-4 *:*:mx-6"
             >
-              <SliderBase />
-              <SliderBase />
-              <SliderBase />
-              <SliderBase />
+              <SliderBase logos={sliderLogosInfo} />
+              <SliderBase logos={sliderLogosInfo} />
+              <SliderBase logos={sliderLogosInfo} />
+              <SliderBase logos={sliderLogosInfo} />
             </div>
           </div>
         </div>
@@ -51,14 +75,16 @@ export default function Slider() {
  * - Consistent spacing and alignment
  * - Background color matching
  * 
+ * @param {Object} props
+ * @param {Array} props.logos - Array of logo objects
+ * 
  * @component
  */
-
-const SliderBase = () => {
+const SliderBase = ({ logos }) => {
   return (
     <>
       <div className="slider bg-midnight justify-around">
-        {sliderLogosInfo.map((logo) => (
+        {logos.map((logo) => (
           <div key={logo.id} className="bg-midnight">
             <img
               src={`/icons/header-logos/${logo.src}`}

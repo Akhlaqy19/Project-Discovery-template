@@ -1,28 +1,27 @@
 # Project Discovery Template
 
-A modern React-based web application for displaying security vulnerabilities and exploit information. Built with React, Tailwind CSS, and Framer Motion.
+A modern React-based web application for vulnerability scanning and security assessment.
 
-## 🚀 Features
+## Features
 
-- Modern and responsive UI design
-- Interactive animations and transitions
-- Real-time vulnerability monitoring
-- Community-powered exploit feed
-- Customizable detection templates
-- Integration with various platforms
-- Accessibility-first approach
+- 🎨 Modern UI with Tailwind CSS
+- ⚡ Smooth animations and transitions
+- 📊 Real-time vulnerability monitoring
+- 🔍 Advanced search and filtering
+- 👥 Community-powered vulnerability detection
+- 🔄 Real-time updates and notifications
+- 📱 Fully responsive design
+- 🌐 Multi-language support
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- **Framework:** React 18
-- **Styling:** Tailwind CSS
-- **Animations:** Framer Motion
-- **UI Components:** Material UI
-- **Build Tool:** Vite
-- **Particles:** tsParticles
-- **Version Control:** Git
+- React 18
+- Tailwind CSS
+- Vite
+- JSON Server (for API simulation)
+- Axios (for API calls)
 
-## 📦 Installation
+## Installation
 
 1. Clone the repository:
 ```bash
@@ -31,6 +30,7 @@ git clone https://github.com/yourusername/project-discovery.git
 
 2. Install dependencies:
 ```bash
+cd project-discovery
 npm install
 ```
 
@@ -39,42 +39,82 @@ npm install
 npm run dev
 ```
 
-4. Build for production:
+4. Start the JSON Server (in a separate terminal):
+```bash
+npm run server
+```
+
+5. Build for production:
 ```bash
 npm run build
 ```
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
-src/
-├── assets/
-│   ├── components/     # Reusable components
-│   ├── icons/         # SVG icons
-│   └── images/        # Image assets
-├── constants/         # Constants and configurations
-├── utils/            # Utility functions
-└── styles/           # Global styles
+project-discovery/
+├── src/
+│   ├── assets/
+│   │   ├── components/
+│   │   │   ├── AlertBox/
+│   │   │   ├── AttackServices/
+│   │   │   ├── CommunityPowered/
+│   │   │   ├── Customization/
+│   │   │   ├── End/
+│   │   │   ├── Features/
+│   │   │   ├── Hero/
+│   │   │   ├── Integration/
+│   │   │   ├── Navbar/
+│   │   │   ├── ScanVulnerabilities/
+│   │   │   ├── Slider/
+│   │   │   └── VulnerabilityDetails/
+│   │   ├── db.json
+│   │   └── datas.js
+│   ├── App.jsx
+│   └── main.jsx
+├── public/
+├── index.html
+├── package.json
+├── tailwind.config.js
+└── vite.config.js
 ```
 
-## 🎨 Key Components
+## Key Components
 
-- `StarryBackground`: Interactive particle background
-- `Monitor`: Real-time vulnerability monitoring
-- `VulnerabilityDetails`: Detailed vulnerability information
-- `CommunityPowered`: Community-driven exploit feed
-- `Customization`: Template customization interface
+- **AlertBox**: Displays security alerts and notifications
+- **AttackServices**: Shows detected attack services and their details
+- **CommunityPowered**: Displays community contributions and updates
+- **Customization**: Allows customization of vulnerability scanning
+- **Features**: Highlights key features of the platform
+- **Hero**: Main landing section with key information
+- **Integration**: Shows integration options with other services
+- **Navbar**: Navigation component with responsive design
+- **ScanVulnerabilities**: Core vulnerability scanning interface
+- **Slider**: Image carousel for showcasing features
+- **VulnerabilityDetails**: Detailed view of detected vulnerabilities
 
-## 🔧 Configuration
+## API Endpoints
 
-The project uses various configuration files:
+The application uses JSON Server to simulate API endpoints:
 
-- `vite.config.js`: Vite configuration
+- `/issueInfo`: Vulnerability information and templates
+- `/attackServicesInfo`: Detected attack services
+- `/vulnerabilityInfo`: Vulnerability management details
+- `/communityPoweredInfo`: Community contributions
+- `/newsletterSubscribers`: Newsletter subscription management
+- `/footerListInfo`: Footer navigation data
+- `/sliderLogosInfo`: Partner logos for slider
+- `/featuresInfo`: Feature highlights
+- `/integrationBoxesInfo`: Integration options
+- `/communityComments`: User testimonials
+
+## Configuration Files
+
 - `tailwind.config.js`: Tailwind CSS configuration
-- `postcss.config.js`: PostCSS configuration
-- `eslint.config.js`: ESLint configuration
+- `vite.config.js`: Vite build configuration
+- `db.json`: API data and endpoints
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -82,20 +122,20 @@ The project uses various configuration files:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👥 Authors
+## Authors
 
 - Hossein Akhlaqy - Initial work
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
-- ProjectDiscovery team for inspiration
-- All contributors and community members
+- Project Discovery team
 - Open source community
+- All contributors
 
-## 📞 Support
+## Support
 
-For support, please open an issue in the GitHub repository or contact the maintainers.
+For support, email support@projectdiscovery.io or join our community.

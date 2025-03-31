@@ -13,17 +13,38 @@
  * <ScanVulnerabilities />
  */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ScanBoxToolkits from "./ScanBoxToolkits";
-import { toolkitsInfo } from "./../../datas";
+import axios from 'axios';
 
 function ScanVulnerabilities() {
-
   const [isHovered, setIsHovered] = useState(false);
+  const [toolkitsInfo, setToolkitsInfo] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3001/toolkitsInfo');
+        setToolkitsInfo(response.data);
+        setLoading(false);
+      } catch (err) {
+        setError('Failed to fetch toolkits data');
+        setLoading(false);
+        console.error('Error fetching data:', err);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleMouseEnter = () => setIsHovered(true)
   const handleMouseLeave = () => setIsHovered(false)
 
+  if (loading) return null;
+  if (error) return null;
+  if (!toolkitsInfo.length) return null;
 
   return (
     <>
@@ -60,8 +81,6 @@ function ScanVulnerabilities() {
                       ))}
                     </div>
 
-
-                    {/* تکرار محتوای انیمیشن برای ایجاد افکت پیوسته */}
                     <div className={`flex shrink-0 justify-around [gap:var(--gap)] horizontal-marquee flex-row ${isHovered ? "running" : "" }`}>
                       {toolkitsInfo.map((toolkitData) => (
                         <ScanBoxToolkits

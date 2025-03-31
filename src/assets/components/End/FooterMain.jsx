@@ -14,56 +14,62 @@
  * <FooterMain />
  */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FooterList from "./FooterList";
 import CopyRight from "./CopyRight";
-import { footerListInfo } from "../../datas";
+import axios from 'axios';
 
 export default function FooterMain() {
+  const [footerListInfo, setFooterListInfo] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3001/footerListInfo');
+        setFooterListInfo(response.data);
+      } catch (err) {
+        setError('Failed to fetch footer data');
+        console.error('Error fetching data:', err);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const subscribeUser = async (email) => {
-    // مثلاً یک فراخوانی API به صورت غیرهمزمان
-    // const response = await fetch("/api/subscribe", {
-    //   method: "POST",
-    //   body: JSON.stringify({ email }),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // });
-    // return response.json();
-
-    // this loop for test
-    let i = 0;
-    while (i < 1000000000) {
-      i++;
+    try {
+      const response = await axios.post('http://localhost:3001/newsletterSubscribers', {
+        email,
+        subscribedAt: new Date().toISOString()
+      });
+      return response.data;
+    } catch (err) {
+      throw new Error('Failed to subscribe to newsletter');
     }
-    return i;
   };
 
-
-  // تابعی که عملیات ارسال فرم را انجام می‌دهد.
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setError(null);
 
-    // در اینجا می‌توانید عملیات غیرهمزمان (مانند فراخوانی API) را انجام دهید.
-    // به عنوان مثال:
-      const email = e.target.value; // گرفتن مقدار ایمیل
-      try {
-        const result = await subscribeUser(email);
-        // در صورت موفقیت
-        setIsSubmitted(true);
-      } catch (error) {
-        // مدیریت خطا
-        console.error(error);
-      }
-
-    // پس از اتمام عملیات، وضعیت را به‌روزرسانی می‌کنیم.
-    setIsLoading(false);
-    setIsSubmitted(true);
+    const email = e.target.email.value;
+    try {
+      await subscribeUser(email);
+      setIsSubmitted(true);
+      e.target.reset();
+    } catch (err) {
+      setError('Failed to subscribe. Please try again.');
+      console.error('Subscription error:', err);
+    } finally {
+      setIsLoading(false);
+    }
   };
+
+  if (error) return <div className="text-center py-10 text-red-500">{error}</div>;
 
   return (
     <>
@@ -78,8 +84,9 @@ export default function FooterMain() {
           </div>
 
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-3 xl:mt-0">
-            <PairOfLists itemsInfo={footerListInfo[0]} />
-            <PairOfLists itemsInfo={footerListInfo[1]} />
+            {footerListInfo.map((items, index) => (
+              <PairOfLists key={index} itemsInfo={items} />
+            ))}
           </div>
 
           <div className="mt-20 w-full lg:mt-10 xl:mt-0">
@@ -110,16 +117,14 @@ export default function FooterMain() {
                   type="submit"
                   className="w-full rounded-md border border-sub-yellow bg-sub-yellow/10 
                   p-2 text-sub-yellow hover:bg-sub-yellow/20"
-                  // onClick={handleSubscribing}
                   disabled={isLoading}
                 >
-
                   {isLoading ? "Subscribing..." : "Subscribe"}
                 </button>
               </div>
               {isSubmitted && (
                 <p className="text-white" role="status" aria-live="polite">
-                  Form submitted successfully!
+                  Successfully subscribed to newsletter!
                 </p>
               )}
             </form>

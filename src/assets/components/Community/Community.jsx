@@ -14,13 +14,34 @@
  * <Community />
  */
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import SectionTitle from "./../SectionTitle";
 import CommentBox from "./CommentBox";
 import axios from 'axios';
-import {communityComments} from "./../../datas";
 
 export default function Community() {
+  const [communityComments, setCommunityComments] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchComments = async () => {
+      try {
+        const response = await axios.get('http://localhost:3001/communityComments');
+        setCommunityComments(response.data);
+        setLoading(false);
+      } catch (err) {
+        setError('Failed to fetch community comments');
+        setLoading(false);
+        console.error('Error fetching comments:', err);
+      }
+    };
+
+    fetchComments();
+  }, []);
+
+  if (loading) return <div className="text-center py-10">Loading...</div>;
+  if (error) return <div className="text-center py-10 text-red-500">{error}</div>;
 
   return (
     <>

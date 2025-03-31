@@ -13,15 +13,38 @@
  * <AttackServices />
  */
 
-import React, { useState } from "react";
-import { attackServicesInfo } from "./../../datas";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import RowAttackServices from "./RowAttackServices";
 
 export default function AttackServices() {
   const [isHovered, setIsHovered] = useState(false);
+  const [attackServicesInfo, setAttackServicesInfo] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3001/attackServicesInfo');
+        setAttackServicesInfo(response.data);
+        setLoading(false);
+      } catch (err) {
+        setError('Failed to fetch attack services data');
+        setLoading(false);
+        console.error('Error fetching data:', err);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleMouseEnter = () => setIsHovered(true)
   const handleMouseLeave = () => setIsHovered(false)
+
+  if (loading) return null;
+  if (error) return null;
+  if (!attackServicesInfo.length) return null;
 
   return (
     <>
@@ -64,10 +87,10 @@ export default function AttackServices() {
                 <div
                   className="group flex overflow-hidden p-2 flex-col relative z-20 max-h-36 gap-y-4"
                 >
-                  <AttackServicesBase isHovered={isHovered} />
-                  <AttackServicesBase isHovered={isHovered} />
-                  <AttackServicesBase isHovered={isHovered} />
-                  <AttackServicesBase isHovered={isHovered} />
+                  <AttackServicesBase isHovered={isHovered} attackServicesInfo={attackServicesInfo} />
+                  <AttackServicesBase isHovered={isHovered} attackServicesInfo={attackServicesInfo} />
+                  <AttackServicesBase isHovered={isHovered} attackServicesInfo={attackServicesInfo} />
+                  <AttackServicesBase isHovered={isHovered} attackServicesInfo={attackServicesInfo} />
                 </div>
               </section>
             </div>
@@ -89,14 +112,14 @@ export default function AttackServices() {
  * 
  * @param {Object} props
  * @param {boolean} props.isHovered - Controls the animation state
+ * @param {Array} props.attackServicesInfo - Array of attack service data
  */
 
-const AttackServicesBase = ({ isHovered }) => {
+const AttackServicesBase = ({ isHovered, attackServicesInfo }) => {
   return (
     <>
       <div
         className={`flex shrink-0 justify-around gap-4 flex-col vertical-marquee ${
-          // اگر isHovered هست، کلاس حذف میشه؛ در غیر اینصورت اضافه میشه.
           isHovered ? "running" : ""
         }`}
       >

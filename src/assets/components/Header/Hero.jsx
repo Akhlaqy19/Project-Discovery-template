@@ -14,11 +14,10 @@
  * <Hero />
  */
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Monitor from "./../Monitor";
 import Bitmap from "./../Bitmap";
-import { bitmapsInfo } from "./../../datas";
-import { bitmapTooltipInfo } from "./../../datas";
+import axios from 'axios';
 import { motion } from "framer-motion";
 
 const wrapperVariants = {
@@ -43,6 +42,35 @@ const childVariants = {
 };
 
 export default function Hero() {
+  const [bitmapsInfo, setBitmapsInfo] = useState([]);
+  const [bitmapTooltipInfo, setBitmapTooltipInfo] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [bitmapsResponse, tooltipResponse] = await Promise.all([
+          axios.get('http://localhost:3001/bitmapsInfo'),
+          axios.get('http://localhost:3001/bitmapTooltipInfo')
+        ]);
+        setBitmapsInfo(bitmapsResponse.data);
+        setBitmapTooltipInfo(tooltipResponse.data);
+        setLoading(false);
+      } catch (err) {
+        setError('Failed to fetch bitmap data');
+        setLoading(false);
+        console.error('Error fetching data:', err);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) return null;
+  if (error) return null;
+  if (!bitmapsInfo.length || !bitmapTooltipInfo.length) return null;
+
   return (
     <>
       <section className="custom-container custome-p lg:pt-48 py-42 lg:pb-14 bg-0.15 text-center text-white">
@@ -69,9 +97,7 @@ export default function Hero() {
             </motion.p>
             <motion.div variants={childVariants} className="mt-6">
               <div className="flex w-full mx-auto min-w-96">
-                {/* <div className="mx-auto flex w-full"> */}
                 <Monitor />
-                {/* </div> */}
               </div>
             </motion.div>
           </motion.div>

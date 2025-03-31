@@ -13,15 +13,38 @@
  * <AlertBox />
  */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import RowAlertBox from "./RowAlertBox";
-import { rowAlertBoxInfo } from "./../../datas";
+import axios from 'axios';
 
 function AlertBox() {
   const [isHovered, setIsHovered] = useState(false);
+  const [rowAlertBoxInfo, setRowAlertBoxInfo] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3001/rowAlertBoxInfo');
+        setRowAlertBoxInfo(response.data);
+        setLoading(false);
+      } catch (err) {
+        setError('Failed to fetch alert box data');
+        setLoading(false);
+        console.error('Error fetching data:', err);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
+
+  if (loading) return null;
+  if (error) return null;
+  if (!rowAlertBoxInfo.length) return null;
 
   return (
     <>

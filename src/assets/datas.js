@@ -1,4 +1,4 @@
-const usersRated = 102.1;
+const usersRated = 102.2;
 
 const navLinksData = [
   {

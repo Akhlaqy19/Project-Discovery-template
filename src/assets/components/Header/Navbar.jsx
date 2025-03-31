@@ -15,20 +15,18 @@
  * <Navbar />
  */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import BtnSales from "./../BtnSales";
 import Menu from './Menu';
 import { FaGithub } from "react-icons/fa";
 import { TiStar } from "react-icons/ti";
 import confetti from "canvas-confetti";
-import { usersRated } from "../../datas";
+import axios from 'axios';
 import BurgerMenu from "/icons/menu/burger.svg";
 import CloseMenu from "/icons/menu/close.svg";
 
-
 export default function Navbar() {
-
   const wrapperVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -40,6 +38,25 @@ export default function Navbar() {
   };
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [usersRated, setUsersRated] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3001/usersRated');
+        setUsersRated(response.data);
+        setLoading(false);
+      } catch (err) {
+        setError('Failed to fetch users data');
+        setLoading(false);
+        console.error('Error fetching data:', err);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleHover = () => {
     confetti({
@@ -56,6 +73,9 @@ export default function Navbar() {
 
   const handleToggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
+  if (loading) return null;
+  if (error) return null;
+
   return (
     <>
       <nav className="mx-auto">
@@ -69,7 +89,6 @@ export default function Navbar() {
           {/* left / logo */}
           <div className="relative z-50 flex items-center gap-8 lg:flex-1">
             {/* logo image */}
-
             <a className="-m-1.5 p-1.5" href="/">
               <img
                 src="/img/logo.png"
@@ -79,7 +98,6 @@ export default function Navbar() {
             </a>
 
             {/* github score */}
-
             <motion.div
               variants={wrapperVariants}
               initial="hidden"
@@ -103,7 +121,6 @@ export default function Navbar() {
           </div>
 
           {/* mid / navbar links */}
-
           <div className="">
             <ul
               className="hidden lg:flex lg:gap-x-12 justify-between text-sm nav-effect **:capitalize *:*:block *:*:leading-5 *:*:font-normal 

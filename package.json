@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "json-server --watch src/assets/db.json --port 3001"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -46,6 +47,7 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "file-loader": "^6.2.0",
     "globals": "^15.15.0",
+    "json-server": "^1.0.0-beta.3",
     "vite": "^6.2.0"
   }
 }
