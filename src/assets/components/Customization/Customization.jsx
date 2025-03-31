@@ -21,7 +21,7 @@ import SectionTitle from "./../SectionTitle";
 import IssueTitle from "./IssueTitle";
 import CutomizationInfo from "./CutomizationInfo";
 import CustomCodeRenderer from "./CustomCodeRenderer";
-import { issueInfos } from "./../../datas";
+import { issueInfo } from "./../../datas";
 import { cutomizationInfo } from "./../../datas";
 import { FaGithub } from "react-icons/fa";
 
@@ -64,13 +64,13 @@ export default function Customization() {
     },
   };
 
-  const [selectedTitle, setSelectedTitle] = useState(issueInfos[0].title);
-  const [codeTemplate, setCodeTemplate] = useState(issueInfos[0].code);
+  const [selectedTitle, setSelectedTitle] = useState(issueInfo[0].title);
+  const [codeTemplate, setCodeTemplate] = useState(issueInfo[0].code);
 
   // click management on title and set rows count
   const handleIssueClick = (title) => {
     setSelectedTitle(title);
-    const selectedCode = issueInfos.find((item) => item.title === title);
+    const selectedCode = issueInfo.find((item) => item.title === title);
     if (selectedCode) setCodeTemplate(selectedCode.code);
   };
 
@@ -98,7 +98,7 @@ export default function Customization() {
         >
           <div className="bg-base flex flex-col overflow-hidden rounded-2xl">
             <div className="flex min-w-full justify-between overflow-x-scroll bg-midnight px-8 py-1 pr-24 lg:overflow-x-hidden">
-              {issueInfos.map((data) => {
+              {issueInfo.map((data) => {
                 return (
                   <div key={data.id}>
                     <IssueTitle

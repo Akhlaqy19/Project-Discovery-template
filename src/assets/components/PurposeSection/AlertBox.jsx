@@ -13,9 +13,9 @@
  * <AlertBox />
  */
 
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import RowAlertBox from "./RowAlertBox";
-import { rowAlertBoxInfos } from "./../../datas";
+import { rowAlertBoxInfo } from "./../../datas";
 
 function AlertBox() {
   const [isHovered, setIsHovered] = useState(false);
@@ -43,7 +43,7 @@ function AlertBox() {
 
 
                 <div className={`flex shrink-0 justify-around [gap:var(--gap)] vertical-marquee-slower flex-col ${isHovered ? "running" : ""}`}>
-                  {rowAlertBoxInfos.map((rowAlertBoxData) => (
+                  {rowAlertBoxInfo.map((rowAlertBoxData) => (
                     <RowAlertBox
                       key={rowAlertBoxData.id}
                       {...rowAlertBoxData}
@@ -51,7 +51,7 @@ function AlertBox() {
                   ))}
                 </div>
                 <div className={`flex shrink-0 justify-around [gap:var(--gap)] vertical-marquee-slower flex-col ${isHovered ? "running" : ""}`}>
-                  {rowAlertBoxInfos.map((rowAlertBoxData) => (
+                  {rowAlertBoxInfo.map((rowAlertBoxData) => (
                     <RowAlertBox
                       key={rowAlertBoxData.id}
                       {...rowAlertBoxData}
@@ -59,7 +59,7 @@ function AlertBox() {
                   ))}
                 </div>
                 <div className={`flex shrink-0 justify-around [gap:var(--gap)] vertical-marquee-slower flex-col ${isHovered ? "running" : ""}`}>
-                  {rowAlertBoxInfos.map((rowAlertBoxData) => (
+                  {rowAlertBoxInfo.map((rowAlertBoxData) => (
                     <RowAlertBox
                       key={rowAlertBoxData.id}
                       {...rowAlertBoxData}
@@ -67,7 +67,7 @@ function AlertBox() {
                   ))}
                 </div>
                 <div className={`flex shrink-0 justify-around [gap:var(--gap)] vertical-marquee-slower flex-col ${isHovered ? "running" : ""}`}>
-                  {rowAlertBoxInfos.map((rowAlertBoxData) => (
+                  {rowAlertBoxInfo.map((rowAlertBoxData) => (
                     <RowAlertBox
                       key={rowAlertBoxData.id}
                       {...rowAlertBoxData}

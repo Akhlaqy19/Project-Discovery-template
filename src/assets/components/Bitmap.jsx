@@ -119,7 +119,7 @@ export default function Bitmap({ yAxis, xAxis, size, scale, img, ...tooltip }) {
  * @param {string} props.margin - Margin class for positioning
  */
 
-const Tooltip = ({ rotate, id, color, text, code, tooltipScale, margin }) => {
+const Tooltip = ({ rotate, id, color, text, code, tooltipScale, translate }) => {
 
   const textVariants = {
     rest: { opacity: 0, y: 30, scale: 0 },
@@ -138,7 +138,7 @@ const Tooltip = ({ rotate, id, color, text, code, tooltipScale, margin }) => {
   return (
     <>
       <motion.div
-        className={`text absolute -top-16 z-50 center -translate-x-[38%] flex-col rounded-md bg-midnight px-4 py-2 shadow-xl whitespace-nowrap opacity-[1] ${margin}`}
+        className={`text absolute -top-16 z-50 center -translate-x-[38%] flex-col rounded-md bg-midnight px-4 py-2 shadow-xl whitespace-nowrap opacity-[1] ${translate}`}
         variants={textVariants}
         style={{ rotate }}
       >

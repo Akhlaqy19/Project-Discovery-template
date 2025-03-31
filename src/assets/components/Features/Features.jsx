@@ -16,7 +16,7 @@
 
 import React, { useRef, useCallback } from "react";
 import SectionTitle from "./../SectionTitle";
-import { featureInfos } from "./../../datas";
+import { featuresInfo } from "./../../datas";
 import { motion, useTransform, useScroll, useInView } from "framer-motion";
 import SnakeBorder from "../SnakeBorder";
 
@@ -33,9 +33,9 @@ function Features() {
       ref={sectionRef}
       className="relative z-50 top-20 pt-44 mx-auto max-w-7xl h-[400vh]"
     >
-      <FeatureCard1 scrollProgress={scrollYProgress} {...featureInfos[0]} />
-      <FeatureCard2 scrollProgress={scrollYProgress} {...featureInfos[1]} />
-      <FeatureCard3 scrollProgress={scrollYProgress} {...featureInfos[2]} />
+      <FeatureCard1 scrollProgress={scrollYProgress} {...featuresInfo[0]} />
+      <FeatureCard2 scrollProgress={scrollYProgress} {...featuresInfo[1]} />
+      <FeatureCard3 scrollProgress={scrollYProgress} {...featuresInfo[2]} />
       <DummyCard scrollProgress={scrollYProgress} />
     </section>
   );

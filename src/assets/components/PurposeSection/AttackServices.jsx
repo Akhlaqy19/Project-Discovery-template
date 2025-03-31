@@ -14,7 +14,7 @@
  */
 
 import React, { useState } from "react";
-import { attackServicesInfos } from "./../../datas";
+import { attackServicesInfo } from "./../../datas";
 import RowAttackServices from "./RowAttackServices";
 
 export default function AttackServices() {
@@ -100,7 +100,7 @@ const AttackServicesBase = ({ isHovered }) => {
           isHovered ? "running" : ""
         }`}
       >
-        {attackServicesInfos.map((data) => (
+        {attackServicesInfo.map((data) => (
           <RowAttackServices key={data.id} {...data} />
         ))}
       </div>

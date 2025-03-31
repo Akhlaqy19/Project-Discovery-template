@@ -15,7 +15,7 @@
 
 import React, { useState } from "react";
 import ScanBoxToolkits from "./ScanBoxToolkits";
-import { toolkitsInfos } from "./../../datas";
+import { toolkitsInfo } from "./../../datas";
 
 function ScanVulnerabilities() {
 
@@ -52,7 +52,7 @@ function ScanVulnerabilities() {
                     className="group pointer-events-none flex flex-row gap-3 shrink-0 p-2 overflow-hidden [--duration:30s]"
                   >
                     <div className={`flex shrink-0 justify-around [gap:var(--gap)] horizontal-marquee flex-row ${isHovered ? "running" : "" }`}>
-                      {toolkitsInfos.map((toolkitData) => (
+                      {toolkitsInfo.map((toolkitData) => (
                         <ScanBoxToolkits
                           key={toolkitData.id}
                           {...toolkitData}
@@ -63,7 +63,7 @@ function ScanVulnerabilities() {
 
                     {/* تکرار محتوای انیمیشن برای ایجاد افکت پیوسته */}
                     <div className={`flex shrink-0 justify-around [gap:var(--gap)] horizontal-marquee flex-row ${isHovered ? "running" : "" }`}>
-                      {toolkitsInfos.map((toolkitData) => (
+                      {toolkitsInfo.map((toolkitData) => (
                         <ScanBoxToolkits
                           key={toolkitData.id + "-duplicate"}
                           {...toolkitData}
@@ -72,7 +72,7 @@ function ScanVulnerabilities() {
                     </div>
 
                     <div className={`flex shrink-0 justify-around [gap:var(--gap)] horizontal-marquee flex-row ${isHovered ? "running" : "" }`}>
-                      {toolkitsInfos.map((toolkitData) => (
+                      {toolkitsInfo.map((toolkitData) => (
                         <ScanBoxToolkits
                           key={toolkitData.id + "-duplicate"}
                           {...toolkitData}
@@ -81,7 +81,7 @@ function ScanVulnerabilities() {
                     </div>
 
                     <div className={`flex shrink-0 justify-around [gap:var(--gap)] horizontal-marquee flex-row ${isHovered ? "running" : "" }`}>
-                      {toolkitsInfos.map((toolkitData) => (
+                      {toolkitsInfo.map((toolkitData) => (
                         <ScanBoxToolkits
                           key={toolkitData.id + "-duplicate"}
                           {...toolkitData}

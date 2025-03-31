@@ -14,12 +14,14 @@
  * <Community />
  */
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import SectionTitle from "./../SectionTitle";
 import CommentBox from "./CommentBox";
+import axios from 'axios';
 import {communityComments} from "./../../datas";
 
 export default function Community() {
+
   return (
     <>
       <section className="custom-container custom-p-sm">

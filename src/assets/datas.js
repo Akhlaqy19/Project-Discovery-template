@@ -189,7 +189,7 @@ const sliderLogosInfo = [
 
 //////////////////////////////////////
 
-const featureInfos = [
+const featuresInfo = [
   {
     id: 1,
     subTitle: "Features - Vulnerability Management",
@@ -218,7 +218,7 @@ const featureInfos = [
 
 //////////////////////////////////////
 
-const attackServicesInfos = [
+const attackServicesInfo = [
   {
     id: 1,
     domain: "app.hooli.com",
@@ -265,7 +265,7 @@ const attackServicesInfos = [
 
 //////////////////////////////////////
 
-const toolkitsInfos = [
+const toolkitsInfo = [
   {
     id: 1,
     name: "Gitlab",
@@ -310,7 +310,7 @@ const toolkitsInfos = [
 
 //////////////////////////////////////
 
-const rowAlertBoxInfos = [
+const rowAlertBoxInfo = [
   {
     id: 1,
     type: "medium",
@@ -633,7 +633,7 @@ const communityPoweredFidsInfo = [
 
 //////////////////////////////////////
 
-const issueInfos = [
+const issueInfo = [
   {
     id: 1,
     title: "Broken Authentication",
@@ -981,40 +981,35 @@ const communityComments = [
     fullName: "Paul Seekamp",
     userName: "nullenc0de",
     avatar: "1.png",
-    comment:
-      "Starting to get better results running Nuclei, than a Nessus scan these days.",
+    comment: "Starting to get better results running Nuclei, than a Nessus scan these days.",
   },
   {
     id: 2,
     fullName: "STÖK",
     userName: "stokfredrik",
     avatar: "2.png",
-    comment:
-      "The @pdnuclei team does it again! Need to dev/null all my hacky shit, low and behold... notify!!! Not only captures it you burp colab request & passes it to slack/discord/telegram.",
+    comment: "The @pdnuclei team does it again! Need to dev/null all my hacky shit, low and behold... notify!!! Not only captures it you burp colab request & passes it to slack/discord/telegram.",
   },
   {
     id: 3,
     fullName: "Daniel Miessler",
     userName: "DanielMiessler",
     avatar: "3.png",
-    comment:
-      "This is the best security tool released in probably 10 years. Maybe longer. It’s Nessus—except transparent and automatable—and for AppSec as well.",
+    comment: "This is the best security tool released in probably 10 years. Maybe longer. It’s Nessus—except transparent and automatable—and for AppSec as well.",
   },
   {
     id: 4,
     fullName: "Jason Haddix",
     userName: "JHaddix",
     avatar: "4.png",
-    comment:
-      "The next level of automation in recon is targeted content discovery / directory bruteforcing for CVE's ++. Want a good start on these fingerprints/templates? They exist!",
+    comment: "The next level of automation in recon is targeted content discovery / directory bruteforcing for CVE's ++. Want a good start on these fingerprints/templates? They exist!",
   },
   {
     id: 5,
     fullName: "STÖK",
     userName: "stokfredrik",
     avatar: "5.png",
-    comment:
-      "Check out the stack from @pdnuclei sooooo many game changing tools, nuclei and chaos is the bomb.",
+    comment: "Check out the stack from @pdnuclei sooooo many game changing tools, nuclei and chaos is the bomb.",
   },
 ];
 
@@ -1097,15 +1092,15 @@ export { usersRated };
 export { bitmapsInfo };
 export { bitmapTooltipInfo };
 export { sliderLogosInfo };
-export { featureInfos };
-export { attackServicesInfos };
-export { toolkitsInfos };
-export { rowAlertBoxInfos };
+export { featuresInfo };
+export { attackServicesInfo };
+export { toolkitsInfo };
+export { rowAlertBoxInfo };
 export { vulnerabilityInfo };
 export { integrationBoxesInfo };
 export { communityPoweredInfo };
 export { communityPoweredFidsInfo };
-export { issueInfos };
+export { issueInfo };
 export { cutomizationInfo };
 export { communityComments };
 export { footerListInfo };
