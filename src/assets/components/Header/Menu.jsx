@@ -7,29 +7,49 @@
  * - Backdrop overlay
  * - Responsive design
  * - Staggered animation effects
+ * - Dynamic data fetching from API
  * 
  * @component
  * @example
  * <Menu />
  */
 
-import React from 'react'
-import { navLinksData } from '../../datas';
-import { motion } from 'framer-motion'; 
+import React, { useState, useEffect } from 'react'
+import { motion } from 'framer-motion';
+import axios from 'axios';
 
 export default function Menu() {
+  const [navLinks, setNavLinks] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-   const wrapperVariants = {
-     hidden: { opacity: 0 },
-     visible: {
-       opacity: 1,
-       transition: {
-         duration: 1.5,
-         staggerChildren: 0.3,
-         type: "spring",
-       },
-     },
-   };
+  useEffect(() => {
+    const fetchNavLinks = async () => {
+      try {
+        const response = await axios.get('http://localhost:3001/navLinksData');
+        setNavLinks(response.data);
+        setLoading(false);
+      } catch (err) {
+        setError('Failed to fetch navigation links');
+        setLoading(false);
+        console.error('Error fetching nav links:', err);
+      }
+    };
+
+    fetchNavLinks();
+  }, []);
+
+  const wrapperVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 1.5,
+        staggerChildren: 0.3,
+        type: "spring",
+      },
+    },
+  };
 
   //  const childVariants = {
   //    hidden: {
@@ -41,6 +61,36 @@ export default function Menu() {
   //      y: 0
   //    },
   //  };
+
+  if (loading) {
+    return (
+      <div className="lg:hidden" role="dialog" aria-modal="true">
+        <div className="fixed inset-0 z-10 bg-black bg-opacity-50"></div>
+        <div className="fixed right-0 top-16 z-10 w-full bg-midnight">
+          <div className="custom-container flow-root p-4 px-6 nav-effect">
+            <div className="flex items-center justify-center py-6">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="lg:hidden" role="dialog" aria-modal="true">
+        <div className="fixed inset-0 z-10 bg-black bg-opacity-50"></div>
+        <div className="fixed right-0 top-16 z-10 w-full bg-midnight">
+          <div className="custom-container flow-root p-4 px-6 nav-effect">
+            <div className="py-6 text-center text-red-500">
+              {error}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -55,7 +105,7 @@ export default function Menu() {
               animate="visible"
               className="space-y-2 py-6 opacity-[1]"
             >
-              {navLinksData.map((item) => (
+              {navLinks.map((item) => (
                 <div key={item.id}>
                   <MenuItem {...item} />
                 </div>

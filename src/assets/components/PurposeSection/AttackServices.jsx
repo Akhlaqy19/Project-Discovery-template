@@ -16,9 +16,11 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import RowAttackServices from "./RowAttackServices";
+import GlowBackground from "../GlowBackground";
 
 export default function AttackServices() {
   const [isHovered, setIsHovered] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [attackServicesInfo, setAttackServicesInfo] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -42,6 +44,21 @@ export default function AttackServices() {
   const handleMouseEnter = () => setIsHovered(true)
   const handleMouseLeave = () => setIsHovered(false)
 
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    // محاسبه درصد موقعیت نسبت به اندازه المان
+    const xPercent = (x / rect.width) * 100;
+    const yPercent = (y / rect.height) * 100;
+    
+    setMousePosition({
+      x: xPercent,
+      y: yPercent
+    });
+  };
+
   if (loading) return null;
   if (error) return null;
   if (!attackServicesInfo.length) return null;
@@ -52,9 +69,10 @@ export default function AttackServices() {
         className="group col-span-4 md:col-span-2 min-h-75.5"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onMouseMove={handleMouseMove}
       >
         <div className="relative z-50 m-0 size-full p-0 py-0">
-          <div className="h-full w-full pb-8">
+          <div className="size-full pb-8">
             <div className="pointer-events-none relative z-20 mb-4 h-auto w-full">
               <div className="flex items-center justify-between px-6 pb-3 pt-6">
                 <h3 className="group-hover:text-white box-title-effect text-base xl:text-lg text-gray tracking-xs font-semibold">
@@ -84,16 +102,28 @@ export default function AttackServices() {
                 </div>
               </div>
               <section className="relative top-0 z-40 h-auto w-full rounded-b-xl overflow-hidden">
-                <div
-                  className="group flex overflow-hidden p-2 flex-col relative z-20 max-h-36 gap-y-4"
-                >
-                  <AttackServicesBase isHovered={isHovered} attackServicesInfo={attackServicesInfo} />
-                  <AttackServicesBase isHovered={isHovered} attackServicesInfo={attackServicesInfo} />
-                  <AttackServicesBase isHovered={isHovered} attackServicesInfo={attackServicesInfo} />
-                  <AttackServicesBase isHovered={isHovered} attackServicesInfo={attackServicesInfo} />
+                <div className="group flex overflow-hidden p-2 flex-col relative z-20 max-h-36 gap-y-4">
+                  <AttackServicesBase
+                    isHovered={isHovered}
+                    attackServicesInfo={attackServicesInfo}
+                  />
+                  <AttackServicesBase
+                    isHovered={isHovered}
+                    attackServicesInfo={attackServicesInfo}
+                  />
+                  <AttackServicesBase
+                    isHovered={isHovered}
+                    attackServicesInfo={attackServicesInfo}
+                  />
+                  <AttackServicesBase
+                    isHovered={isHovered}
+                    attackServicesInfo={attackServicesInfo}
+                  />
                 </div>
               </section>
             </div>
+
+            <GlowBackground mousePosition={mousePosition}/>
           </div>
         </div>
       </section>

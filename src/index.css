@@ -463,8 +463,26 @@ opacity: 0.5;
 }
 
 .GlowBackground_glowBackground {
-	@apply relative block size-full overflow-hidden;
+	@apply relative block size-full overflow-hidden rounded-2xl bg-glass-secondary;
+	--border-radius: 16px;
+	--border-width: 1px;
+	--x: 0px;
+	--y: 0px;
 } 
+
+.GlowBackground_glowBackground:before,
+.GlowBackground_glowBackground:after {
+	content: "";
+	position: absolute;
+	left: var(--x);
+	top: var(--y);
+	transform: translate(-50%, -50%);
+	transition: width .2s ease, height .2s ease;
+	-webkit-transition: width .2s ease, height .2s ease;
+	-moz-transition: width .2s ease, height .2s ease;
+	-ms-transition: width .2s ease, height .2s ease;
+	-o-transition: width .2s ease, height .2s ease;
+}
 
 .GlowBackground_glowBackground:before {
 	@apply size-0;
@@ -480,14 +498,20 @@ opacity: 0.5;
 	margin: -5px;
 }
 
-/* .GlowBackground_glowBorderBg {
-	@apply absolute z-1 pointer-events-none rounded-2xl opacity-100 
+.GlowBackground_glowBorderBg {
+	@apply absolute z-1 pointer-events-none rounded-2xl opacity-[1]
 	transition-opacity duration-500 ease-out;
 	background: var(--overlay-color);
-} */
+	top: var(--border-width);
+	right: var(--border-width);
+	bottom: var(--border-width);
+	left: var(--border-width);
+	background: var(--overlay-color);
+}
 
 .animate-grid {
 	animation: grid 25s linear infinite;
+	-webkit-animation: grid 25s linear infinite;
 }
 
 @keyframes grid {

@@ -25,16 +25,36 @@
  * />
  */
 
-import React from 'react'
+import React, {useState} from 'react'
+import GlowBackground from "../GlowBackground";
 import X from "/icons/X.svg";
 
 export default function CommentBox({ fullName, userName, avatar, comment }) {
+
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+   const handleMouseMove = (e) => {
+     const rect = e.currentTarget.getBoundingClientRect();
+     const x = e.clientX - rect.left;
+     const y = e.clientY - rect.top;
+
+     // محاسبه درصد موقعیت نسبت به اندازه المان
+     const xPercent = (x / rect.width) * 100;
+     const yPercent = (y / rect.height) * 100;
+
+     setMousePosition({
+       x: xPercent,
+       y: yPercent,
+     });
+   };
+
   return (
     <>
       <a
         href={`https://twitter.com/${userName}`}
         target="_blank"
         className="slider-comments mx-3"
+        onMouseMove={handleMouseMove}
       >
         <figure className="relative w-96 cursor-pointer overflow-hidden p-8">
           <div className="pointer-events-none relative z-20 flex flex-col items-center gap-2">
@@ -63,16 +83,13 @@ export default function CommentBox({ fullName, userName, avatar, comment }) {
             </h5>
           </div>
 
-          <div className="absolute left-0 top-0 z-10 h-full w-full">
-            {/* bg-glass-secondary */}
-            <div
-              className="GlowBackground_glowBackground 
-               bg-base-2 border rounded-2xl"
-            >
-            </div>
-          </div>
+          <GlowBackground mousePosition={mousePosition} />
         </figure>
       </a>
     </>
   );
+}
+
+{
+  /* bg-glass-secondary */
 }

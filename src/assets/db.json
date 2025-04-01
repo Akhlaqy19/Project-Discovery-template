@@ -150,7 +150,7 @@
       "translate": "translate-y-4"
     }
   ],
-
+  
   "sliderLogosInfo": [
     {
       "id": 1,
@@ -522,7 +522,7 @@
       "name": "API"
     }
   ],
-  
+
   "vulnerabilityInfo": [
     {
       "id": "vulnerability",
