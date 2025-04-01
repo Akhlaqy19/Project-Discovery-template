@@ -205,16 +205,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [JSON Server](https://github.com/typicode/json-server) - API simulation
 - [Vite](https://vitejs.dev/) - Build tool
 
-## 📞 Support
-
-For support, please:
-- Open an issue
-- Join our community
-- Contact the maintainers
-
-## 🔄 Updates
+## Updates
 
 Stay tuned for updates and new features. Follow us on:
-- GitHub
-- Twitter
-- LinkedIn
+- GitHub: https://github.com/Akhlaqy19
