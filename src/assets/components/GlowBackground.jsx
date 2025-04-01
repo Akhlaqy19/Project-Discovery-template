@@ -9,9 +9,7 @@ export default function GlowBackground({ mousePosition }) {
           style={{
             "--x": `${mousePosition.x}px`,
             "--y": `${mousePosition.y}px`,
-          
           }}
-
         >
           <div className="GlowBackground_glowBorderBg"></div>
         </div>
