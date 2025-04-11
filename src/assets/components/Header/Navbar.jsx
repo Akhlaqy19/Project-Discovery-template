@@ -45,7 +45,7 @@ export default function Navbar() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/usersRated');
+        const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/usersRated`);
         setUsersRated(response.data);
         setLoading(false);
       } catch (err) {

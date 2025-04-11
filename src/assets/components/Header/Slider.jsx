@@ -24,7 +24,7 @@ export default function Slider() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/sliderLogosInfo');
+        const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/sliderLogosInfo`);
         setSliderLogosInfo(response.data);
         setLoading(false);
       } catch (err) {

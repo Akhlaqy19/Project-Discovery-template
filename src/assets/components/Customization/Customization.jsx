@@ -36,8 +36,8 @@ export default function Customization() {
     const fetchData = async () => {
       try {
         const [issueResponse, customizationResponse] = await Promise.all([
-          axios.get('http://localhost:3001/issueInfo'),
-          axios.get('http://localhost:3001/cutomizationInfo')
+          axios.get(`${process.env.REACT_APP_API_BASE_URL}/issueInfo`),
+          axios.get(`${process.env.REACT_APP_API_BASE_URL}/cutomizationInfo`)
         ]);
         setIssueInfo(issueResponse.data);
         setCutomizationInfo(customizationResponse.data);

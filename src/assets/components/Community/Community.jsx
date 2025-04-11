@@ -27,7 +27,7 @@ export default function Community() {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/communityComments');
+        const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/communityComments`);
         setCommunityComments(response.data);
         setLoading(false);
       } catch (err) {

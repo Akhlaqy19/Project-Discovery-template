@@ -51,8 +51,8 @@ export default function Hero() {
     const fetchData = async () => {
       try {
         const [bitmapsResponse, tooltipResponse] = await Promise.all([
-          axios.get('http://localhost:3001/bitmapsInfo'),
-          axios.get('http://localhost:3001/bitmapTooltipInfo')
+          axios.get(`${process.env.REACT_APP_API_BASE_URL}/bitmapsInfo`),
+          axios.get(`${process.env.REACT_APP_API_BASE_URL}/bitmapTooltipInfo`)
         ]);
         setBitmapsInfo(bitmapsResponse.data);
         setBitmapTooltipInfo(tooltipResponse.data);

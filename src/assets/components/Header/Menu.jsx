@@ -26,7 +26,7 @@ export default function Menu() {
   useEffect(() => {
     const fetchNavLinks = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/navLinksData');
+        const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/navLinksData`);
         setNavLinks(response.data);
         setLoading(false);
       } catch (err) {

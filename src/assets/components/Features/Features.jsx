@@ -34,7 +34,7 @@ function Features() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/featuresInfo');
+        const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/featuresInfo`);
         setFeaturesInfo(response.data);
         setLoading(false);
       } catch (err) {

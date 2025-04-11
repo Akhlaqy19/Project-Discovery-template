@@ -35,8 +35,8 @@ export default function CommunityPowered() {
     const fetchData = async () => {
       try {
         const [infoResponse, fidsResponse] = await Promise.all([
-          axios.get('http://localhost:3001/communityPoweredInfo'),
-          axios.get('http://localhost:3001/communityPoweredFidsInfo')
+          axios.get(`${process.env.REACT_APP_API_BASE_URL}/communityPoweredInfo`),
+          axios.get(`${process.env.REACT_APP_API_BASE_URL}/communityPoweredFidsInfo`)
         ]);
         setCommunityPoweredInfo(infoResponse.data);
         setCommunityPoweredFidsInfo(fidsResponse.data);

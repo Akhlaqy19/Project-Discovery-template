@@ -43,7 +43,7 @@ function ScanVulnerabilities() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/toolkitsInfo');
+        const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/toolkitsInfo`);
         setToolkitsInfo(response.data);
         setLoading(false);
       } catch (err) {

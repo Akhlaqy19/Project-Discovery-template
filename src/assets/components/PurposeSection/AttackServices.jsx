@@ -28,7 +28,7 @@ export default function AttackServices() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/attackServicesInfo');
+        const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/attackServicesInfo`);
         setAttackServicesInfo(response.data);
         setLoading(false);
       } catch (err) {
