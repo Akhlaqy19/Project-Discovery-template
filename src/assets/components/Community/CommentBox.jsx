@@ -89,7 +89,3 @@ export default function CommentBox({ fullName, userName, avatar, comment }) {
     </>
   );
 }
-
-{
-  /* bg-glass-secondary */
-}

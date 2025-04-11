@@ -22,7 +22,6 @@ import GraphDashLines from './GraphDashLines';
 export default function Solution() {
   return (
     <>
-      {/* <section className="custom-container-sm"> */}
         <div className="relative z-40 size-full">
           <div className="relative w-full flex flex-col items-center py-12 md:pb-0 md:pt-20">
             <div className="flex flex-col gap-3 items-center text-center mx-auto my-6 max-w-2xl">
@@ -61,7 +60,6 @@ export default function Solution() {
             </div>
           </div>
         </div>
-      {/* </section> */}
     </>
   );
 }

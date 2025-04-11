@@ -16,7 +16,7 @@
 import React, { useState, useEffect } from "react";
 import RowAlertBox from "./RowAlertBox";
 import GlowBackground from "./../GlowBackground";
-import axios from 'axios';
+import axios from "axios";
 
 function AlertBox() {
   const [isHovered, setIsHovered] = useState(false);
