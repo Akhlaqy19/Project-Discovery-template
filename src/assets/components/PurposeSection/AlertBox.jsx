@@ -44,7 +44,7 @@ function AlertBox() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/rowAlertBoxInfo');
+        const response = await axios.get('http://project-discovery-template-security.vercel.app/rowAlertBoxInfo');
         setRowAlertBoxInfo(response.data);
         setLoading(false);
       } catch (err) {
